@@ -4,11 +4,26 @@ policy_client.py calls ``mpc_utils.cem(...)`` through the module, so replacing t
 runs is enough; the official code stays untouched. Arguments are passed through unchanged.
 
     REPO=<robo_jepa clone> PLANNER=cem python planners/run_client.py <policy_client.py arguments>
+
+DETERMINISTIC=1 (default; 0 turns it off): deterministic GPU kernels, so that a seed re-run gives the same
+episode (with the per-call seeding in planners.make_planner). Without it, the same camera frame can be encoded into
+slightly different features from one run to the next.
 """
 
 import os
 import runpy
 import sys
+
+DETERMINISTIC = os.environ.get("DETERMINISTIC", "1") == "1"
+if DETERMINISTIC:
+    os.environ.setdefault("CUBLAS_WORKSPACE_CONFIG", ":4096:8")  # cuBLAS reads it at its first use
+
+import torch  # noqa: E402
+
+if DETERMINISTIC:
+    torch.backends.cudnn.benchmark = False
+    torch.backends.cudnn.deterministic = True
+    torch.use_deterministic_algorithms(True, warn_only=True)  # an op without a deterministic kernel warns
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.environ["REPO"]

@@ -8,15 +8,22 @@ translation of each of R steps) through the predictor, and `problem.score.J(F)` 
 view-weighted mean l1 distance between the last predicted features and the goal features (lower is better).
 
 Environment variables:
-    PLANNER      the entry of PLANNERS to use (default cem; read by run_client.py)
-    PLAN_CHUNK   batch size of the rollouts made here (default 32)
-    PLAN_LOG     one JSON line per planning call (set by run_task.sh)
+    PLANNER           the entry of PLANNERS to use (default cem; read by run_client.py)
+    PLAN_CHUNK        batch size of the rollouts made here (default 32)
+    PLAN_LOG          one JSON line per planning call (set by run_task.sh)
+    PLAN_SEED_OFFSET  k (default 0): a different random draw on the same setup
+
+Every planning call of a known setup seed first seeds Python's, numpy's and torch's generators from (seed, step,
+PLAN_SEED_OFFSET) (make_planner), so the random samples depend on the call alone, not on what the process ran
+before.
 """
 
 import json
 import os
+import random
 import time
 
+import numpy as np
 import torch
 
 from app.robo_jepa.mpc import mpc_utils
@@ -113,8 +120,8 @@ PLANNERS = {"cem": _cem}
 
 
 def make_planner(name):
-    """PLANNERS[name], with one JSON line per planning call appended to PLAN_LOG: setup seed, step, wall-clock time,
-    predictor rollouts, J of the executed plan (J_exec) and the executed action.
+    """PLANNERS[name], with one JSON line per planning call appended to PLAN_LOG: setup seed, step, the call's random
+    seed, wall-clock time, predictor rollouts, J of the executed plan (J_exec) and the executed action.
 
     The client runs its task files in sorted(os.listdir()) order (policy_client.py), not in the order the seeds
     were listed: ts10.json before ts3.json. TASK_DIR (run_task.sh) recovers each call's seed from that order."""
@@ -128,6 +135,11 @@ def make_planner(name):
         step = kw.get("global_step", 0)  # 0 at the first call of every episode
         episode[0] += step == 0
         seed = seeds[episode[0]] if seeds and episode[0] < len(seeds) else None  # bookkeeping must never raise
+        rng_seed = None if seed is None else 1000 * seed + step + 1_000_000 * _env("PLAN_SEED_OFFSET", 0)
+        if rng_seed is not None:  # cem() samples from the global generators (np.random, torch.randn)
+            random.seed(rng_seed)
+            np.random.seed(rng_seed)
+            torch.manual_seed(rng_seed)  # CUDA generators too
         ROLLOUTS = 0
         torch.cuda.synchronize()
         t = time.time()
@@ -141,8 +153,8 @@ def make_planner(name):
         problem = _problem(world_model, wm_state, goal_features, kw)
         x = means[-1][: _horizon(kw), :3].to(problem.device)
         J_exec = problem.score.J(problem.features(x[None], count=False)).item()  # one rollout, not counted
-        rec = dict(planner=name, call=calls[0], seed=seed, global_step=step, seconds=round(seconds, 3),
-                   rollouts=rollouts, J_exec=J_exec, action=x.flatten().tolist())
+        rec = dict(planner=name, call=calls[0], seed=seed, rng_seed=rng_seed, global_step=step,
+                   seconds=round(seconds, 3), rollouts=rollouts, J_exec=J_exec, action=x.flatten().tolist())
         log = os.environ.get("PLAN_LOG")
         if log:
             with open(log, "a") as f:
