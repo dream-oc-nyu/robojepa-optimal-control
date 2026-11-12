@@ -24,7 +24,7 @@ it runs, so the official code stays unchanged and is not copied here.
 
 ```
 planners/   planners.py (the planners), run_client.py (plugs one into the client),
-            summarize.py (tables from run folders)
+            summarize.py (tables from run folders), draw_setups.py (random setup seeds)
 scripts/    run_task.sh (one task, one planner, some setups)
 ```
 
@@ -52,6 +52,7 @@ METRIC=final python planners/summarize.py closed $OUT/push
 The last arguments are setup seeds (start and goal); `SCENE` picks the kitchen. Results go to `$OUT/<task>/<run>/`.
 A rerun of the same setup gives the same episode (deterministic kernels, each planning call seeded from its setup and
 step); `PLAN_SEED_OFFSET=k` draws other samples on the same setup, `DETERMINISTIC=0` turns the kernels off.
+`python planners/draw_setups.py <generator seed> <how many>` draws setup seeds that anyone can draw again.
 
 ## Planners
 
