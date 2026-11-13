@@ -50,6 +50,8 @@ METRIC=final python planners/summarize.py closed $OUT/push
 
 `TASK` is `reach`, `objreach`, `obstacle` or `push`, with the settings of the official `reproduce_*.sh` scripts.
 The last arguments are setup seeds (start and goal); `SCENE` picks the kitchen. Results go to `$OUT/<task>/<run>/`.
+`PAPER=1` uses the paper's settings (its Table 14) where they differ from the scripts, with results in
+`$OUT/<task>_paper/<run>/`; the top of `scripts/run_task.sh` lists the differences.
 A rerun of the same setup gives the same episode (deterministic kernels, each planning call seeded from its setup and
 step); `PLAN_SEED_OFFSET=k` draws other samples on the same setup, `DETERMINISTIC=0` turns the kernels off.
 `python planners/draw_setups.py <generator seed> <how many>` draws setup seeds that anyone can draw again.

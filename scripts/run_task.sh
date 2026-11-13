@@ -11,22 +11,40 @@
 #       bash scripts/run_task.sh <size> <step> <seed> [seed ...]
 #
 # MODELS/wm-<size>/ holds cooldown_<size>_<step>.pth.tar, config.json and encoder.pth.tar (README, Setup).
-# Every seed listed runs in one client process, against one env server. Results go to OUT/<task>/<TAG>/ (TAG defaults
-# to the planner and its budget).
+# Every seed listed runs in one client process, against one env server. Results go to OUT/<task>/<TAG>/ (with PAPER=1
+# OUT/<task>_paper/<TAG>/; TAG defaults to the planner and its budget).
 #
 # TASK (default reach): reach | objreach | obstacle | push, with the settings of the official
 # scripts/deployment/examples/reproduce_*.sh. The seed picks the start and the goal; SCENE is the env's scene seed
 # (reach, objreach, obstacle; default 0) or the target kitchen (push: 1-10, default 4, as reproduce_push.sh; larger
 # values are taken mod 10, 0 = 10). ObjectReach carries OBJECT (default banana).
+# PAPER=1: the env settings of the paper's Table 14 where the official scripts differ:
+#   Reach          start-goal 0.25-0.35 m (script: 0-0.30), a held-out target kitchen (script: a pretraining one)
+#   ObjectReach    start-goal 0.11-0.26 m in a held-out target kitchen, [1,2,3,4,5,6,8,9,10][SCENE % 9], scene seed 0
+#   ObstacleReach  start-goal 0.25-0.50 m (script: 0.40-0.80), 18 steps (script: 5), obstacle clearance and jitter
+#                  0.05 m and the four obstacle classes of obstacle_reach_golden_target.json
+#   ObjectPush     unchanged: reproduce_push.sh already matches Table 14
+# Either way the predictor runs in fp16 without compiling, not the paper's compiled bf16.
 # The CEM settings default to the official ones (CEM_ITERS, STEP_CEM, SAMPLES, NUM_BATCHES, CUTOFF).
 set -e
 SIZE=$1; STEP=$2; shift 2; SEEDS="$@"
 TASK=${TASK:-reach}
 [ "$TASK" = push ] && SCENE=${SCENE:-4} || SCENE=${SCENE:-0}
+PAPER=${PAPER:-0}
 if [ "$TASK" = obstacle ]; then
-  ROLLOUT=${ROLLOUT:-5}; EMBODIMENT=${EMBODIMENT:-3}; TOTAL_STEPS=5
+  ROLLOUT=${ROLLOUT:-5}; EMBODIMENT=${EMBODIMENT:-3}
   TASK_FLAGS="--obstacle_reach_task --reach_clear_radius 1.0 --kitchen_split target"
-  TASK_FLAGS="$TASK_FLAGS --obstacle_classes CoffeeMachine --reach_min_distance 0.40 --reach_max_distance 0.80"
+  if [ "$PAPER" = 1 ]; then
+    # the paper-era settings recorded in obstacle_reach_golden_target.json: with the default clearance (0.12) the two
+    # sides of the coffee machine are >= 0.51 m apart and no pair fits 0.25-0.50 m; and with the coffee machine alone
+    # some kitchens (half width 0.21-0.25 m) still have none, hence its four classes
+    TOTAL_STEPS=18
+    TASK_FLAGS="$TASK_FLAGS --obstacle_classes StandMixer Blender CoffeeMachine Toaster"
+    TASK_FLAGS="$TASK_FLAGS --reach_min_distance 0.25 --reach_max_distance 0.50 --obstacle_clearance_m 0.05 --obstacle_lateral_jitter_std 0.05"
+  else
+    TOTAL_STEPS=5
+    TASK_FLAGS="$TASK_FLAGS --obstacle_classes CoffeeMachine --reach_min_distance 0.40 --reach_max_distance 0.80"
+  fi
 elif [ "$TASK" = push ]; then
   ROLLOUT=${ROLLOUT:-5}; EMBODIMENT=${EMBODIMENT:-3}; TOTAL_STEPS=18
   K=$((SCENE % 10)); [ $K = 0 ] && K=10  # the target layouts are 1-10
@@ -38,9 +56,19 @@ elif [ "$TASK" = objreach ]; then
   OBJECT=${OBJECT:-banana}
   TASK_FLAGS="--object_reach_task --object_reach_object_name $OBJECT --object_reach_max_distance 0.15"
   TASK_FLAGS="$TASK_FLAGS --object_reach_clear_radius 1.0 --object_reach_max_retries 3"
+  OS=$SCENE  # the scene seed, as reproduce_object_reach.sh
+  if [ "$PAPER" = 1 ]; then
+    # a pinned target kitchen (the golden file's kitchens 1-6, 8-10), with scene seed 0 as the flag's help asks
+    KS=(1 2 3 4 5 6 8 9 10); K=${KS[$((SCENE % 9))]}; OS=0
+    TASK_FLAGS="$TASK_FLAGS --object_reach_target_kitchen_id $K --object_reach_min_distance 0.11 --object_reach_max_pair_distance 0.26"
+  fi
 else
   ROLLOUT=${ROLLOUT:-1}; EMBODIMENT=${EMBODIMENT:-2}; TOTAL_STEPS=5
-  TASK_FLAGS="--reach_task --reach_max_distance 0.30 --reach_clear_radius 1.0"
+  if [ "$PAPER" = 1 ]; then
+    TASK_FLAGS="--reach_task --reach_min_distance 0.25 --reach_max_distance 0.35 --reach_clear_radius 1.0 --kitchen_split target"
+  else
+    TASK_FLAGS="--reach_task --reach_max_distance 0.30 --reach_clear_radius 1.0"
+  fi
 fi
 CEM_ITERS=${CEM_ITERS:-15}; STEP_CEM=${STEP_CEM:-10}; SAMPLES=${SAMPLES:-16}; NUM_BATCHES=${NUM_BATCHES:-64}
 CUTOFF=${CUTOFF:-20}  # CEM's elite count
@@ -48,7 +76,8 @@ export PLANNER=${PLANNER:-cem}
 TAG=${TAG:-${PLANNER}_${SAMPLES}x${NUM_BATCHES}_${CEM_ITERS}-${STEP_CEM}}
 HERE=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)  # the repo root
 : "${REPO:?set REPO to the robo_jepa clone}" "${MODELS:?set MODELS to the checkpoint folder}" "${OUT:?set OUT}"
-RUN=$OUT/$TASK/$TAG; mkdir -p "$RUN"
+SWEEP=$TASK; [ "$PAPER" = 1 ] && SWEEP=${TASK}_paper
+RUN=$OUT/$SWEEP/$TAG; mkdir -p "$RUN"
 export PLAN_LOG=$RUN/plan_log.jsonl  # one line per planning call (planners.make_planner)
 PORT=${PORT:-$((7300 + RANDOM % 600))}
 export MUJOCO_GL=egl PYOPENGL_PLATFORM=egl CUDA_VISIBLE_DEVICES=${GPU:-0}
@@ -66,23 +95,23 @@ for s in $SEEDS; do
   if [ "$TASK" = push ]; then
     printf '{"init":{"mode":"init","object_push_task_seed":%d},"goal":{"mode":"goal","object_push_task_seed":%d}}' "$s" "$s" > "$TASKS/ts$s.json"
   elif [ "$TASK" = objreach ]; then
-    printf '{"init":{"mode":"init","seed":%d,"object_reach_task_seed":%d,"object_reach_object_name":"%s"},"goal":{"mode":"goal","seed":%d,"object_reach_task_seed":%d,"object_reach_object_name":"%s"}}' "$SCENE" "$s" "$OBJECT" "$SCENE" "$s" "$OBJECT" > "$TASKS/ts$s.json"
+    printf '{"init":{"mode":"init","seed":%d,"object_reach_task_seed":%d,"object_reach_object_name":"%s"},"goal":{"mode":"goal","seed":%d,"object_reach_task_seed":%d,"object_reach_object_name":"%s"}}' "$OS" "$s" "$OBJECT" "$OS" "$s" "$OBJECT" > "$TASKS/ts$s.json"
   else
     printf '{"init":{"mode":"init","seed":%d,"reach_task_seed":%d},"goal":{"mode":"goal","seed":%d,"reach_task_seed":%d}}' "$SCENE" "$s" "$SCENE" "$s" > "$TASKS/ts$s.json"
   fi
 done
 export TASK_DIR=$TASKS  # planners.make_planner: which seed each planning call belongs to
 VIEW_W=${VIEW_W:-0.5,0.5}  # the cost's weights of the left and the wrist camera
-{ echo "seeds=$SEEDS task=$TASK steps=$TOTAL_STEPS scene=$SCENE env_flags=$TASK_FLAGS"
+{ echo "seeds=$SEEDS task=$TASK paper=$PAPER steps=$TOTAL_STEPS scene=$SCENE env_flags=$TASK_FLAGS"
   echo "embodiment=$EMBODIMENT size=$SIZE step=$STEP rollout=$ROLLOUT cem=$CEM_ITERS/$STEP_CEM samples=$SAMPLES x $NUM_BATCHES cutoff=$CUTOFF"
   env | grep -E '^(PLANNER|PLAN_[A-Z_]+)=' | sort
   echo "VIEW_W=$VIEW_W"; } >> "$RUN/config.txt"
 
 # as the official scripts: the reach tasks pass their scene seed and a placeholder inner task, ObjectReach its scene
-# seed, push scene seed 0 (its kitchen is pinned by --object_push_target_kitchen_id)
+# seed (0 with PAPER=1), push scene seed 0 (its kitchen is pinned by --object_push_target_kitchen_id)
 SCENE_FLAGS="--seed $SCENE --task_name CloseStandMixerHead --reach_task_seed $SCENE"
 [ "$TASK" = push ] && SCENE_FLAGS="--seed 0"
-[ "$TASK" = objreach ] && SCENE_FLAGS="--seed $SCENE --task_name ObjectReachKitchen --object_reach_task_seed $SCENE"
+[ "$TASK" = objreach ] && SCENE_FLAGS="--seed $OS --task_name ObjectReachKitchen --object_reach_task_seed $OS"
 cd "$REPO"
 python scripts/deployment/robots/robocasa/robot_env_server.py \
   --port "$PORT" --camera_names robot0_agentview_left robot0_eye_in_hand \
