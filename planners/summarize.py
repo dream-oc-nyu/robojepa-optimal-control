@@ -2,7 +2,8 @@
 
     python planners/summarize.py closed <OUT/<task>> [tag ...]               one row per run folder
 
-A tag "a+b" pools run folders a and b into one row (one configuration split over several jobs). The score is the
+A tag "a+b" pools run folders a and b into one row (one configuration split over several jobs); a setup both hold
+counts once if it is the same episode, and stops the script if not. The score is the
 paper's normalized cumulative reward (NCR, the mean of r_t over the episode's steps), or with METRIC=final the final
 reward r_T (the paper scores ObstacleReach and ObjectPush this way). r_t = max(0, 1 - d_t / d_0), d the distance to
 the goal of the end effector (Reach, ObstacleReach) or of the object (ObjectReach, ObjectPush).
@@ -24,7 +25,7 @@ def ms(v, f="{:.3f}"):
 def per_seed(root, tag):
     """seed -> score, d_T (cm) and the episode's plan-log lines, for run folder tag ("a+b": folders pooled)."""
     final = os.environ.get("METRIC") == "final"
-    out = {}
+    out, src = {}, {}  # src: seed -> (folder, reward per step), to check a setup that two pooled folders share
     for d in (os.path.join(root, t) for t in tag.split("+")):
         p = os.path.join(d, "plan_log.jsonl")
         log = [json.loads(line) for line in open(p)] if os.path.exists(p) else []
@@ -36,6 +37,14 @@ def per_seed(root, tag):
             k = next((p for p in ("env_info_reach_", "env_info_object_push_", "env_info_object_reach_")
                       if p + "reward" in z.files), "env_info_reach_")
             r = z[k + "reward"]
+            # a setup in two pooled folders: kept once if it is the same episode (a deterministic rerun), an error if
+            # not, since keeping either copy would decide the score silently
+            if seed in src:
+                if not np.array_equal(src[seed][1], r):
+                    sys.exit(f"setup {seed} is in both {src[seed][0]} and {os.path.basename(d)} with different rewards: "
+                             "pool only folders of one configuration, or drop one copy")
+                continue
+            src[seed] = os.path.basename(d), r
             out[seed] = dict(score=r[-1] if final else r.mean(), dT=100 * z[k + "distance_to_goal"][-1],
                              calls=[c for c in log if c.get("seed") == seed])
     return out
