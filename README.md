@@ -12,7 +12,7 @@ $$
 with the encoder $E$ and the predictor $P$ fixed. The paper uses CEM. We keep the model fixed and change only the
 optimizer, and compare how well each one plans and what it costs. This repository runs one optimizer in the paper's
 four tasks (Reach, ObjectReach, ObstacleReach, ObjectPush) and logs the cost of every planning step (predictor
-rollouts, wall time) next to the task's reward.
+rollouts, wall time, peak GPU memory) next to the task's reward.
 
 ## Built on
 
@@ -64,6 +64,7 @@ METRIC=final python planners/summarize.py closed $OUT/push      # one row per ru
 | `METRIC=final` | `summarize.py` scores by the final reward instead of the paper's NCR |
 
 - Results: `$OUT/<task>/<run>/`, or `$OUT/<task>_paper/<run>/` with `PAPER=1`
+- Each planning call: one line in `<run>/plan_log.jsonl`: time, rollouts, GPU memory, the model's $J$ after each plan step, and for CEM $J$ per iteration (the fields are listed in `make_planner`)
 - The same setup, run again, gives the same episode; `python planners/compare_runs.py $OUT/<task> <run a> <run b>` checks it, bit for bit
 - New setup seeds: `python planners/draw_setups.py <generator seed> <how many>`
 
