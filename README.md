@@ -27,6 +27,7 @@ planners/
   planners.py      the planners
   run_client.py    runs the official client with the chosen planner
   summarize.py     tables from run folders
+  compare_runs.py  checks that two runs are the same episodes
   draw_setups.py   random setup seeds
 scripts/
   run_task.sh      one task, one planner, a list of setups
@@ -63,7 +64,7 @@ METRIC=final python planners/summarize.py closed $OUT/push      # one row per ru
 | `METRIC=final` | `summarize.py` scores by the final reward instead of the paper's NCR |
 
 - Results: `$OUT/<task>/<run>/`, or `$OUT/<task>_paper/<run>/` with `PAPER=1`
-- The same setup, run again, gives the same episode
+- The same setup, run again, gives the same episode; `python planners/compare_runs.py $OUT/<task> <run a> <run b>` checks it, bit for bit
 - New setup seeds: `python planners/draw_setups.py <generator seed> <how many>`
 
 ## Example: CEM with 1024 samples against 32
