@@ -40,9 +40,10 @@ def _env(name, default):
 # ── scoring ────────────────────────────────────────────────────────────────────────────────────────────
 
 
-def rollout_features(wm_state, actions, step_func, device, use_cache, repeat=1, count=True):
+def rollout_features(wm_state, actions, step_func, device, use_cache, repeat=1, count=True, every=False):
     """actions [N, R, 7] -> features of the last predicted step, [N, V, D] in fp32. Each action is applied as
-    `repeat` world-model steps of action / repeat, as cem() does with action_repeat."""
+    `repeat` world-model steps of action / repeat, as cem() does with action_repeat. every=True: the features of
+    every plan step instead, concatenated along the last axis, [N, V, R*D] (make_planner's per-step log)."""
     global ROLLOUTS
     chunk = _env("PLAN_CHUNK", 32)
     outs = []
@@ -60,7 +61,7 @@ def rollout_features(wm_state, actions, step_func, device, use_cache, repeat=1, 
                     a[:, h : h + 1] / repeat, history, no_grad=True, device=device, use_cache=use_cache, batch=100
                 )
             steps.append(state.flatten(3, 5)[:, 0].float())
-        outs.append(steps[-1])
+        outs.append(torch.cat(steps, -1) if every else steps[-1])
         del history
     if count:
         ROLLOUTS += len(actions)
@@ -96,9 +97,9 @@ class Problem:
             wm_state, step_func, device, use_cache, repeat)
         self.score = Scorer(goal_features, view_weights, device)
 
-    def features(self, X, count=True):  # X [N, R, 3]
+    def features(self, X, count=True, every=False):  # X [N, R, 3]
         return rollout_features(self.wm_state, to_actions(X), self.step_func, self.device, self.use_cache,
-                                self.repeat, count)
+                                self.repeat, count, every)
 
 
 def _problem(world_model, wm_state, goal_features, kw):
@@ -121,7 +122,11 @@ PLANNERS = {"cem": _cem}
 
 def make_planner(name):
     """PLANNERS[name], with one JSON line per planning call appended to PLAN_LOG: setup seed, step, the call's random
-    seed, wall-clock time, predictor rollouts, J of the executed plan (J_exec) and the executed action.
+    seed, wall-clock time, predictor rollouts, the GPU memory allocated when the call starts and its peak during the
+    call (PyTorch tensors only, torch.cuda.max_memory_allocated; the difference is what the planner itself needs),
+    J of the executed plan (J_exec), the model's J after each of its steps (J_steps), the executed action, and for
+    CEM the mean J of the elites in its last iteration (J_elite) and after every iteration (trace: (rollouts so far,
+    J)).
 
     The client runs its task files in sorted(os.listdir()) order (policy_client.py), not in the order the seeds
     were listed: ts10.json before ts3.json. TASK_DIR (run_task.sh) recovers each call's seed from that order."""
@@ -142,19 +147,33 @@ def make_planner(name):
             torch.manual_seed(rng_seed)  # CUDA generators too
         ROLLOUTS = 0
         torch.cuda.synchronize()
+        torch.cuda.reset_peak_memory_stats()
+        mem_start = torch.cuda.memory_allocated()
         t = time.time()
         rewards, means, stds = plan(world_model, wm_state, goal_features, **kw)
         torch.cuda.synchronize()
         seconds = time.time() - t
+        mem_peak = torch.cuda.max_memory_allocated()
         if name == "cem":
             rollouts = kw["cem_steps"] * kw["samples"] * kw.get("num_batches", 1) * kw.get("world_size", 1)
         else:
             rollouts = ROLLOUTS
         problem = _problem(world_model, wm_state, goal_features, kw)
         x = means[-1][: _horizon(kw), :3].to(problem.device)
-        J_exec = problem.score.J(problem.features(x[None], count=False)).item()  # one rollout, not counted
+        # J after each step of the executed plan, from one rollout (not counted); J_exec is the last one
+        Fs = problem.features(x[None], count=False, every=True)  # [1, V, R*D]
+        D = problem.score.goal.shape[-1]
+        J_steps = [problem.score.J(Fs[..., h * D : (h + 1) * D]).item() for h in range(Fs.shape[-1] // D)]
         rec = dict(planner=name, call=calls[0], seed=seed, rng_seed=rng_seed, global_step=step,
-                   seconds=round(seconds, 3), rollouts=rollouts, J_exec=J_exec, action=x.flatten().tolist())
+                   seconds=round(seconds, 3), rollouts=rollouts, gpu_mem_start_gb=round(mem_start / 1e9, 3),
+                   gpu_mem_peak_gb=round(mem_peak / 1e9, 3), J_exec=J_steps[-1], J_steps=J_steps,
+                   action=x.flatten().tolist())
+        if name == "cem":
+            # cem() returns, per iteration, the per-view reward averaged over its elites (higher is better)
+            w = problem.score.w.cpu()
+            rec["J_elite"] = -(rewards[-1].float() * w).sum().item()
+            per_iter = kw["samples"] * kw.get("num_batches", 1) * kw.get("world_size", 1)
+            rec["trace"] = [(per_iter * (i + 1), -(r.float().cpu() * w).sum().item()) for i, r in enumerate(rewards)]
         log = os.environ.get("PLAN_LOG")
         if log:
             with open(log, "a") as f:
