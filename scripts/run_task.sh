@@ -73,7 +73,13 @@ fi
 CEM_ITERS=${CEM_ITERS:-15}; STEP_CEM=${STEP_CEM:-10}; SAMPLES=${SAMPLES:-16}; NUM_BATCHES=${NUM_BATCHES:-64}
 CUTOFF=${CUTOFF:-20}  # CEM's elite count
 export PLANNER=${PLANNER:-cem}
-TAG=${TAG:-${PLANNER}_${SAMPLES}x${NUM_BATCHES}_${CEM_ITERS}-${STEP_CEM}}
+if [ "$PLANNER" = cem ]; then
+  TAG=${TAG:-${PLANNER}_${SAMPLES}x${NUM_BATCHES}_${CEM_ITERS}-${STEP_CEM}}
+else  # adam, lbfgs: candidates and iterations (planners.py; the defaults set here so that the tag names them)
+  PLAN_K=${PLAN_K:-8}; [ "$PLANNER" = lbfgs ] && PLAN_ITERS=${PLAN_ITERS:-10} || PLAN_ITERS=${PLAN_ITERS:-20}
+  export PLAN_K PLAN_ITERS
+  TAG=${TAG:-${PLANNER}_k${PLAN_K}_it${PLAN_ITERS}}
+fi
 HERE=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)  # the repo root
 : "${REPO:?set REPO to the robo_jepa clone}" "${MODELS:?set MODELS to the checkpoint folder}" "${OUT:?set OUT}"
 SWEEP=$TASK; [ "$PAPER" = 1 ] && SWEEP=${TASK}_paper

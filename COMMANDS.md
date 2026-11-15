@@ -74,6 +74,7 @@ srun --account=torch_pr_564_tandon_advanced --partition=h200_tandon,h200_public,
 # then the block from step 5, and:
 nvidia-smi -L
 TASK=reach PLANNER=cem SAMPLES=32 NUM_BATCHES=1 bash scripts/run_task.sh 300m 300k 0
+TASK=reach PLANNER=adam bash scripts/run_task.sh 300m 300k 0     # the gradient planner (or PLANNER=lbfgs)
 METRIC=final python planners/summarize.py closed $OUT/reach
 ```
 
@@ -96,16 +97,19 @@ TASK=reach PLANNER=cem sbatch job.sh 300m 300k 0 1 2 3 4
 #SBATCH --mem=64G
 #SBATCH --time=04:00:00
 #SBATCH --output=%x_%j.log
-set -euo pipefail
-source $SCRATCH/miniforge3/bin/activate
+set -eo pipefail  # no -u: conda's activation scripts read unset variables
+# conda's shell hook, not `source .../activate`: a sourced script gets the job's arguments and activate rejects them
+eval "$($SCRATCH/miniforge3/bin/conda shell.bash hook)"
 conda activate $SCRATCH/miniforge3/envs/robo_jepa
 export REPO=$SCRATCH/robo_jepa MODELS=$SCRATCH/checkpoints OUT=$SCRATCH/outputs
 export TORCH_HOME=$SCRATCH/.cache/torch XDG_CACHE_HOME=$SCRATCH/.cache
 cd $SCRATCH/robojepa-optimal-control
 nvidia-smi -L
-
 bash scripts/run_task.sh "$@"
 ```
+
+Rerunning a setup under the same tag appends to `plan_log.jsonl` and overwrites the episode file. `summarize.py`
+counts only the last run of each setup, but you can also delete the folder first (`rm -rf $OUT/<task>/<tag>`).
 
 With the default CEM (1024 samples) a setup takes about 30 min, so set `--time` to fit the number of setups, or split
 them across several jobs. Runs of the same setup give identical episodes, so the outputs can be combined.

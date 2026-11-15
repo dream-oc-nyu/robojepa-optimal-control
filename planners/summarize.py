@@ -7,6 +7,11 @@ counts once if it is the same episode, and stops the script if not. The score is
 paper's normalized cumulative reward (NCR, the mean of r_t over the episode's steps), or with METRIC=final the final
 reward r_T (the paper scores ObstacleReach and ObjectPush this way). r_t = max(0, 1 - d_t / d_0), d the distance to
 the goal of the end effector (Reach, ObstacleReach) or of the object (ObjectReach, ObjectPush).
+
+Rollouts count every predictor rollout; backward passes count those of them that were also differentiated (adam,
+lbfgs), each costing about two more. A setup run again in the same folder appends to plan_log.jsonl and overwrites
+its episode file; only its last run's planning calls are counted. Episode wall time runs from the start of the first
+planning call to the end of the last one: planning, env steps and encoding (logs before t_start was added: -).
 """
 
 import glob
@@ -45,26 +50,33 @@ def per_seed(root, tag):
                              "pool only folders of one configuration, or drop one copy")
                 continue
             src[seed] = os.path.basename(d), r
-            out[seed] = dict(score=r[-1] if final else r.mean(), dT=100 * z[k + "distance_to_goal"][-1],
-                             calls=[c for c in log if c.get("seed") == seed])
+            calls = [c for c in log if c.get("seed") == seed]
+            starts = [i for i, c in enumerate(calls) if c.get("global_step") == 0]
+            calls = calls[starts[-1]:] if starts else calls  # the last run, the one the episode file holds
+            out[seed] = dict(score=r[-1] if final else r.mean(), dT=100 * z[k + "distance_to_goal"][-1], calls=calls)
     return out
 
 
 def closed(root, tags):
     tags = tags or sorted(os.path.basename(d) for d in glob.glob(os.path.join(root, "*")) if os.path.isdir(d))
     score = "final reward" if os.environ.get("METRIC") == "final" else "NCR"
-    print(f"| Run | Seeds | Rollouts / episode | Planning time / episode (s) | J_exec, step 1 | d_T (cm) | {score} |")
-    print("|---|---|---|---|---|---|---|")
+    print(f"| Run | Seeds | Rollouts / episode | Backward passes / episode | Planning time / episode (s) "
+          f"| Episode wall time (s) | J_exec, step 1 | d_T (cm) | {score} |")
+    print("|---|---|---|---|---|---|---|---|---|")
     for tag in tags:
         runs = per_seed(root, tag)
         if not runs:
             continue
         calls = [r["calls"] for r in runs.values() if r["calls"]]
         roll = [sum(c["rollouts"] for c in ep) for ep in calls]
+        back = [sum(c.get("backwards", 0) for c in ep) for ep in calls]
         secs = [sum(c["seconds"] for c in ep) for ep in calls]
+        wall = [ep[-1]["t_start"] + ep[-1]["seconds"] - ep[0]["t_start"] for ep in calls
+                if all("t_start" in c for c in ep)]
         J1 = [ep[0]["J_exec"] for ep in calls]
         seeds = ",".join(str(s) for s in sorted(runs))
-        print(f"| `{tag}` | {seeds} | {ms(roll, '{:,.0f}') if roll else '-'} | {ms(secs, '{:.0f}') if secs else '-'} | "
+        print(f"| `{tag}` | {seeds} | {ms(roll, '{:,.0f}') if roll else '-'} | {ms(back, '{:,.0f}') if back else '-'} | "
+              f"{ms(secs, '{:.0f}') if secs else '-'} | {ms(wall, '{:.0f}') if wall else '-'} | "
               f"{ms(J1, '{:.4f}') if J1 else '-'} | {ms([r['dT'] for r in runs.values()], '{:.2f}')} | "
               f"{ms([r['score'] for r in runs.values()])} |")
 

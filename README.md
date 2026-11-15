@@ -90,6 +90,15 @@ Time per setup on one GPU: about 30 min with 1024 samples, a few minutes with 32
 | `PLANNER` | |
 |---|---|
 | `cem` | the official CEM, the baseline |
+| `adam` | gradient-based shooting: Adam on the plan's translations, by backpropagation through the predictor |
+| `lbfgs` | the same with L-BFGS (strong-Wolfe line search), as in LEAP ([arXiv:2609.03294](https://arxiv.org/abs/2609.03294)) without its learned proposal and state term |
+
+Settings of `adam` and `lbfgs`: `PLAN_K` candidates (default 8: the warm start and perturbations of it),
+`PLAN_ITERS` (default 20 Adam, 10 L-BFGS) and `PLAN_LR`; the rest are at the top of `planners/planners.py`.
+
+The gradient planners patch two parts of the official rollout while they run: its KV cache stores keys and values
+detached and in place, and its pose update goes through numpy. Both are restored afterwards, and the forward values
+are unchanged. Runs are tagged `<planner>_k<K>_it<iters>`, and `summarize.py` also counts their backward passes.
 
 A new planner is a function with the same inputs and outputs as the official `cem()`, added to `PLANNERS` in
 `planners/planners.py` (the top of that file says how).
