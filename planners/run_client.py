@@ -53,6 +53,25 @@ def _offline_repo_info(github):
 
 _hub._parse_repo_info = _offline_repo_info
 
+# policy_client.py loads /usr/share/fonts/dejavu/DejaVuSans.ttf (for the text on its videos), which not every node has.
+# A missing font file is looked up by name among the fonts matplotlib ships (DejaVu among them).
+from PIL import ImageFont  # noqa: E402
+
+_truetype = ImageFont.truetype
+
+
+def _truetype_fallback(font=None, *args, **kwargs):
+    if isinstance(font, str) and not os.path.exists(font):
+        import matplotlib
+
+        local = os.path.join(matplotlib.get_data_path(), "fonts", "ttf", os.path.basename(font))
+        if os.path.exists(local):
+            font = local
+    return _truetype(font, *args, **kwargs)
+
+
+ImageFont.truetype = _truetype_fallback
+
 script = os.path.join(CLIENT_DIR, "policy_client.py")
 sys.argv = [script] + sys.argv[1:]
 os.chdir(CLIENT_DIR)

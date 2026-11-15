@@ -79,7 +79,12 @@ METRIC=final python planners/summarize.py closed $OUT/reach
 
 ### Batch job
 
-Save this as `job.sh` and submit it with `sbatch job.sh`:
+Save this as `job.sh`. It runs one task with one planner on a list of setups. Settings go in as environment
+variables and the arguments go to `run_task.sh` (`sbatch` passes your shell's environment to the job):
+
+```bash
+TASK=reach PLANNER=cem sbatch job.sh 300m 300k 0 1 2 3 4
+```
 
 ```bash
 #!/bin/bash
@@ -89,7 +94,7 @@ Save this as `job.sh` and submit it with `sbatch job.sh`:
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=64G
-#SBATCH --time=12:00:00
+#SBATCH --time=04:00:00
 #SBATCH --output=%x_%j.log
 set -euo pipefail
 source $SCRATCH/miniforge3/bin/activate
@@ -99,19 +104,12 @@ export TORCH_HOME=$SCRATCH/.cache/torch XDG_CACHE_HOME=$SCRATCH/.cache
 cd $SCRATCH/robojepa-optimal-control
 nvidia-smi -L
 
-# the README's CEM 1024 vs 32 comparison (ObjectReach, paper settings, 20 setups)
-OBJS=(banana can mug)
-for s in 375 382 391 442 475 518 527 593 712 733 736 772 777 780 808 887 930 940 981 991; do
-  O=${OBJS[$((s % 3))]}
-  PAPER=1 TASK=objreach SCENE=$s OBJECT=$O TAG=cem1024 bash scripts/run_task.sh 300m 300k $s
-  PAPER=1 TASK=objreach SCENE=$s OBJECT=$O TAG=cem32 SAMPLES=32 NUM_BATCHES=1 CUTOFF=4 \
-    bash scripts/run_task.sh 300m 300k $s
-done
-python planners/summarize.py closed $OUT/objreach_paper cem1024 cem32
+bash scripts/run_task.sh "$@"
 ```
 
-CEM-1024 takes about 30 min per setup, so all 20 setups need around 10–11 h. To get results sooner, split the
-seeds across several jobs: runs of the same setup give identical episodes, so the outputs can be combined.
+With the default CEM (1024 samples) a setup takes about 30 min, so set `--time` to fit the number of setups, or split
+them across several jobs. Runs of the same setup give identical episodes, so the outputs can be combined.
+Then: `METRIC=final python planners/summarize.py closed $OUT/<task>`.
 
 Useful commands: `squeue -u $USER`, `scancel <jobid>`, `tail -f robojepa_<jobid>.log`, and
 `$OUT/<task>/<run>/env_server.log` when the env server dies.
