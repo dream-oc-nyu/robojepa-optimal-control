@@ -22,6 +22,9 @@ Environment variables:
     PLAN_LOSS_SCALE   J is multiplied by this before the fp16 backward pass (default 4096), so small gradients don't
                       underflow; non-finite gradients are zeroed and counted (nonfinite in PLAN_LOG)
     PLAN_FP32         1: the gradient rollouts run in fp32 instead of the client's fp16 autocast (default 0)
+    PLAN_LOSS         the cost they descend: l2 (default), the view-weighted mean squared feature error, smooth for
+                      L-BFGS's line search; or l1, J itself. Either way they pick and report candidates by J (l1),
+                      the cost cem() minimizes, so that the planners stay comparable
 
 Every planning call of a known setup seed first seeds Python's, numpy's and torch's generators from (seed, step,
 PLAN_SEED_OFFSET) (make_planner), so the random samples depend on the call alone, not on what the process ran
@@ -100,6 +103,9 @@ class Scorer:
 
     def J(self, F):  # [N]
         return ((F - self.goal).abs().mean(-1) * self.w).sum(-1)
+
+    def J2(self, F):  # [N], the squared-error counterpart of J (the gradient planners' PLAN_LOSS=l2)
+        return ((F - self.goal).square().mean(-1) * self.w).sum(-1)
 
     def per_view_sims(self, F):  # [N, V], what cem() returns as rewards (higher is better)
         return -(F - self.goal).abs().mean(-1)
@@ -212,17 +218,21 @@ def _from_ball(X, r):
 
 
 def _grad_planner(method):
-    """Gradient-based shooting: minimize J over the translations of the plan, X [K, R, 3], by Adam or L-BFGS, through
-    the predictor. K candidates start from cem()'s initial mean (the previous plan, shifted, padded with zeros) and K-1
+    """Gradient-based shooting: minimize PLAN_LOSS (default the squared-error J2) over the translations of the plan,
+    X [K, R, 3], by Adam or L-BFGS, through the predictor. K candidates start from cem()'s initial mean (the previous plan, shifted, padded with zeros) and K-1
     Gaussian perturbations of it; the per-step norm bound is built in (_to_ball). The plan returned is the lowest-J
-    candidate seen at any evaluation. With L-BFGS the K candidates are one problem (J summed), sharing curvature
+    candidate seen at any evaluation (by J, the l1 cost, whatever the loss). With L-BFGS the K candidates are one problem
+    (their losses summed), sharing curvature
     estimates and line searches; with Adam they are independent (per-coordinate steps)."""
 
     def plan(world_model, wm_state, goal_features, **kw):
         if isinstance(goal_features, dict):
             raise NotImplementedError("the gradient planners score the final goal only, not sub-goal dicts")
         if kw.get("objective", mpc_utils.l1) is not mpc_utils.l1:
-            raise NotImplementedError("the gradient planners minimize the l1 objective (the client's --objective l1)")
+            raise NotImplementedError("the gradient planners report J, the l1 objective (the client's --objective l1)")
+        loss_name = os.environ.get("PLAN_LOSS", "l2")
+        if loss_name not in ("l1", "l2"):
+            raise ValueError(f"PLAN_LOSS={loss_name}: l1 or l2")
         problem = _problem(world_model, wm_state, goal_features, kw)
         dev, R, r = problem.device, _horizon(kw), kw.get("maxnorm", 0.05)
         K = _env("PLAN_K", 8)
@@ -264,8 +274,9 @@ def _grad_planner(method):
                     X = _to_ball(U[i : i + chunk], r)
                     F = problem.features(X)
                     J = problem.score.J(F)
+                    loss = problem.score.J2(F) if loss_name == "l2" else J
                     # autograd.grad, not backward(): no gradient is computed for (or left on) the model's weights
-                    (g,) = torch.autograd.grad(J.sum() * scale, U)
+                    (g,) = torch.autograd.grad(loss.sum() * scale, U)
                 BACKWARDS += len(J)
                 g = g / scale
                 bad = ~torch.isfinite(g)
@@ -274,8 +285,8 @@ def _grad_planner(method):
                     g = torch.nan_to_num(g, nan=0.0, posinf=0.0, neginf=0.0)
                 grad += g
                 keep(i, X, F, J)
-                total += J.sum().item()
-                del F, J, g
+                total += loss.sum().item()
+                del F, J, loss, g
             U.grad = grad
             trace.append((ROLLOUTS, float(best_J.min()), round(time.time() - t0, 3)))  # keep() synced the GPU
             return torch.tensor(total)
@@ -300,7 +311,7 @@ def _grad_planner(method):
         plan = torch.zeros(R, 7)
         plan[:, :3] = best_X[k]
         trace.append((ROLLOUTS, float(best_J.min()), round(time.time() - t0, 3)))
-        EXTRA.update(J_best=float(best_J[k]), trace=trace, **stats)
+        EXTRA.update(J_best=float(best_J[k]), loss=loss_name, trace=trace, **stats)
         return [best_S[k]], [plan], [torch.zeros(R, 7)]
 
     return plan

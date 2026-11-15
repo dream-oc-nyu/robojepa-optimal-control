@@ -94,7 +94,9 @@ Time per setup on one GPU: about 30 min with 1024 samples, a few minutes with 32
 | `lbfgs` | the same with L-BFGS (strong-Wolfe line search), as in LEAP ([arXiv:2609.03294](https://arxiv.org/abs/2609.03294)) without its learned proposal and state term |
 
 Settings of `adam` and `lbfgs`: `PLAN_K` candidates (default 8: the warm start and perturbations of it),
-`PLAN_ITERS` (default 20 Adam, 10 L-BFGS) and `PLAN_LR`; the rest are at the top of `planners/planners.py`.
+`PLAN_ITERS` (default 20 Adam, 10 L-BFGS), `PLAN_LR`, and `PLAN_LOSS`; the rest are at the top of
+`planners/planners.py`. `PLAN_LOSS` is the cost they descend: by default `l2`, the mean squared feature error, which is
+smooth; or `l1`. They still choose and report plans by the L1 cost CEM minimizes, so the planners stay comparable.
 
 The gradient planners patch two parts of the official rollout while they run: its KV cache stores keys and values
 detached and in place, and its pose update goes through numpy. Both are restored afterwards, and the forward values

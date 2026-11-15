@@ -118,6 +118,79 @@ Then: `METRIC=final python planners/summarize.py closed $OUT/<task>`.
 Useful commands: `squeue -u $USER`, `scancel <jobid>`, `tail -f robojepa_<jobid>.log`, and
 `$OUT/<task>/<run>/env_server.log` when the env server dies.
 
+## 7. Gradient planners (Adam, L-BFGS)
+
+Both descend J by backpropagation through the predictor (`planners/planners.py`). Run folders are tagged
+`<planner>_k<K>_it<iters>`, for example `adam_k8_it20` and `lbfgs_k8_it10`.
+
+### First: one setup, interactively
+
+The first run shows whether gradients survive fp16 and how much memory the planner needs. In a GPU session, after
+the block from step 5:
+
+```bash
+TASK=reach PLANNER=adam bash scripts/run_task.sh 300m 300k 0
+TASK=reach PLANNER=lbfgs bash scripts/run_task.sh 300m 300k 0
+
+python - <<'EOF'
+import json, os
+for tag in ("adam_k8_it20", "lbfgs_k8_it10"):
+    for line in open(os.path.expandvars(f"$OUT/reach/{tag}/plan_log.jsonl")):
+        r = json.loads(line)
+        print(tag, r["global_step"], f"J {r['J_warm']:.4f} -> {r['J_best']:.4f}", "nonfinite", r["nonfinite"],
+              f"{r['seconds']:.1f}s", f"peak {r['gpu_mem_peak_gb']:.1f} GB")
+EOF
+```
+
+What to check:
+
+| You see | Do |
+|---|---|
+| `nonfinite` above 0 | gradients overflow or underflow in fp16: lower `PLAN_LOSS_SCALE` (default 4096) on overflow, or run in fp32 with `PLAN_FP32=1` |
+| `J_best` equal to `J_warm` | no progress: raise `PLAN_LR` (Adam: 0.3), or check that `nonfinite` is 0 |
+| CUDA out of memory | `PLAN_GRAD_CHUNK=2`, or `1` (candidates per forward+backward pass; default 4) |
+
+### Batch jobs
+
+The same `job.sh` as for CEM, with the planner's settings in front:
+
+```bash
+TASK=reach PLANNER=adam  sbatch job.sh 300m 300k 0 1 2 3 4
+TASK=reach PLANNER=lbfgs sbatch job.sh 300m 300k 0 1 2 3 4
+
+# other settings: more candidates or iterations, or another step size (each gets its own tag)
+TASK=reach PLANNER=adam PLAN_K=16 PLAN_ITERS=40 sbatch job.sh 300m 300k 0 1 2 3 4
+TASK=reach PLANNER=adam PLAN_LR=0.3 TAG=adam_k8_it20_lr0.3 sbatch job.sh 300m 300k 0 1 2 3 4
+TASK=reach PLANNER=lbfgs PLAN_LOSS=l1 TAG=lbfgs_k8_it10_l1 sbatch job.sh 300m 300k 0 1 2 3 4
+
+# the other tasks: horizon 5 instead of 1, so more memory; start with a smaller chunk
+TASK=push PLANNER=adam PLAN_GRAD_CHUNK=2 sbatch job.sh 300m 300k 0 1 2 3 4
+```
+
+`PLAN_LR`, `PLAN_LOSS` and the other settings are not in the default tag, so give such runs their own `TAG`, or their results
+land in the same folder as the default run's.
+
+| Setting | Default | |
+|---|---|---|
+| `PLAN_K` | 8 | candidates: the warm start (the previous plan, shifted) and K-1 random perturbations of it |
+| `PLAN_ITERS` | 20 Adam, 10 L-BFGS | iterations per planning call |
+| `PLAN_LR` | 0.1 Adam, 1.0 L-BFGS | step size |
+| `PLAN_INIT_STD` | the client's `robot_init_std` (0.3) | std of the perturbations |
+| `PLAN_GRAD_CHUNK` | 4 | candidates per forward+backward pass |
+| `PLAN_LOSS_SCALE` | 4096 | J is multiplied by this before the fp16 backward pass |
+| `PLAN_FP32` | 0 | 1: gradient rollouts in fp32 |
+| `PLAN_HISTORY` | 20 | L-BFGS history size |
+| `PLAN_LOSS` | `l2` | the cost descended: `l2` (mean squared feature error) or `l1`. Plans are still chosen and reported by L1, as CEM's |
+
+### Compare against CEM
+
+```bash
+METRIC=final python planners/summarize.py closed $OUT/reach cem_16x64_15-10 adam_k8_it20 lbfgs_k8_it10
+```
+
+This gives one row per planner: rollouts, backward passes (each costs about two forward ones), planning and episode
+wall time, d_T and the reward. Compare only runs on the same setups.
+
 ## Notes
 
 - Use full GPUs. MIG slices can't do the EGL rendering RoboCasa needs (`run_task.sh` sets `MUJOCO_GL=egl`).
