@@ -1,0 +1,53 @@
+\documentclass[border=4pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\definecolor{real}{RGB}{0,114,178}
+\definecolor{pred}{RGB}{213,94,0}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+  width=15cm, height=9.2cm,
+  xmin=0.4, xmax=11.3, ymin=-0.092, ymax=0.062,
+  xtick={1,2,3,4,5,6,7,8,9.7,10.7},
+  xticklabels={$-30$,$-10$,$-3$,$-1$,$+1$,$+3$,$+10$,$+30$,$10$,$30$},
+  ytick={-0.08,-0.06,-0.04,-0.02,0,0.02,0.04,0.06},
+  yticklabel style={/pgf/number format/fixed,/pgf/number format/precision=2},
+  scaled y ticks=false,
+  tick label style={font=\large},
+  label style={font=\large},
+  ylabel={cost change vs.\ no motion, $\Delta C$},
+  axis lines=left, axis line style={black!70}, tick style={black!70},
+  ymajorgrids, grid style={black!8},
+  clip=false,
+]
+\draw[black!55, line width=0.6pt] (axis cs:0.4,0) -- (axis cs:11.3,0);
+\draw[black!25, dashed] (axis cs:4.5,-0.092) -- (axis cs:4.5,0.062);
+\draw[black!25] (axis cs:8.85,-0.092) -- (axis cs:8.85,0.062);
+% individual instances
+\addplot[only marks, mark=*, mark size=1.9pt, real, opacity=0.45, draw opacity=0]
+  table[x expr=\thisrow{xpos}-0.13, y=dC_real]{fig_points.dat};
+\addplot[only marks, mark=square*, mark size=1.9pt, pred, opacity=0.45, draw opacity=0]
+  table[x expr=\thisrow{xpos}+0.13, y=dC_pred_cmd]{fig_points.dat};
+% medians: on the goal line (connected), lateral (unconnected)
+\addplot[real, line width=1.6pt, mark=*, mark size=3.2pt, restrict x to domain=0:8.5]
+  table[x expr=\thisrow{xpos}-0.13, y=dC_real]{fig_medians.dat};
+\addplot[pred, line width=1.6pt, mark=square*, mark size=3.2pt, restrict x to domain=0:8.5]
+  table[x expr=\thisrow{xpos}+0.13, y=dC_pred_cmd]{fig_medians.dat};
+\addplot[real, only marks, mark=*, mark size=3.2pt, restrict x to domain=9:11]
+  table[x expr=\thisrow{xpos}-0.13, y=dC_real]{fig_medians.dat};
+\addplot[pred, only marks, mark=square*, mark size=3.2pt, restrict x to domain=9:11]
+  table[x expr=\thisrow{xpos}+0.13, y=dC_pred_cmd]{fig_medians.dat};
+% direct labels
+\node[real, font=\large\bfseries, anchor=west] at (axis cs:1.25,0.047) {realized};
+\node[pred, font=\large\bfseries, anchor=west] at (axis cs:1.25,-0.016) {predicted};
+\node[black!70, font=\large, anchor=south] at (axis cs:2.5,-0.091) {away from goal};
+\node[black!70, font=\large, anchor=south] at (axis cs:6.6,-0.091) {toward goal};
+\node[black!70, font=\large, anchor=south] at (axis cs:10.1,-0.091) {lateral};
+\node[font=\large, anchor=north] at (axis cs:4.5,-0.108) {commanded displacement along the goal line (mm, even spacing)};
+\node[font=\large, anchor=north] at (axis cs:10.2,-0.108) {(mm)};
+\end{axis}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,5154 @@
+{
+ "runs": "runs/E002-planner-loop",
+ "config": {
+  "CLAMP_M": 0.05,
+  "MOVED_M": 0.001,
+  "AMBIG_SEP_M": 0.002,
+  "AMBIG_RMS_M": 0.0005,
+  "BIN_FAR_M": 0.03,
+  "BIN_NEAR_M": 0.01,
+  "RATIO_MIN_R_M": 0.01,
+  "DISTINCT_POINT_M": 0.001,
+  "LM_ITERS": 300,
+  "BASELINE_GROUP": "cem_release",
+  "EXPECT_SAT_TICKS": 28,
+  "EXPECT_SAT_DENOM": 40
+ },
+ "units": [
+  {
+   "path": "runs/E002-planner-loop/_calibration/inst100-seed0/unit.json",
+   "group": "_calibration",
+   "planner": "cem_release",
+   "instance": 100,
+   "seed": 0,
+   "calibration": true,
+   "n_ticks": 5,
+   "initial_distance_m": 0.07287632260032376
+  },
+  {
+   "path": "runs/E002-planner-loop/cem_release/inst100-seed0/unit.json",
+   "group": "cem_release",
+   "planner": "cem_release",
+   "instance": 100,
+   "seed": 0,
+   "calibration": false,
+   "n_ticks": 5,
+   "initial_distance_m": 0.07287632260032376
+  },
+  {
+   "path": "runs/E002-planner-loop/cem_release/inst101-seed0/unit.json",
+   "group": "cem_release",
+   "planner": "cem_release",
+   "instance": 101,
+   "seed": 0,
+   "calibration": false,
+   "n_ticks": 5,
+   "initial_distance_m": 0.23530868143902217
+  },
+  {
+   "path": "runs/E002-planner-loop/cem_release/inst102-seed0/unit.json",
+   "group": "cem_release",
+   "planner": "cem_release",
+   "instance": 102,
+   "seed": 0,
+   "calibration": false,
+   "n_ticks": 5,
+   "initial_distance_m": 0.15813765451273054
+  },
+  {
+   "path": "runs/E002-planner-loop/cem_release/inst103-seed0/unit.json",
+   "group": "cem_release",
+   "planner": "cem_release",
+   "instance": 103,
+   "seed": 0,
+   "calibration": false,
+   "n_ticks": 5,
+   "initial_distance_m": 0.2628323480650084
+  },
+  {
+   "path": "runs/E002-planner-loop/cem_release/inst104-seed0/unit.json",
+   "group": "cem_release",
+   "planner": "cem_release",
+   "instance": 104,
+   "seed": 0,
+   "calibration": false,
+   "n_ticks": 5,
+   "initial_distance_m": 0.0940677914895272
+  },
+  {
+   "path": "runs/E002-planner-loop/cem_release/inst105-seed0/unit.json",
+   "group": "cem_release",
+   "planner": "cem_release",
+   "instance": 105,
+   "seed": 0,
+   "calibration": false,
+   "n_ticks": 5,
+   "initial_distance_m": 0.26925459793194517
+  },
+  {
+   "path": "runs/E002-planner-loop/cem_release/inst106-seed0/unit.json",
+   "group": "cem_release",
+   "planner": "cem_release",
+   "instance": 106,
+   "seed": 0,
+   "calibration": false,
+   "n_ticks": 5,
+   "initial_distance_m": 0.2516892777889359
+  },
+  {
+   "path": "runs/E002-planner-loop/cem_release/inst107-seed0/unit.json",
+   "group": "cem_release",
+   "planner": "cem_release",
+   "instance": 107,
+   "seed": 0,
+   "calibration": false,
+   "n_ticks": 5,
+   "initial_distance_m": 0.07068624431423323
+  }
+ ],
+ "instances": [
+  {
+   "instance": 100,
+   "status": "unique",
+   "ambiguity_kind": null,
+   "units": [
+    {
+     "group": "_calibration",
+     "seed": 0,
+     "calibration": true
+    },
+    {
+     "group": "cem_release",
+     "seed": 0,
+     "calibration": false
+    }
+   ],
+   "n_equations": 12,
+   "n_distinct_points": 6,
+   "distinct_points_singular_values_m": [
+    0.24533860608946642,
+    0.08234209625495706,
+    0.022169451545483644
+   ],
+   "distinct_points_max_out_of_plane_m": 0.01714395348854368,
+   "initial_distance_spread_m": 0.0,
+   "n_starts": 33,
+   "n_runs_including_mirror_restarts": 66,
+   "linearised_g_m": [
+    0.03266181490224935,
+    0.034542290974831635,
+    -0.055235804794928
+   ],
+   "linearised_minus_fit_m": 4.146129321083498e-09,
+   "solutions": [
+    {
+     "g_m": [
+      0.03266181533076148,
+      0.0345422950569565,
+      -0.055235804209246966
+     ],
+     "norm_g_m": 0.07287632259619631,
+     "max_abs_residual_m": 4.8107963029897505e-09,
+     "rms_residual_m": 2.632834599879507e-09,
+     "residuals_m": [
+      -4.127448383073329e-12,
+      -1.2108556657342007e-09,
+      2.9535997675411707e-09,
+      -3.0726750310794415e-09,
+      -3.071130766363339e-09,
+      -3.0707117681938456e-09,
+      -4.127448383073329e-12,
+      6.654629347568886e-10,
+      -4.8107963029897505e-09,
+      2.6528798047209534e-09,
+      2.6518701401467837e-09,
+      2.6519094975530066e-09
+     ],
+     "jacobian_singular_values": [
+      3.0767291751268204,
+      1.5317222053913566,
+      0.43308736813081705
+     ]
+    }
+   ],
+   "g_m": [
+    0.03266181533076148,
+    0.0345422950569565,
+    -0.055235804209246966
+   ],
+   "norm_g_m": 0.07287632259619631,
+   "max_abs_residual_m": 4.8107963029897505e-09,
+   "rms_residual_m": 2.632834599879507e-09,
+   "residuals_m": [
+    -4.127448383073329e-12,
+    -1.2108556657342007e-09,
+    2.9535997675411707e-09,
+    -3.0726750310794415e-09,
+    -3.071130766363339e-09,
+    -3.0707117681938456e-09,
+    -4.127448383073329e-12,
+    6.654629347568886e-10,
+    -4.8107963029897505e-09,
+    2.6528798047209534e-09,
+    2.6518701401467837e-09,
+    2.6519094975530066e-09
+   ],
+   "jacobian_singular_values": [
+    3.0767291751268204,
+    1.5317222053913566,
+    0.43308736813081705
+   ]
+  },
+  {
+   "instance": 101,
+   "status": "unique",
+   "ambiguity_kind": null,
+   "units": [
+    {
+     "group": "cem_release",
+     "seed": 0,
+     "calibration": false
+    }
+   ],
+   "n_equations": 6,
+   "n_distinct_points": 6,
+   "distinct_points_singular_values_m": [
+    0.21152183163538363,
+    0.05206383144194441,
+    0.009694093074415122
+   ],
+   "distinct_points_max_out_of_plane_m": 0.008484270088846705,
+   "initial_distance_spread_m": 0.0,
+   "n_starts": 33,
+   "n_runs_including_mirror_restarts": 66,
+   "linearised_g_m": [
+    0.14168225406957236,
+    0.14307064440315476,
+    0.12176660110104778
+   ],
+   "linearised_minus_fit_m": 9.58083017442885e-10,
+   "solutions": [
+    {
+     "g_m": [
+      0.14168225426611497,
+      0.14307064432188574,
+      0.12176660016686931
+     ],
+     "norm_g_m": 0.2353086810060475,
+     "max_abs_residual_m": 7.291852677226984e-10,
+     "rms_residual_m": 5.089352626262743e-10,
+     "residuals_m": [
+      -4.3297468388381333e-10,
+      7.291852677226984e-10,
+      2.8863675338719474e-11,
+      -3.7067565336612596e-10,
+      -5.604384387125627e-10,
+      6.185366459472708e-10
+     ],
+     "jacobian_singular_values": [
+      1.7515404683297782,
+      1.2829179193642535,
+      1.1341197467539292
+     ]
+    }
+   ],
+   "g_m": [
+    0.14168225426611497,
+    0.14307064432188574,
+    0.12176660016686931
+   ],
+   "norm_g_m": 0.2353086810060475,
+   "max_abs_residual_m": 7.291852677226984e-10,
+   "rms_residual_m": 5.089352626262743e-10,
+   "residuals_m": [
+    -4.3297468388381333e-10,
+    7.291852677226984e-10,
+    2.8863675338719474e-11,
+    -3.7067565336612596e-10,
+    -5.604384387125627e-10,
+    6.185366459472708e-10
+   ],
+   "jacobian_singular_values": [
+    1.7515404683297782,
+    1.2829179193642535,
+    1.1341197467539292
+   ]
+  },
+  {
+   "instance": 102,
+   "status": "unique",
+   "ambiguity_kind": null,
+   "units": [
+    {
+     "group": "cem_release",
+     "seed": 0,
+     "calibration": false
+    }
+   ],
+   "n_equations": 6,
+   "n_distinct_points": 6,
+   "distinct_points_singular_values_m": [
+    0.16339462049193093,
+    0.13276636145966828,
+    0.00821396958487971
+   ],
+   "distinct_points_max_out_of_plane_m": 0.00744149068217787,
+   "initial_distance_spread_m": 0.0,
+   "n_starts": 33,
+   "n_runs_including_mirror_restarts": 66,
+   "linearised_g_m": [
+    0.10278399682770761,
+    -0.11654931350101869,
+    -0.029312545210269284
+   ],
+   "linearised_minus_fit_m": 1.072961162739145e-08,
+   "solutions": [
+    {
+     "g_m": [
+      0.10278398983396242,
+      -0.11654932155870465,
+      -0.029312544076342144
+     ],
+     "norm_g_m": 0.15813765573768293,
+     "max_abs_residual_m": 2.9140844043373804e-09,
+     "rms_residual_m": 1.6270865532618661e-09,
+     "residuals_m": [
+      1.2249523895224712e-09,
+      2.9140844043373804e-09,
+      2.0626437641224626e-09,
+      -1.1267353439148309e-09,
+      -4.607569169950976e-10,
+      3.946376428767828e-10
+     ],
+     "jacobian_singular_values": [
+      1.8331349482210821,
+      1.397321753195085,
+      0.8289198873584263
+     ]
+    }
+   ],
+   "g_m": [
+    0.10278398983396242,
+    -0.11654932155870465,
+    -0.029312544076342144
+   ],
+   "norm_g_m": 0.15813765573768293,
+   "max_abs_residual_m": 2.9140844043373804e-09,
+   "rms_residual_m": 1.6270865532618661e-09,
+   "residuals_m": [
+    1.2249523895224712e-09,
+    2.9140844043373804e-09,
+    2.0626437641224626e-09,
+    -1.1267353439148309e-09,
+    -4.607569169950976e-10,
+    3.946376428767828e-10
+   ],
+   "jacobian_singular_values": [
+    1.8331349482210821,
+    1.397321753195085,
+    0.8289198873584263
+   ]
+  },
+  {
+   "instance": 103,
+   "status": "unique",
+   "ambiguity_kind": null,
+   "units": [
+    {
+     "group": "cem_release",
+     "seed": 0,
+     "calibration": false
+    }
+   ],
+   "n_equations": 6,
+   "n_distinct_points": 6,
+   "distinct_points_singular_values_m": [
+    0.2558025561026329,
+    0.09822060828520487,
+    0.031039088793713344
+   ],
+   "distinct_points_max_out_of_plane_m": 0.02329423222205243,
+   "initial_distance_spread_m": 0.0,
+   "n_starts": 33,
+   "n_runs_including_mirror_restarts": 66,
+   "linearised_g_m": [
+    0.01912416808274605,
+    0.22165984483929294,
+    0.13993577949876151
+   ],
+   "linearised_minus_fit_m": 8.169857217081118e-09,
+   "solutions": [
+    {
+     "g_m": [
+      0.01912417354114867,
+      0.22165984239012862,
+      0.1399357850623936
+     ],
+     "norm_g_m": 0.2628323490042218,
+     "max_abs_residual_m": 1.0156575580566596e-09,
+     "rms_residual_m": 6.256911020949238e-10,
+     "residuals_m": [
+      9.392133737406994e-10,
+      -1.0156575580566596e-09,
+      -3.4606922882929325e-10,
+      -4.92253564299272e-10,
+      2.3103612772912285e-11,
+      2.6952334808427736e-10
+     ],
+     "jacobian_singular_values": [
+      1.5011393658188597,
+      1.4649596139572805,
+      1.2650983890050163
+     ]
+    }
+   ],
+   "g_m": [
+    0.01912417354114867,
+    0.22165984239012862,
+    0.1399357850623936
+   ],
+   "norm_g_m": 0.2628323490042218,
+   "max_abs_residual_m": 1.0156575580566596e-09,
+   "rms_residual_m": 6.256911020949238e-10,
+   "residuals_m": [
+    9.392133737406994e-10,
+    -1.0156575580566596e-09,
+    -3.4606922882929325e-10,
+    -4.92253564299272e-10,
+    2.3103612772912285e-11,
+    2.6952334808427736e-10
+   ],
+   "jacobian_singular_values": [
+    1.5011393658188597,
+    1.4649596139572805,
+    1.2650983890050163
+   ]
+  },
+  {
+   "instance": 104,
+   "status": "ambiguous",
+   "ambiguity_kind": "mirror_pair",
+   "units": [
+    {
+     "group": "cem_release",
+     "seed": 0,
+     "calibration": false
+    }
+   ],
+   "n_equations": 6,
+   "n_distinct_points": 6,
+   "distinct_points_singular_values_m": [
+    0.07963497404344937,
+    0.007739898112377966,
+    0.0009916054680708226
+   ],
+   "distinct_points_max_out_of_plane_m": 0.0006096936812746925,
+   "initial_distance_spread_m": 0.0,
+   "n_starts": 33,
+   "n_runs_including_mirror_restarts": 66,
+   "linearised_g_m": [
+    -0.06985446724985928,
+    -0.0049096174708266925,
+    0.06280922267131529
+   ],
+   "linearised_minus_fit_m": 1.301335426744232e-09,
+   "solutions": [
+    {
+     "g_m": [
+      -0.06985446815727177,
+      -0.004909617259687889,
+      0.06280922176274671
+     ],
+     "norm_g_m": 0.09406779152086976,
+     "max_abs_residual_m": 6.894216447728141e-11,
+     "rms_residual_m": 3.948299467925579e-11,
+     "residuals_m": [
+      3.134255355252691e-11,
+      -4.001189657376614e-11,
+      -3.872729914533579e-11,
+      6.894216447728141e-11,
+      -2.2744227508308956e-11,
+      -8.975285792356402e-14
+     ],
+     "jacobian_singular_values": [
+      2.192182691049464,
+      1.0027188544986325,
+      0.4346147120106254
+     ]
+    },
+    {
+     "g_m": [
+      -0.06693327002812706,
+      -0.005546459512869234,
+      0.06563307842359595
+     ],
+     "norm_g_m": 0.09390701162929191,
+     "max_abs_residual_m": 0.0001607798602352717,
+     "rms_residual_m": 0.00010707448949102413,
+     "residuals_m": [
+      -0.0001607798602352717,
+      2.7658015647323564e-05,
+      0.00015620663160976003,
+      6.932380980097762e-05,
+      -0.0001137364250480416,
+      5.680824311782122e-06
+     ],
+     "jacobian_singular_values": [
+      2.195191518555315,
+      0.9956736995546899,
+      0.4356237836458042
+     ]
+    }
+   ],
+   "g_m": [
+    -0.06985446815727177,
+    -0.004909617259687889,
+    0.06280922176274671
+   ],
+   "norm_g_m": 0.09406779152086976,
+   "max_abs_residual_m": 6.894216447728141e-11,
+   "rms_residual_m": 3.948299467925579e-11,
+   "residuals_m": [
+    3.134255355252691e-11,
+    -4.001189657376614e-11,
+    -3.872729914533579e-11,
+    6.894216447728141e-11,
+    -2.2744227508308956e-11,
+    -8.975285792356402e-14
+   ],
+   "jacobian_singular_values": [
+    2.192182691049464,
+    1.0027188544986325,
+    0.4346147120106254
+   ]
+  },
+  {
+   "instance": 105,
+   "status": "unique",
+   "ambiguity_kind": null,
+   "units": [
+    {
+     "group": "cem_release",
+     "seed": 0,
+     "calibration": false
+    }
+   ],
+   "n_equations": 6,
+   "n_distinct_points": 6,
+   "distinct_points_singular_values_m": [
+    0.22012719935103658,
+    0.1580131295151996,
+    0.00558114411070069
+   ],
+   "distinct_points_max_out_of_plane_m": 0.003808515721070153,
+   "initial_distance_spread_m": 0.0,
+   "n_starts": 33,
+   "n_runs_including_mirror_restarts": 66,
+   "linearised_g_m": [
+    0.24459449286632787,
+    -0.11100659950972079,
+    0.018684439024129987
+   ],
+   "linearised_minus_fit_m": 1.2328008455928354e-08,
+   "solutions": [
+    {
+     "g_m": [
+      0.24459449123045587,
+      -0.11100658844144214,
+      0.018684433847555547
+     ],
+     "norm_g_m": 0.2692545930636968,
+     "max_abs_residual_m": 4.868248359990446e-09,
+     "rms_residual_m": 2.656261992828357e-09,
+     "residuals_m": [
+      -4.868248359990446e-09,
+      2.9398166956351446e-09,
+      1.9995921585191923e-09,
+      2.38228643756333e-09,
+      -5.526697953450732e-10,
+      1.135824594100665e-10
+     ],
+     "jacobian_singular_values": [
+      1.8988006119493848,
+      1.4547841455348545,
+      0.5274081208713672
+     ]
+    }
+   ],
+   "g_m": [
+    0.24459449123045587,
+    -0.11100658844144214,
+    0.018684433847555547
+   ],
+   "norm_g_m": 0.2692545930636968,
+   "max_abs_residual_m": 4.868248359990446e-09,
+   "rms_residual_m": 2.656261992828357e-09,
+   "residuals_m": [
+    -4.868248359990446e-09,
+    2.9398166956351446e-09,
+    1.9995921585191923e-09,
+    2.38228643756333e-09,
+    -5.526697953450732e-10,
+    1.135824594100665e-10
+   ],
+   "jacobian_singular_values": [
+    1.8988006119493848,
+    1.4547841455348545,
+    0.5274081208713672
+   ]
+  },
+  {
+   "instance": 106,
+   "status": "unique",
+   "ambiguity_kind": null,
+   "units": [
+    {
+     "group": "cem_release",
+     "seed": 0,
+     "calibration": false
+    }
+   ],
+   "n_equations": 6,
+   "n_distinct_points": 6,
+   "distinct_points_singular_values_m": [
+    0.2440545195603492,
+    0.17612091578605582,
+    0.08813625984724668
+   ],
+   "distinct_points_max_out_of_plane_m": 0.052043610360107496,
+   "initial_distance_spread_m": 0.0,
+   "n_starts": 33,
+   "n_runs_including_mirror_restarts": 66,
+   "linearised_g_m": [
+    -0.011150397831654602,
+    -0.24305139308991372,
+    0.06441414153839181
+   ],
+   "linearised_minus_fit_m": 1.4521647590218724e-09,
+   "solutions": [
+    {
+     "g_m": [
+      -0.011150397839178247,
+      -0.24305139311999369,
+      0.0644141429902255
+     ],
+     "norm_g_m": 0.2516892784500501,
+     "max_abs_residual_m": 2.6478540124386107e-09,
+     "rms_residual_m": 1.517842880012102e-09,
+     "residuals_m": [
+      6.611142189250074e-10,
+      1.1442155556373734e-10,
+      1.704456936701959e-09,
+      -8.017277952632185e-10,
+      2.6478540124386107e-09,
+      -1.6774522257345659e-09
+     ],
+     "jacobian_singular_values": [
+      1.7135289879268687,
+      1.263912419346124,
+      1.2109268366655976
+     ]
+    }
+   ],
+   "g_m": [
+    -0.011150397839178247,
+    -0.24305139311999369,
+    0.0644141429902255
+   ],
+   "norm_g_m": 0.2516892784500501,
+   "max_abs_residual_m": 2.6478540124386107e-09,
+   "rms_residual_m": 1.517842880012102e-09,
+   "residuals_m": [
+    6.611142189250074e-10,
+    1.1442155556373734e-10,
+    1.704456936701959e-09,
+    -8.017277952632185e-10,
+    2.6478540124386107e-09,
+    -1.6774522257345659e-09
+   ],
+   "jacobian_singular_values": [
+    1.7135289879268687,
+    1.263912419346124,
+    1.2109268366655976
+   ]
+  },
+  {
+   "instance": 107,
+   "status": "ambiguous",
+   "ambiguity_kind": "mirror_pair",
+   "units": [
+    {
+     "group": "cem_release",
+     "seed": 0,
+     "calibration": false
+    }
+   ],
+   "n_equations": 6,
+   "n_distinct_points": 3,
+   "distinct_points_singular_values_m": [
+    0.1640494387220271,
+    0.043605384764360045,
+    2.1274019004253186e-18
+   ],
+   "distinct_points_max_out_of_plane_m": 6.829028622328246e-18,
+   "initial_distance_spread_m": 0.0,
+   "n_starts": 33,
+   "n_runs_including_mirror_restarts": 66,
+   "linearised_g_m": [
+    0.03015180755548308,
+    -0.027863455848142045,
+    0.05754164378895467
+   ],
+   "linearised_minus_fit_m": 1.3105360828952476e-08,
+   "solutions": [
+    {
+     "g_m": [
+      0.030151801562825195,
+      -0.027863466849160273,
+      0.05754164763812755
+     ],
+     "norm_g_m": 0.07068624431421344,
+     "max_abs_residual_m": 7.169875804180492e-12,
+     "rms_residual_m": 3.8191425098082445e-12,
+     "residuals_m": [
+      -1.9789725413943415e-14,
+      -1.559863349598345e-14,
+      7.169875804180492e-12,
+      1.0761669333447799e-12,
+      -3.4054564723717817e-12,
+      -4.83239837034688e-12
+     ],
+     "jacobian_singular_values": [
+      2.2328611096559348,
+      0.9553787875246041,
+      0.3187203120826813
+     ]
+    },
+    {
+     "g_m": [
+      0.05438909045562641,
+      0.016630329011554,
+      0.04197377264179539
+     ],
+     "norm_g_m": 0.0706861980404094,
+     "max_abs_residual_m": 3.0023164731232677e-05,
+     "rms_residual_m": 1.5398259640012673e-05,
+     "residuals_m": [
+      -4.6273823828268945e-08,
+      -2.9902705867002055e-08,
+      -3.0023164731232677e-05,
+      -1.788286454057486e-06,
+      1.3533788718989026e-05,
+      1.8299823447184838e-05
+     ],
+     "jacobian_singular_values": [
+      2.2328613984506465,
+      0.9553789973081905,
+      0.31871766002438545
+     ]
+    }
+   ],
+   "g_m": [
+    0.030151801562825195,
+    -0.027863466849160273,
+    0.05754164763812755
+   ],
+   "norm_g_m": 0.07068624431421344,
+   "max_abs_residual_m": 7.169875804180492e-12,
+   "rms_residual_m": 3.8191425098082445e-12,
+   "residuals_m": [
+    -1.9789725413943415e-14,
+    -1.559863349598345e-14,
+    7.169875804180492e-12,
+    1.0761669333447799e-12,
+    -3.4054564723717817e-12,
+    -4.83239837034688e-12
+   ],
+   "jacobian_singular_values": [
+    2.2328611096559348,
+    0.9553787875246041,
+    0.3187203120826813
+   ]
+  }
+ ],
+ "excluded_instances": [
+  104,
+  107
+ ],
+ "aggregates": {
+  "cem_release_non_calibration": {
+   "n_units": 8,
+   "n_instances": 8,
+   "n_ticks": 40,
+   "n_ticks_g_unique": 30,
+   "saturated_ticks": {
+    "with_saturated_axis": 23,
+    "n_ticks": 40,
+    "saturated_components": 40,
+    "n_components": 120
+   },
+   "sign_match": {
+    "r_ge_3cm": {
+     "match": 45,
+     "n": 45,
+     "rate": 1.0
+    },
+    "r_1_to_3cm": {
+     "match": 17,
+     "n": 18,
+     "rate": 0.9444444444444444
+    },
+    "r_lt_1cm": {
+     "match": 17,
+     "n": 27,
+     "rate": 0.6296296296296297
+    }
+   },
+   "unsaturated_ratio_a_over_r": {
+    "n": 32,
+    "median": 0.5923918029413457,
+    "q1": 0.37868197470636067,
+    "q3": 0.9249982138262425,
+    "iqr": 0.5463162391198818,
+    "slope_through_origin": 0.45032116175251896,
+    "n_sign_match": 31
+   },
+   "full_command_vs_logged": {
+    "n_ticks_moved_and_converged": 24,
+    "max_abs_diff_m": 0.0008855643464473206,
+    "median_abs_diff_m": 0.00036514181745067077
+   },
+   "tick0": [
+    {
+     "instance": 100,
+     "group": "cem_release",
+     "seed": 0,
+     "D0_m": 0.07287632260032376,
+     "D1_logged_m": 0.11630503040534286,
+     "clamp_cf_distance_m": 0.00727207448175243,
+     "cos_a0_g": 0.8930307801289099,
+     "saturated_axes": [
+      "z"
+     ]
+    },
+    {
+     "instance": 101,
+     "group": "cem_release",
+     "seed": 0,
+     "D0_m": 0.23530868143902217,
+     "D1_logged_m": 0.06329522200286142,
+     "clamp_cf_distance_m": 0.1490577924206541,
+     "cos_a0_g": 0.96375978047369,
+     "saturated_axes": [
+      "x",
+      "y",
+      "z"
+     ]
+    },
+    {
+     "instance": 102,
+     "group": "cem_release",
+     "seed": 0,
+     "D0_m": 0.15813765451273054,
+     "D1_logged_m": 0.08192615436039945,
+     "clamp_cf_distance_m": 0.10859676516812172,
+     "cos_a0_g": 0.9250572019138299,
+     "saturated_axes": [
+      "x",
+      "y"
+     ]
+    },
+    {
+     "instance": 103,
+     "group": "cem_release",
+     "seed": 0,
+     "D0_m": 0.2628323480650084,
+     "D1_logged_m": 0.16535492966583845,
+     "clamp_cf_distance_m": 0.19623675390637188,
+     "cos_a0_g": 0.8579958231289687,
+     "saturated_axes": [
+      "x",
+      "y",
+      "z"
+     ]
+    },
+    {
+     "instance": 105,
+     "group": "cem_release",
+     "seed": 0,
+     "D0_m": 0.26925459793194517,
+     "D1_logged_m": 0.18083823970197993,
+     "clamp_cf_distance_m": 0.2069284902302301,
+     "cos_a0_g": 0.7460366840115176,
+     "saturated_axes": [
+      "x",
+      "z"
+     ]
+    },
+    {
+     "instance": 106,
+     "group": "cem_release",
+     "seed": 0,
+     "D0_m": 0.2516892777889359,
+     "D1_logged_m": 0.17063588842469032,
+     "clamp_cf_distance_m": 0.19371911131285635,
+     "cos_a0_g": 0.7356776313692603,
+     "saturated_axes": [
+      "y",
+      "z"
+     ]
+    }
+   ]
+  },
+  "all_units": {
+   "n_units": 9,
+   "n_instances": 8,
+   "n_ticks": 45,
+   "n_ticks_g_unique": 35,
+   "saturated_ticks": {
+    "with_saturated_axis": 28,
+    "n_ticks": 45,
+    "saturated_components": 47,
+    "n_components": 135
+   },
+   "sign_match": {
+    "r_ge_3cm": {
+     "match": 55,
+     "n": 55,
+     "rate": 1.0
+    },
+    "r_1_to_3cm": {
+     "match": 18,
+     "n": 19,
+     "rate": 0.9473684210526315
+    },
+    "r_lt_1cm": {
+     "match": 20,
+     "n": 31,
+     "rate": 0.6451612903225806
+    }
+   },
+   "unsaturated_ratio_a_over_r": {
+    "n": 36,
+    "median": 0.6313164465387069,
+    "q1": 0.40276447515758274,
+    "q3": 0.9249982138262425,
+    "iqr": 0.5222337386686597,
+    "slope_through_origin": 0.4643970246671404,
+    "n_sign_match": 35
+   },
+   "full_command_vs_logged": {
+    "n_ticks_moved_and_converged": 26,
+    "max_abs_diff_m": 0.0008855643464473206,
+    "median_abs_diff_m": 0.0004414569747778728
+   },
+   "tick0": [
+    {
+     "instance": 100,
+     "group": "_calibration",
+     "seed": 0,
+     "D0_m": 0.07287632260032376,
+     "D1_logged_m": 0.11563000180771384,
+     "clamp_cf_distance_m": 0.00727108396750659,
+     "cos_a0_g": 0.8935888317216182,
+     "saturated_axes": [
+      "z"
+     ]
+    },
+    {
+     "instance": 100,
+     "group": "cem_release",
+     "seed": 0,
+     "D0_m": 0.07287632260032376,
+     "D1_logged_m": 0.11630503040534286,
+     "clamp_cf_distance_m": 0.00727207448175243,
+     "cos_a0_g": 0.8930307801289099,
+     "saturated_axes": [
+      "z"
+     ]
+    },
+    {
+     "instance": 101,
+     "group": "cem_release",
+     "seed": 0,
+     "D0_m": 0.23530868143902217,
+     "D1_logged_m": 0.06329522200286142,
+     "clamp_cf_distance_m": 0.1490577924206541,
+     "cos_a0_g": 0.96375978047369,
+     "saturated_axes": [
+      "x",
+      "y",
+      "z"
+     ]
+    },
+    {
+     "instance": 102,
+     "group": "cem_release",
+     "seed": 0,
+     "D0_m": 0.15813765451273054,
+     "D1_logged_m": 0.08192615436039945,
+     "clamp_cf_distance_m": 0.10859676516812172,
+     "cos_a0_g": 0.9250572019138299,
+     "saturated_axes": [
+      "x",
+      "y"
+     ]
+    },
+    {
+     "instance": 103,
+     "group": "cem_release",
+     "seed": 0,
+     "D0_m": 0.2628323480650084,
+     "D1_logged_m": 0.16535492966583845,
+     "clamp_cf_distance_m": 0.19623675390637188,
+     "cos_a0_g": 0.8579958231289687,
+     "saturated_axes": [
+      "x",
+      "y",
+      "z"
+     ]
+    },
+    {
+     "instance": 105,
+     "group": "cem_release",
+     "seed": 0,
+     "D0_m": 0.26925459793194517,
+     "D1_logged_m": 0.18083823970197993,
+     "clamp_cf_distance_m": 0.2069284902302301,
+     "cos_a0_g": 0.7460366840115176,
+     "saturated_axes": [
+      "x",
+      "z"
+     ]
+    },
+    {
+     "instance": 106,
+     "group": "cem_release",
+     "seed": 0,
+     "D0_m": 0.2516892777889359,
+     "D1_logged_m": 0.17063588842469032,
+     "clamp_cf_distance_m": 0.19371911131285635,
+     "cos_a0_g": 0.7356776313692603,
+     "saturated_axes": [
+      "y",
+      "z"
+     ]
+    }
+   ]
+  }
+ },
+ "same_seed_pairs": [
+  {
+   "instance": 100,
+   "seed": 0,
+   "unit_a": "_calibration",
+   "unit_b": "cem_release",
+   "per_tick_max_abs_commanded_diff_mm": [
+    0.8966028690338135,
+    8.720815181732178,
+    3.163456916809082,
+    4.0043070912361145,
+    3.787301480770111
+   ],
+   "tick0_diff_a_minus_b_mm": [
+    -0.00860169529914856,
+    0.009404495358467102,
+    0.8966028690338135
+   ],
+   "tick0_saturated_a": [
+    false,
+    false,
+    true
+   ],
+   "tick0_saturated_b": [
+    false,
+    false,
+    true
+   ]
+  }
+ ],
+ "ticks": [
+  {
+   "instance": 100,
+   "group": "_calibration",
+   "seed": 0,
+   "calibration": true,
+   "g_ambiguous": false,
+   "tick": 0,
+   "r_m": [
+    0.03266181533076148,
+    0.0345422950569565,
+    -0.055235804209246966
+   ],
+   "a_m": [
+    0.029338907450437546,
+    0.03074580989778042,
+    -0.16988003253936768
+   ],
+   "e_m": [
+    0.029050184413790703,
+    0.030424710363149643,
+    -0.17073601484298706
+   ],
+   "cos_a_r": 0.8935888317216182,
+   "norm_a_m": 0.1751151100625883,
+   "norm_r_m": 0.07287632259619631,
+   "norm_e_m": 0.17584186924513026,
+   "norm_a_minus_e_m": 0.0009587343777815748,
+   "logged_distance_before_m": 0.07287632260032376,
+   "logged_distance_after_m": 0.11563000180771384,
+   "full_command_distance_m": 0.11475519206447181,
+   "full_command_minus_logged_m": -0.0008748097432420276,
+   "executed_distance_m": 0.11563000059685817,
+   "clamp_cf_distance_m": 0.00727108396750659,
+   "clamp_cf_kind": "tick0_counterfactual",
+   "n_saturated_axes": 1,
+   "saturated_axes": [
+    "z"
+   ],
+   "blocking_converged": true,
+   "moved": true,
+   "controller_sim_steps": 51,
+   "rho": -0.23999200668677567
+  },
+  {
+   "instance": 100,
+   "group": "_calibration",
+   "seed": 0,
+   "calibration": true,
+   "g_ambiguous": false,
+   "tick": 1,
+   "r_m": [
+    0.0036116309169707747,
+    0.00411758469380686,
+    0.1155002106337401
+   ],
+   "a_m": [
+    0.03600780665874481,
+    -0.009154358878731728,
+    0.2079201638698578
+   ],
+   "e_m": [
+    0.036750148981809616,
+    -0.008774744346737862,
+    0.20825111865997314
+   ],
+   "cos_a_r": 0.9870838667451122,
+   "norm_a_m": 0.21121353879551064,
+   "norm_r_m": 0.11563000059685817,
+   "norm_e_m": 0.21165088710342328,
+   "norm_a_minus_e_m": 0.0008970565147271779,
+   "logged_distance_before_m": 0.11563000180771384,
+   "logged_distance_after_m": 0.0993332969377965,
+   "full_command_distance_m": 0.09882866206243378,
+   "full_command_minus_logged_m": -0.0005046348753627167,
+   "executed_distance_m": 0.09933329989139626,
+   "clamp_cf_distance_m": 0.0742693360812447,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 1,
+   "saturated_axes": [
+    "z"
+   ],
+   "blocking_converged": true,
+   "moved": true,
+   "controller_sim_steps": 46,
+   "rho": -3.4916848090851573
+  },
+  {
+   "instance": 100,
+   "group": "_calibration",
+   "seed": 0,
+   "calibration": true,
+   "g_ambiguous": false,
+   "tick": 2,
+   "r_m": [
+    -0.03313851806483884,
+    0.012892329040544721,
+    -0.09275090802623305
+   ],
+   "a_m": [
+    -0.12212042510509491,
+    0.021295588463544846,
+    -0.1921347677707672
+   ],
+   "e_m": [
+    -0.12269148975610733,
+    0.01709061861038208,
+    -0.18574921786785126
+   ],
+   "cos_a_r": 0.97486693289655,
+   "norm_a_m": 0.22865403845588297,
+   "norm_r_m": 0.09933329989139626,
+   "norm_e_m": 0.22326679744551584,
+   "norm_a_minus_e_m": 0.007667015968698225,
+   "logged_distance_before_m": 0.0993332969377965,
+   "logged_distance_after_m": 0.12917448200503598,
+   "full_command_distance_m": 0.1336620594154237,
+   "full_command_minus_logged_m": 0.004487577410387716,
+   "executed_distance_m": 0.12917447893236095,
+   "clamp_cf_distance_m": 0.04671792460124319,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 2,
+   "saturated_axes": [
+    "x",
+    "z"
+   ],
+   "blocking_converged": false,
+   "moved": true,
+   "controller_sim_steps": 200,
+   "rho": 0.5584207893980591
+  },
+  {
+   "instance": 100,
+   "group": "_calibration",
+   "seed": 0,
+   "calibration": true,
+   "g_ambiguous": false,
+   "tick": 3,
+   "r_m": [
+    0.0895529716912685,
+    -0.004198289569837359,
+    0.0929983098416182
+   ],
+   "a_m": [
+    0.08961840718984604,
+    -0.012154770083725452,
+    0.04219979792833328
+   ],
+   "e_m": [
+    -5.681810580426827e-05,
+    -2.0308794773882255e-05,
+    -3.6893725336994976e-05
+   ],
+   "cos_a_r": 0.9309266177612564,
+   "norm_a_m": 0.09979990124356555,
+   "norm_r_m": 0.12917447893236095,
+   "norm_e_m": 7.072405009326258e-05,
+   "norm_a_minus_e_m": 0.09986405411581249,
+   "logged_distance_before_m": 0.12917448200503598,
+   "logged_distance_after_m": 0.12923977656821317,
+   "full_command_distance_m": 0.051417882848056914,
+   "full_command_minus_logged_m": -0.07782189372015626,
+   "executed_distance_m": 0.1292397734970824,
+   "clamp_cf_distance_m": 0.06487088687833949,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 1,
+   "saturated_axes": [
+    "x"
+   ],
+   "blocking_converged": false,
+   "moved": false,
+   "controller_sim_steps": 200,
+   "rho": -0.01634943515135262
+  },
+  {
+   "instance": 100,
+   "group": "_calibration",
+   "seed": 0,
+   "calibration": true,
+   "g_ambiguous": false,
+   "tick": 4,
+   "r_m": [
+    0.08960978979707276,
+    -0.0041779807750634765,
+    0.0930352035669552
+   ],
+   "a_m": [
+    0.14395245909690857,
+    -0.04476708546280861,
+    0.1507595330476761
+   ],
+   "e_m": [
+    -2.5372659365530126e-05,
+    -1.0578117326076608e-05,
+    -1.4779554476263002e-05
+   ],
+   "cos_a_r": 0.9839743689536337,
+   "norm_a_m": 0.21320140530877107,
+   "norm_r_m": 0.1292397734970824,
+   "norm_e_m": 3.121063344375265e-05,
+   "norm_a_minus_e_m": 0.21322676738077648,
+   "logged_distance_before_m": 0.12923977656821317,
+   "logged_distance_after_m": 0.12926766705673143,
+   "full_command_distance_m": 0.0890657023774184,
+   "full_command_minus_logged_m": -0.04020196467931303,
+   "executed_distance_m": 0.12926766398601966,
+   "clamp_cf_distance_m": 0.071192974464973,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 2,
+   "saturated_axes": [
+    "x",
+    "z"
+   ],
+   "blocking_converged": false,
+   "moved": false,
+   "controller_sim_steps": 200,
+   "rho": -0.008805807855201419
+  },
+  {
+   "instance": 100,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 0,
+   "r_m": [
+    0.03266181533076148,
+    0.0345422950569565,
+    -0.055235804209246966
+   ],
+   "a_m": [
+    0.029347509145736694,
+    0.03073640540242195,
+    -0.1707766354084015
+   ],
+   "e_m": [
+    0.029177555814385414,
+    0.0305031668394804,
+    -0.1714184433221817
+   ],
+   "cos_a_r": 0.8930307801289099,
+   "norm_a_m": 0.17598483489078035,
+   "norm_r_m": 0.07287632259619631,
+   "norm_e_m": 0.17653910519071625,
+   "norm_a_minus_e_m": 0.0007037057341469846,
+   "logged_distance_before_m": 0.07287632260032376,
+   "logged_distance_after_m": 0.11630503040534286,
+   "full_command_distance_m": 0.11565099695092172,
+   "full_command_minus_logged_m": -0.0006540334544211379,
+   "executed_distance_m": 0.1163050310708058,
+   "clamp_cf_distance_m": 0.00727207448175243,
+   "clamp_cf_kind": "tick0_counterfactual",
+   "n_saturated_axes": 1,
+   "saturated_axes": [
+    "z"
+   ],
+   "blocking_converged": true,
+   "moved": true,
+   "controller_sim_steps": 52,
+   "rho": -0.0958734698758245
+  },
+  {
+   "instance": 100,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 1,
+   "r_m": [
+    0.0034842595163760634,
+    0.004039128217476103,
+    0.11618263911293474
+   ],
+   "a_m": [
+    0.037971027195453644,
+    -0.009757207706570625,
+    0.21664097905158997
+   ],
+   "e_m": [
+    0.03874160721898079,
+    -0.009381838142871857,
+    0.2171190083026886
+   ],
+   "cos_a_r": 0.9866093942199522,
+   "norm_a_m": 0.22015975066514423,
+   "norm_r_m": 0.1163050310708058,
+   "norm_e_m": 0.2207478081050677,
+   "norm_a_minus_e_m": 0.0009814315294081495,
+   "logged_distance_before_m": 0.11630503040534286,
+   "logged_distance_after_m": 0.10775599550402065,
+   "full_command_distance_m": 0.10710534110449499,
+   "full_command_minus_logged_m": -0.0006506543995256631,
+   "executed_distance_m": 0.10775599069322435,
+   "clamp_cf_distance_m": 0.07589346315614258,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 1,
+   "saturated_axes": [
+    "z"
+   ],
+   "blocking_converged": true,
+   "moved": true,
+   "controller_sim_steps": 48,
+   "rho": -4.1620057538714
+  },
+  {
+   "instance": 100,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 2,
+   "r_m": [
+    -0.035257347702604726,
+    0.01342096636034796,
+    -0.10093636918975386
+   ],
+   "a_m": [
+    -0.125283882021904,
+    0.018433470278978348,
+    -0.19204433262348175
+   ],
+   "e_m": [
+    -0.12532423436641693,
+    0.014340524561703205,
+    -0.18485543131828308
+   ],
+   "cos_a_r": 0.9701870120918314,
+   "norm_a_m": 0.23003667015022372,
+   "norm_r_m": 0.10775599069322435,
+   "norm_e_m": 0.2237930849067993,
+   "norm_a_minus_e_m": 0.008272492667398126,
+   "logged_distance_before_m": 0.10775599550402065,
+   "logged_distance_after_m": 0.12310685600710558,
+   "full_command_distance_m": 0.12818175797717768,
+   "full_command_minus_logged_m": 0.005074901970072099,
+   "executed_distance_m": 0.1231068586599854,
+   "clamp_cf_distance_m": 0.053263352302789634,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 2,
+   "saturated_axes": [
+    "x",
+    "z"
+   ],
+   "blocking_converged": false,
+   "moved": true,
+   "controller_sim_steps": 200,
+   "rho": 0.617226817059514
+  },
+  {
+   "instance": 100,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 3,
+   "r_m": [
+    0.09006688666381221,
+    -0.0009195582013552459,
+    0.08391906212852922
+   ],
+   "a_m": [
+    0.09001453220844269,
+    -0.013642840087413788,
+    0.0462041050195694
+   ],
+   "e_m": [
+    -5.354955646907911e-05,
+    -1.8722870663623326e-05,
+    -3.149111580569297e-05
+   ],
+   "cos_a_r": 0.9545362615653749,
+   "norm_a_m": 0.10209584915663765,
+   "norm_r_m": 0.1231068586599854,
+   "norm_e_m": 6.488290420911678e-05,
+   "norm_a_minus_e_m": 0.10215481522052737,
+   "logged_distance_before_m": 0.12310685600710558,
+   "logged_distance_after_m": 0.12316736282639573,
+   "full_command_distance_m": 0.03980329926867598,
+   "full_command_minus_logged_m": -0.08336406355771975,
+   "executed_distance_m": 0.12316736547826587,
+   "clamp_cf_distance_m": 0.056477033372987616,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 1,
+   "saturated_axes": [
+    "x"
+   ],
+   "blocking_converged": false,
+   "moved": false,
+   "controller_sim_steps": 200,
+   "rho": 0.06467353638855823
+  },
+  {
+   "instance": 100,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 4,
+   "r_m": [
+    0.09012043622028129,
+    -0.0009008353306916225,
+    0.08395055324433491
+   ],
+   "a_m": [
+    0.14160428941249847,
+    -0.0409797839820385,
+    0.14721468091011047
+   ],
+   "e_m": [
+    -2.3592099751112983e-05,
+    -1.0292576916981488e-05,
+    -1.3046140338701662e-05
+   ],
+   "cos_a_r": 0.9804011848643756,
+   "norm_a_m": 0.20833453806486052,
+   "norm_r_m": 0.12316736547826587,
+   "norm_e_m": 2.8856993744940655e-05,
+   "norm_a_minus_e_m": 0.20835776841789147,
+   "logged_distance_before_m": 0.12316736282639573,
+   "logged_distance_after_m": 0.12319344250565183,
+   "full_command_distance_m": 0.09088046607399534,
+   "full_command_minus_logged_m": -0.03231297643165648,
+   "executed_distance_m": 0.12319344515756132,
+   "clamp_cf_distance_m": 0.06609547331776494,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 2,
+   "saturated_axes": [
+    "x",
+    "z"
+   ],
+   "blocking_converged": false,
+   "moved": false,
+   "controller_sim_steps": 200,
+   "rho": 0.005981285831658535
+  },
+  {
+   "instance": 101,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 0,
+   "r_m": [
+    0.14168225426611497,
+    0.14307064432188574,
+    0.12176660016686931
+   ],
+   "a_m": [
+    0.10578550398349762,
+    0.12203681468963623,
+    0.1693226546049118
+   ],
+   "e_m": [
+    0.10609161108732224,
+    0.12115095555782318,
+    0.16929678618907928
+   ],
+   "cos_a_r": 0.96375978047369,
+   "norm_a_m": 0.23399512463957334,
+   "norm_r_m": 0.2353086810060475,
+   "norm_e_m": 0.2336544153009485,
+   "norm_a_minus_e_m": 0.0009376124654494241,
+   "logged_distance_before_m": 0.23530868143902217,
+   "logged_distance_after_m": 0.06329522200286142,
+   "full_command_distance_m": 0.06318684185465473,
+   "full_command_minus_logged_m": -0.00010838014820668818,
+   "executed_distance_m": 0.0632952227320467,
+   "clamp_cf_distance_m": 0.1490577924206541,
+   "clamp_cf_kind": "tick0_counterfactual",
+   "n_saturated_axes": 3,
+   "saturated_axes": [
+    "x",
+    "y",
+    "z"
+   ],
+   "blocking_converged": true,
+   "moved": true,
+   "controller_sim_steps": 49,
+   "rho": 2.2128191039729503
+  },
+  {
+   "instance": 101,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 1,
+   "r_m": [
+    0.035590643178792736,
+    0.021919688764062556,
+    -0.04753018602220997
+   ],
+   "a_m": [
+    0.0284209456294775,
+    0.00687742093577981,
+    -0.040846891701221466
+   ],
+   "e_m": [
+    0.028300177305936813,
+    0.007079051807522774,
+    -0.04149448871612549
+   ],
+   "cos_a_r": 0.9761351976815483,
+   "norm_a_m": 0.050234625815794964,
+   "norm_r_m": 0.0632952227320467,
+   "norm_e_m": 0.05072283118925557,
+   "norm_a_minus_e_m": 0.0006889280732582002,
+   "logged_distance_before_m": 0.06329522200286142,
+   "logged_distance_after_m": 0.01760184759829657,
+   "full_command_distance_m": 0.01795385215900488,
+   "full_command_minus_logged_m": 0.0003520045607083126,
+   "executed_distance_m": 0.017601847627160244,
+   "clamp_cf_distance_m": 0.01795385215900488,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 0,
+   "saturated_axes": [],
+   "blocking_converged": true,
+   "moved": true,
+   "controller_sim_steps": 26,
+   "rho": 2.343161122508158
+  },
+  {
+   "instance": 101,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 2,
+   "r_m": [
+    0.007290465872855922,
+    0.014840636956539782,
+    -0.006035697306084484
+   ],
+   "a_m": [
+    -0.0007054895395413041,
+    0.016849301755428314,
+    -0.0024468873161822557
+   ],
+   "e_m": [
+    -0.0005398426437750459,
+    0.016258131712675095,
+    -0.001732590259052813
+   ],
+   "cos_a_r": 0.8657518633604221,
+   "norm_a_m": 0.01704065558228249,
+   "norm_r_m": 0.017601847627160244,
+   "norm_e_m": 0.016359099787961875,
+   "norm_a_minus_e_m": 0.0009418817332073191,
+   "logged_distance_before_m": 0.01760184759829657,
+   "logged_distance_after_m": 0.009046533027307598,
+   "full_command_distance_m": 0.00899164024941837,
+   "full_command_minus_logged_m": -5.489277788922782e-05,
+   "executed_distance_m": 0.009046532656631944,
+   "clamp_cf_distance_m": 0.00899164024941837,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 0,
+   "saturated_axes": [],
+   "blocking_converged": true,
+   "moved": true,
+   "controller_sim_steps": 9,
+   "rho": 5.053799765265466
+  },
+  {
+   "instance": 101,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 3,
+   "r_m": [
+    0.007830308516630968,
+    -0.0014174947561353124,
+    -0.004303107047031671
+   ],
+   "a_m": [
+    0.0054343631491065025,
+    0.0008299071341753006,
+    -0.0002822191163431853
+   ],
+   "e_m": [
+    0.004894457291811705,
+    0.0007059547351673245,
+    -0.0008569507044740021
+   ],
+   "cos_a_r": 0.8552774726213609,
+   "norm_a_m": 0.005504606826772583,
+   "norm_r_m": 0.009046532656631944,
+   "norm_e_m": 0.005018809498214933,
+   "norm_a_minus_e_m": 0.0007982348842016578,
+   "logged_distance_before_m": 0.009046533027307598,
+   "logged_distance_after_m": 0.005000425911719732,
+   "full_command_distance_m": 0.005192196954266083,
+   "full_command_minus_logged_m": 0.0001917710425463513,
+   "executed_distance_m": 0.005000425351281293,
+   "clamp_cf_distance_m": 0.005192196954266083,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 0,
+   "saturated_axes": [],
+   "blocking_converged": true,
+   "moved": true,
+   "controller_sim_steps": 8,
+   "rho": 4.21525665001256
+  },
+  {
+   "instance": 101,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 4,
+   "r_m": [
+    0.0029358512248192636,
+    -0.002123449491302637,
+    -0.0034461563425576686
+   ],
+   "a_m": [
+    -0.0002804286195896566,
+    -0.00032356558949686587,
+    -0.005754864774644375
+   ],
+   "e_m": [
+    -8.70537114678882e-05,
+    -0.0002075618685921654,
+    -0.004800806753337383
+   ],
+   "cos_a_r": 0.6825523032865103,
+   "norm_a_m": 0.005770771480125865,
+   "norm_r_m": 0.005000425351281293,
+   "norm_e_m": 0.004806080082651935,
+   "norm_a_minus_e_m": 0.0009803455647755285,
+   "logged_distance_before_m": 0.005000425911719732,
+   "logged_distance_after_m": 0.003826702580316129,
+   "full_command_distance_m": 0.004349042736271845,
+   "full_command_minus_logged_m": 0.0005223401559557158,
+   "executed_distance_m": 0.003826703198852775,
+   "clamp_cf_distance_m": 0.004349042736271845,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 0,
+   "saturated_axes": [],
+   "blocking_converged": true,
+   "moved": true,
+   "controller_sim_steps": 8,
+   "rho": 14.911419579633584
+  },
+  {
+   "instance": 102,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 0,
+   "r_m": [
+    0.10278398983396242,
+    -0.11654932155870465,
+    -0.029312544076342144
+   ],
+   "a_m": [
+    0.14332440495491028,
+    -0.13514384627342224,
+    0.038350559771060944
+   ],
+   "e_m": [
+    0.14356595277786255,
+    -0.13504470884799957,
+    0.03929246589541435
+   ],
+   "cos_a_r": 0.9250572019138299,
+   "norm_a_m": 0.2006900836514032,
+   "norm_r_m": 0.15813765573768293,
+   "norm_e_m": 0.2009779939719738,
+   "norm_a_minus_e_m": 0.000977425560841784,
+   "logged_distance_before_m": 0.15813765451273054,
+   "logged_distance_after_m": 0.08192615436039945,
+   "full_command_distance_m": 0.08104059001395213,
+   "full_command_minus_logged_m": -0.0008855643464473206,
+   "executed_distance_m": 0.08192615727448387,
+   "clamp_cf_distance_m": 0.10859676516812172,
+   "clamp_cf_kind": "tick0_counterfactual",
+   "n_saturated_axes": 2,
+   "saturated_axes": [
+    "x",
+    "y"
+   ],
+   "blocking_converged": true,
+   "moved": true,
+   "controller_sim_steps": 50,
+   "rho": 0.2799577372174235
+  },
+  {
+   "instance": 102,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 1,
+   "r_m": [
+    -0.04078196294390013,
+    0.018495387289294923,
+    -0.0686050099717565
+   ],
+   "a_m": [
+    -0.02405252680182457,
+    0.007540760096162558,
+    -0.1821095198392868
+   ],
+   "e_m": [
+    -0.024761104956269264,
+    0.007263485342264175,
+    -0.18146467208862305
+   ],
+   "cos_a_r": 0.9038776836070769,
+   "norm_a_m": 0.1838457623239545,
+   "norm_r_m": 0.08192615727448387,
+   "norm_e_m": 0.1832902009224829,
+   "norm_a_minus_e_m": 0.000997393057746927,
+   "logged_distance_before_m": 0.08192615436039945,
+   "logged_distance_after_m": 0.11454312014528642,
+   "full_command_distance_m": 0.11525255594059762,
+   "full_command_minus_logged_m": 0.0007094357953112002,
+   "executed_distance_m": 0.11454312220793018,
+   "clamp_cf_distance_m": 0.027313445162070966,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 1,
+   "saturated_axes": [
+    "z"
+   ],
+   "blocking_converged": true,
+   "moved": true,
+   "controller_sim_steps": 39,
+   "rho": -0.4756912402376051
+  },
+  {
+   "instance": 102,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 2,
+   "r_m": [
+    -0.016020857987630865,
+    0.011231901947030748,
+    0.11285966211686654
+   ],
+   "a_m": [
+    -0.0032899044454097748,
+    0.0164231825619936,
+    0.1417849361896515
+   ],
+   "e_m": [
+    -0.0024151562247425318,
+    0.016570186242461205,
+    0.14219556748867035
+   ],
+   "cos_a_r": 0.9930016449670714,
+   "norm_a_m": 0.1427708392040477,
+   "norm_r_m": 0.11454312220793018,
+   "norm_e_m": 0.1431781528904629,
+   "norm_a_minus_e_m": 0.000977452093642162,
+   "logged_distance_before_m": 0.11454312014528642,
+   "logged_distance_after_m": 0.03277510972553222,
+   "full_command_distance_m": 0.032026521083364734,
+   "full_command_minus_logged_m": -0.0007485886421674873,
+   "executed_distance_m": 0.032775108598796884,
+   "clamp_cf_distance_m": 0.06434565792626654,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 1,
+   "saturated_axes": [
+    "z"
+   ],
+   "blocking_converged": true,
+   "moved": true,
+   "controller_sim_steps": 33,
+   "rho": 2.313645685497953
+  },
+  {
+   "instance": 102,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 3,
+   "r_m": [
+    -0.013605701762888334,
+    -0.005338284295430457,
+    -0.0293359053718038
+   ],
+   "a_m": [
+    -0.0006689875735901296,
+    -0.0025182138197124004,
+    -0.03170480579137802
+   ],
+   "e_m": [
+    -0.0008084427681751549,
+    -0.0024363254196941853,
+    -0.031149309128522873
+   ],
+   "cos_a_r": 0.9136824146618163,
+   "norm_a_m": 0.03181169054741363,
+   "norm_r_m": 0.03277510859879688,
+   "norm_e_m": 0.03125489914308381,
+   "norm_a_minus_e_m": 0.000578558556930495,
+   "logged_distance_before_m": 0.03277510972553222,
+   "logged_distance_after_m": 0.013246873158836065,
+   "full_command_distance_m": 0.013450764316627702,
+   "full_command_minus_logged_m": 0.00020389115779163684,
+   "executed_distance_m": 0.013246872698079148,
+   "clamp_cf_distance_m": 0.013450764316627702,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 0,
+   "saturated_axes": [],
+   "blocking_converged": true,
+   "moved": true,
+   "controller_sim_steps": 11,
+   "rho": 3.2770005112686373
+  },
+  {
+   "instance": 102,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 4,
+   "r_m": [
+    -0.012797258994713179,
+    -0.0029019588757362713,
+    0.0018134037567190744
+   ],
+   "a_m": [
+    -0.013129368424415588,
+    0.00039315776666626334,
+    0.006772301159799099
+   ],
+   "e_m": [
+    -0.01320662535727024,
+    0.00038984595448710024,
+    0.0060399724170565605
+   ],
+   "cos_a_r": 0.9151709272062731,
+   "norm_a_m": 0.014778327078954075,
+   "norm_r_m": 0.013246872698079148,
+   "norm_e_m": 0.014527498063821153,
+   "norm_a_minus_e_m": 0.0007364000198403619,
+   "logged_distance_before_m": 0.013246873158836065,
+   "logged_distance_after_m": 0.005372842660917035,
+   "full_command_distance_m": 0.005963116116143407,
+   "full_command_minus_logged_m": 0.0005902734552263719,
+   "executed_distance_m": 0.0053728430555546785,
+   "clamp_cf_distance_m": 0.005963116116143407,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 0,
+   "saturated_axes": [],
+   "blocking_converged": true,
+   "moved": true,
+   "controller_sim_steps": 13,
+   "rho": 5.432373863475762
+  },
+  {
+   "instance": 103,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 0,
+   "r_m": [
+    0.01912417354114867,
+    0.22165984239012862,
+    0.1399357850623936
+   ],
+   "a_m": [
+    0.10578550398349762,
+    0.12203681468963623,
+    0.1693226546049118
+   ],
+   "e_m": [
+    0.05686340481042862,
+    0.08488159626722336,
+    0.055025748908519745
+   ],
+   "cos_a_r": 0.8579958231289687,
+   "norm_a_m": 0.23399512463957334,
+   "norm_r_m": 0.2628323490042218,
+   "norm_e_m": 0.11604380739380299,
+   "norm_a_minus_e_m": 0.12976002734003544,
+   "logged_distance_before_m": 0.2628323480650084,
+   "logged_distance_after_m": 0.16535492966583845,
+   "full_command_distance_m": 0.13527202942131109,
+   "full_command_minus_logged_m": -0.030082900244527366,
+   "executed_distance_m": 0.1653549286501809,
+   "clamp_cf_distance_m": 0.19623675390637188,
+   "clamp_cf_kind": "tick0_counterfactual",
+   "n_saturated_axes": 3,
+   "saturated_axes": [
+    "x",
+    "y",
+    "z"
+   ],
+   "blocking_converged": false,
+   "moved": true,
+   "controller_sim_steps": 200,
+   "rho": 1.353338397580744
+  },
+  {
+   "instance": 103,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 1,
+   "r_m": [
+    -0.03773923126927995,
+    0.13677824612290526,
+    0.08491003615387385
+   ],
+   "a_m": [
+    -0.12008978426456451,
+    0.10336576402187347,
+    0.13889682292938232
+   ],
+   "e_m": [
+    -0.11970312893390656,
+    0.10298565775156021,
+    0.13909965753555298
+   ],
+   "cos_a_r": 0.874352498698017,
+   "norm_a_m": 0.2107091950447618,
+   "norm_r_m": 0.1653549286501809,
+   "norm_e_m": 0.21043668764166829,
+   "norm_a_minus_e_m": 0.0005788998176870324,
+   "logged_distance_before_m": 0.16535492966583845,
+   "logged_distance_after_m": 0.10390637461975026,
+   "full_command_distance_m": 0.10398355968673682,
+   "full_command_minus_logged_m": 7.718506698656258e-05,
+   "executed_distance_m": 0.10390637427368103,
+   "clamp_cf_distance_m": 0.09433716698258701,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 3,
+   "saturated_axes": [
+    "x",
+    "y",
+    "z"
+   ],
+   "blocking_converged": true,
+   "moved": true,
+   "controller_sim_steps": 79,
+   "rho": 1.4281313699838754
+  },
+  {
+   "instance": 103,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 2,
+   "r_m": [
+    0.08196389766462661,
+    0.03379258837134505,
+    -0.054189621381679126
+   ],
+   "a_m": [
+    0.1456991732120514,
+    0.04402316361665726,
+    -0.18439580500125885
+   ],
+   "e_m": [
+    0.07719017565250397,
+    0.041491080075502396,
+    -0.06437787413597107
+   ],
+   "cos_a_r": 0.9427708743710905,
+   "norm_a_m": 0.23909851716720582,
+   "norm_r_m": 0.10390637427368103,
+   "norm_e_m": 0.10873979778058768,
+   "norm_a_minus_e_m": 0.13821793632831617,
+   "logged_distance_before_m": 0.10390637461975026,
+   "logged_distance_after_m": 0.013632890521639887,
+   "full_command_distance_m": 0.14532893817726691,
+   "full_command_minus_logged_m": 0.13169604765562704,
+   "executed_distance_m": 0.013632890029386327,
+   "clamp_cf_distance_m": 0.03382171419497451,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 2,
+   "saturated_axes": [
+    "x",
+    "z"
+   ],
+   "blocking_converged": false,
+   "moved": true,
+   "controller_sim_steps": 200,
+   "rho": 3.059969834501446
+  },
+  {
+   "instance": 103,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 3,
+   "r_m": [
+    0.004773722012122637,
+    -0.007698491704157345,
+    0.010188252754291943
+   ],
+   "a_m": [
+    -0.004298130050301552,
+    -0.01091753225773573,
+    0.00894000194966793
+   ],
+   "e_m": [
+    -0.004474756773561239,
+    -0.011088601313531399,
+    0.008025296032428741
+   ],
+   "cos_a_r": 0.7688468060261782,
+   "norm_a_m": 0.014750934458130843,
+   "norm_r_m": 0.013632890029386323,
+   "norm_e_m": 0.014400899405283649,
+   "norm_a_minus_e_m": 0.0009471792524399288,
+   "logged_distance_before_m": 0.013632890521639887,
+   "logged_distance_after_m": 0.010084918657454412,
+   "full_command_distance_m": 0.009706639583261383,
+   "full_command_minus_logged_m": -0.0003782790741930289,
+   "executed_distance_m": 0.010084918680558025,
+   "clamp_cf_distance_m": 0.009706639583261383,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 0,
+   "saturated_axes": [],
+   "blocking_converged": true,
+   "moved": true,
+   "controller_sim_steps": 12,
+   "rho": 0.9624396886549329
+  },
+  {
+   "instance": 103,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 4,
+   "r_m": [
+    0.009248478785683877,
+    0.0033901096093740535,
+    0.0021629567218632018
+   ],
+   "a_m": [
+    0.006556467618793249,
+    0.010102356784045696,
+    -0.010095641948282719
+   ],
+   "e_m": [
+    0.0026765877846628428,
+    0.010021479800343513,
+    -0.008642936125397682
+   ],
+   "cos_a_r": 0.46091686493595185,
+   "norm_a_m": 0.015715179495518473,
+   "norm_r_m": 0.010084918680558025,
+   "norm_e_m": 0.013501648952087435,
+   "norm_a_minus_e_m": 0.004143713651017483,
+   "logged_distance_before_m": 0.010084918657454412,
+   "logged_distance_after_m": 0.014280480890628907,
+   "full_command_distance_m": 0.014232864350237257,
+   "full_command_minus_logged_m": -4.7616540391650156e-05,
+   "executed_distance_m": 0.014280481160152255,
+   "clamp_cf_distance_m": 0.014232864350237257,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 0,
+   "saturated_axes": [],
+   "blocking_converged": false,
+   "moved": true,
+   "controller_sim_steps": 200,
+   "rho": -1.8159158355439753
+  },
+  {
+   "instance": 104,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 0,
+   "r_m": [
+    -0.06985446815727177,
+    -0.004909617259687889,
+    0.06280922176274671
+   ],
+   "a_m": [
+    -0.03550703078508377,
+    -0.010663214139640331,
+    0.028552893549203873
+   ],
+   "e_m": [
+    -0.03501978516578674,
+    -0.010486180894076824,
+    0.028025420382618904
+   ],
+   "cos_a_r": 0.982782460502484,
+   "norm_a_m": 0.04679445587879915,
+   "norm_r_m": 0.09406779152086976,
+   "norm_e_m": 0.046062669597231015,
+   "norm_a_minus_e_m": 0.0007395789376571421,
+   "logged_distance_before_m": 0.0940677914895272,
+   "logged_distance_after_m": 0.04954256799462873,
+   "full_command_distance_m": 0.048850244152586854,
+   "full_command_minus_logged_m": -0.0006923238420418754,
+   "executed_distance_m": 0.049542567954616826,
+   "clamp_cf_distance_m": 0.048850244152586854,
+   "clamp_cf_kind": "tick0_counterfactual",
+   "n_saturated_axes": 0,
+   "saturated_axes": [],
+   "blocking_converged": true,
+   "moved": true,
+   "controller_sim_steps": 14,
+   "rho": 1.3880257802692575
+  },
+  {
+   "instance": 104,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 1,
+   "r_m": [
+    -0.034834682991485025,
+    0.005576563634388935,
+    0.03478380138012781
+   ],
+   "a_m": [
+    -0.016158420592546463,
+    0.0009975563734769821,
+    0.015049323439598083
+   ],
+   "e_m": [
+    -0.015420162118971348,
+    0.0008630013326182961,
+    0.01507499348372221
+   ],
+   "cos_a_r": 0.9971115755863281,
+   "norm_a_m": 0.02210366057361383,
+   "norm_r_m": 0.049542567954616826,
+   "norm_e_m": 0.021581973950723945,
+   "norm_a_minus_e_m": 0.0007508592304761768,
+   "logged_distance_before_m": 0.04954256799462873,
+   "logged_distance_after_m": 0.028063827272006837,
+   "full_command_distance_m": 0.02755394171937556,
+   "full_command_minus_logged_m": -0.0005098855526312757,
+   "executed_distance_m": 0.028063827233279538,
+   "clamp_cf_distance_m": 0.02755394171937556,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 0,
+   "saturated_axes": [],
+   "blocking_converged": true,
+   "moved": true,
+   "controller_sim_steps": 9,
+   "rho": 2.882077583051477
+  },
+  {
+   "instance": 104,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 2,
+   "r_m": [
+    -0.019414520872513677,
+    0.004713562301770639,
+    0.019708807896405597
+   ],
+   "a_m": [
+    -0.010955712758004665,
+    -0.00010615366045385599,
+    0.012722711078822613
+   ],
+   "e_m": [
+    -0.01039988361299038,
+    -0.00027888608747161925,
+    0.011934460140764713
+   ],
+   "cos_a_r": 0.9825030116076817,
+   "norm_a_m": 0.01679006515266482,
+   "norm_r_m": 0.028063827233279538,
+   "norm_e_m": 0.015832457025523005,
+   "norm_a_minus_e_m": 0.0009798581893008384,
+   "logged_distance_before_m": 0.028063827272006837,
+   "logged_distance_after_m": 0.012908474235392634,
+   "full_command_distance_m": 0.011982764514887547,
+   "full_command_minus_logged_m": -0.0009257097205050864,
+   "executed_distance_m": 0.012908474304334798,
+   "clamp_cf_distance_m": 0.011982764514887547,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 0,
+   "saturated_axes": [],
+   "blocking_converged": true,
+   "moved": true,
+   "controller_sim_steps": 8,
+   "rho": 4.443643575189769
+  },
+  {
+   "instance": 104,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 3,
+   "r_m": [
+    -0.009014637259523298,
+    0.004992448389242258,
+    0.007774347755640884
+   ],
+   "a_m": [
+    -0.005470508709549904,
+    0.0018404873553663492,
+    0.0063369497656822205
+   ],
+   "e_m": [
+    -0.004927970468997955,
+    0.0015115165151655674,
+    0.005982125177979469
+   ],
+   "cos_a_r": 0.9740044431810158,
+   "norm_a_m": 0.008571510460782552,
+   "norm_r_m": 0.012908474304334798,
+   "norm_e_m": 0.007896543342751314,
+   "norm_a_minus_e_m": 0.0007269594515528632,
+   "logged_distance_before_m": 0.012908474235392634,
+   "logged_distance_after_m": 0.005659487096377764,
+   "full_command_distance_m": 0.004955988147619585,
+   "full_command_minus_logged_m": -0.0007034989487581791,
+   "executed_distance_m": 0.005659487073633536,
+   "clamp_cf_distance_m": 0.004955988147619585,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 0,
+   "saturated_axes": [],
+   "blocking_converged": true,
+   "moved": true,
+   "controller_sim_steps": 7,
+   "rho": 16.475483724576097
+  },
+  {
+   "instance": 104,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 4,
+   "r_m": [
+    -0.004086666790525342,
+    0.003480931874076691,
+    0.0017922225776614148
+   ],
+   "a_m": [
+    -0.002747992053627968,
+    0.003362142015248537,
+    0.0033414275385439396
+   ],
+   "e_m": [
+    -0.0023580254055559635,
+    0.00275174411945045,
+    0.0028299130499362946
+   ],
+   "cos_a_r": 0.932702289126283,
+   "norm_a_m": 0.005479105515760922,
+   "norm_r_m": 0.005659487073633536,
+   "norm_e_m": 0.004597911197748086,
+   "norm_a_minus_e_m": 0.0008867393359148942,
+   "logged_distance_before_m": 0.005659487096377764,
+   "logged_distance_after_m": 0.002143995647374461,
+   "full_command_distance_m": 0.0020509015316661824,
+   "full_command_minus_logged_m": -9.309411570827862e-05,
+   "executed_distance_m": 0.002143995647284708,
+   "clamp_cf_distance_m": 0.0020509015316661824,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 0,
+   "saturated_axes": [],
+   "blocking_converged": true,
+   "moved": true,
+   "controller_sim_steps": 6,
+   "rho": 23.953680536249344
+  },
+  {
+   "instance": 105,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 0,
+   "r_m": [
+    0.24459449123045587,
+    -0.11100658844144214,
+    0.018684433847555547
+   ],
+   "a_m": [
+    0.14973150193691254,
+    -0.0479850098490715,
+    0.15902291238307953
+   ],
+   "e_m": [
+    0.14967548847198486,
+    -0.04747984930872917,
+    0.15888859331607819
+   ],
+   "cos_a_r": 0.7460366840115176,
+   "norm_a_m": 0.22362998570248963,
+   "norm_r_m": 0.2692545930636968,
+   "norm_e_m": 0.2233890620099135,
+   "norm_a_minus_e_m": 0.0005257055178826552,
+   "logged_distance_before_m": 0.26925459793194517,
+   "logged_distance_after_m": 0.18083823970197993,
+   "full_command_distance_m": 0.18073625719165204,
+   "full_command_minus_logged_m": -0.00010198251032789152,
+   "executed_distance_m": 0.18083824264179663,
+   "clamp_cf_distance_m": 0.2069284902302301,
+   "clamp_cf_kind": "tick0_counterfactual",
+   "n_saturated_axes": 2,
+   "saturated_axes": [
+    "x",
+    "z"
+   ],
+   "blocking_converged": true,
+   "moved": true,
+   "controller_sim_steps": 50,
+   "rho": 1.8585787298066558
+  },
+  {
+   "instance": 105,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 1,
+   "r_m": [
+    0.09491900275847101,
+    -0.06352673913271296,
+    -0.14020415946852263
+   ],
+   "a_m": [
+    0.0368216410279274,
+    -0.0373762845993042,
+    -0.20569577813148499
+   ],
+   "e_m": [
+    0.03667100891470909,
+    -0.03709590435028076,
+    -0.20640605688095093
+   ],
+   "cos_a_r": 0.904143558749134,
+   "norm_a_m": 0.21228182456243122,
+   "norm_r_m": 0.18083824264179663,
+   "norm_e_m": 0.21289511345150738,
+   "norm_a_minus_e_m": 0.0007783309190299206,
+   "logged_distance_before_m": 0.18083823970197993,
+   "logged_distance_after_m": 0.09205492201387294,
+   "full_command_distance_m": 0.09136904195321516,
+   "full_command_minus_logged_m": -0.0006858800606577842,
+   "executed_distance_m": 0.0920549240134651,
+   "clamp_cf_distance_m": 0.11043523032880483,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 1,
+   "saturated_axes": [
+    "z"
+   ],
+   "blocking_converged": true,
+   "moved": true,
+   "controller_sim_steps": 63,
+   "rho": -1.2458666343459692
+  },
+  {
+   "instance": 105,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 2,
+   "r_m": [
+    0.05824799384376192,
+    -0.026430834782432203,
+    0.0662018974124283
+   ],
+   "a_m": [
+    0.019105713814496994,
+    -0.009275821968913078,
+    0.039390139281749725
+   ],
+   "e_m": [
+    0.019282834604382515,
+    -0.009193966165184975,
+    0.03971324488520622
+   ],
+   "cos_a_r": 0.9626631616330718,
+   "norm_a_m": 0.04475100273955964,
+   "norm_r_m": 0.0920549240134651,
+   "norm_e_m": 0.045094329394491456,
+   "norm_a_minus_e_m": 0.00037745115948773015,
+   "logged_distance_before_m": 0.09205492201387294,
+   "logged_distance_after_m": 0.050170128043957665,
+   "full_command_distance_m": 0.050450797065848284,
+   "full_command_minus_logged_m": 0.00028066902189061854,
+   "executed_distance_m": 0.05017013042624411,
+   "clamp_cf_distance_m": 0.050450797065848284,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 0,
+   "saturated_axes": [],
+   "blocking_converged": true,
+   "moved": true,
+   "controller_sim_steps": 13,
+   "rho": 1.0546868450094533
+  },
+  {
+   "instance": 105,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 3,
+   "r_m": [
+    0.038965159239379404,
+    -0.017236868617247228,
+    0.026488652527222066
+   ],
+   "a_m": [
+    0.03172585740685463,
+    -0.0027041626162827015,
+    0.026605550199747086
+   ],
+   "e_m": [
+    0.03116055391728878,
+    -0.0026120448019355536,
+    0.026723217219114304
+   ],
+   "cos_a_r": 0.954764923676879,
+   "norm_a_m": 0.04149334675687942,
+   "norm_r_m": 0.0501701304262441,
+   "norm_e_m": 0.04113311606260273,
+   "norm_a_minus_e_m": 0.0005847215187439122,
+   "logged_distance_before_m": 0.050170128043957665,
+   "logged_distance_after_m": 0.0165786722864727,
+   "full_command_distance_m": 0.016236400456958084,
+   "full_command_minus_logged_m": -0.0003422718295146149,
+   "executed_distance_m": 0.016578671733802904,
+   "clamp_cf_distance_m": 0.016236400456958084,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 0,
+   "saturated_axes": [],
+   "blocking_converged": true,
+   "moved": true,
+   "controller_sim_steps": 11,
+   "rho": 3.2419246558390875
+  },
+  {
+   "instance": 105,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 4,
+   "r_m": [
+    0.007804605322090624,
+    -0.014624823815311674,
+    -0.00023456469189223755
+   ],
+   "a_m": [
+    0.005359781440347433,
+    -0.00823778472840786,
+    0.00852503813803196
+   ],
+   "e_m": [
+    0.005302709992974997,
+    -0.00742037408053875,
+    0.008755584247410297
+   ],
+   "cos_a_r": 0.7432259801811661,
+   "norm_a_m": 0.013010174079341982,
+   "norm_r_m": 0.016578671733802904,
+   "norm_e_m": 0.012642821689726844,
+   "norm_a_minus_e_m": 0.0008512160864930078,
+   "logged_distance_before_m": 0.0165786722864727,
+   "logged_distance_after_m": 0.01178924728264953,
+   "full_command_distance_m": 0.01111314869190523,
+   "full_command_minus_logged_m": -0.0006760985907442989,
+   "executed_distance_m": 0.01178924739623199,
+   "clamp_cf_distance_m": 0.01111314869190523,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 0,
+   "saturated_axes": [],
+   "blocking_converged": true,
+   "moved": true,
+   "controller_sim_steps": 6,
+   "rho": 7.984129237856343
+  },
+  {
+   "instance": 106,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 0,
+   "r_m": [
+    -0.011150397839178247,
+    -0.24305139311999369,
+    0.0644141429902255
+   ],
+   "a_m": [
+    -0.01825576089322567,
+    -0.09880940616130829,
+    0.15500342845916748
+   ],
+   "e_m": [
+    -0.01773931086063385,
+    -0.09836634248495102,
+    0.15463292598724365
+   ],
+   "cos_a_r": 0.7356776313692603,
+   "norm_a_m": 0.1847231289953623,
+   "norm_r_m": 0.2516892784500501,
+   "norm_e_m": 0.18412485514740604,
+   "norm_a_minus_e_m": 0.0007747890933492662,
+   "logged_distance_before_m": 0.2516892777889359,
+   "logged_distance_after_m": 0.17063588842469032,
+   "full_command_distance_m": 0.17047772765875563,
+   "full_command_minus_logged_m": -0.00015816076593469508,
+   "executed_distance_m": 0.1706358885391119,
+   "clamp_cf_distance_m": 0.19371911131285635,
+   "clamp_cf_kind": "tick0_counterfactual",
+   "n_saturated_axes": 2,
+   "saturated_axes": [
+    "y",
+    "z"
+   ],
+   "blocking_converged": true,
+   "moved": true,
+   "controller_sim_steps": 41,
+   "rho": -0.47482727474676173
+  },
+  {
+   "instance": 106,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 1,
+   "r_m": [
+    0.006588913021455603,
+    -0.14468505063504267,
+    -0.09021878299701815
+   ],
+   "a_m": [
+    -0.12067874521017075,
+    -0.13525357842445374,
+    -0.19787845015525818
+   ],
+   "e_m": [
+    -0.12129195034503937,
+    -0.13472019135951996,
+    -0.19751407206058502
+   ],
+   "cos_a_r": 0.7998690293539306,
+   "norm_a_m": 0.2683519537062627,
+   "norm_r_m": 0.1706358885391119,
+   "norm_e_m": 0.26809154376892075,
+   "norm_a_minus_e_m": 0.0008906703623370174,
+   "logged_distance_before_m": 0.17063588842469032,
+   "logged_distance_after_m": 0.16722766553686857,
+   "full_command_distance_m": 0.16696291034970667,
+   "full_command_minus_logged_m": -0.0002647551871619025,
+   "executed_distance_m": 0.1672276672413255,
+   "clamp_cf_distance_m": 0.11741002681403193,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 3,
+   "saturated_axes": [
+    "x",
+    "y",
+    "z"
+   ],
+   "blocking_converged": true,
+   "moved": true,
+   "controller_sim_steps": 59,
+   "rho": -0.32593098033030277
+  },
+  {
+   "instance": 106,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 2,
+   "r_m": [
+    0.12788086336649496,
+    -0.009964859275522708,
+    0.10729528906356688
+   ],
+   "a_m": [
+    0.01972973346710205,
+    -0.008150006644427776,
+    0.16282960772514343
+   ],
+   "e_m": [
+    0.020402878522872925,
+    -0.008056738413870335,
+    0.16236671805381775
+   ],
+   "cos_a_r": 0.7309980763653396,
+   "norm_a_m": 0.16422291601025477,
+   "norm_r_m": 0.1672276672413255,
+   "norm_e_m": 0.16384181278738522,
+   "norm_a_minus_e_m": 0.0008222469682279701,
+   "logged_distance_before_m": 0.16722766553686857,
+   "logged_distance_after_m": 0.12078087860238285,
+   "full_command_distance_m": 0.1215895601513283,
+   "full_command_minus_logged_m": 0.0008086815489454502,
+   "executed_distance_m": 0.12078087780065504,
+   "clamp_cf_distance_m": 0.12240388366986416,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 1,
+   "saturated_axes": [
+    "z"
+   ],
+   "blocking_converged": true,
+   "moved": true,
+   "controller_sim_steps": 37,
+   "rho": 2.485186953062848
+  },
+  {
+   "instance": 106,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 3,
+   "r_m": [
+    0.10747798484362205,
+    -0.0019081208616523737,
+    -0.05507142899025087
+   ],
+   "a_m": [
+    0.10126446187496185,
+    -0.002426915569230914,
+    -0.024930063635110855
+   ],
+   "e_m": [
+    0.10159476101398468,
+    -0.0023030138108879328,
+    -0.02403128892183304
+   ],
+   "cos_a_r": 0.9731615918894352,
+   "norm_a_m": 0.1043162941771632,
+   "norm_r_m": 0.12078087780065505,
+   "norm_e_m": 0.10442366678749802,
+   "norm_a_minus_e_m": 0.0009655284315789593,
+   "logged_distance_before_m": 0.12078087860238285,
+   "logged_distance_after_m": 0.03159522734874464,
+   "full_command_distance_m": 0.030779521131796612,
+   "full_command_minus_logged_m": -0.0008157062169480284,
+   "executed_distance_m": 0.03159522999659865,
+   "clamp_cf_distance_m": 0.06490369631310909,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 1,
+   "saturated_axes": [
+    "x"
+   ],
+   "blocking_converged": true,
+   "moved": true,
+   "controller_sim_steps": 34,
+   "rho": 2.7730889364312694
+  },
+  {
+   "instance": 106,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 4,
+   "r_m": [
+    0.005883223829637366,
+    0.00039489294923555907,
+    -0.031040140068417835
+   ],
+   "a_m": [
+    -0.005534690339118242,
+    0.009271448478102684,
+    -0.020723413676023483
+   ],
+   "e_m": [
+    -0.005408506374806166,
+    0.008838365785777569,
+    -0.020011918619275093
+   ],
+   "cos_a_r": 0.8321127345231002,
+   "norm_a_m": 0.02336776472878051,
+   "norm_r_m": 0.03159522999659865,
+   "norm_e_m": 0.0225354285025604,
+   "norm_a_minus_e_m": 0.0008424418241151592,
+   "logged_distance_before_m": 0.03159522734874464,
+   "logged_distance_after_m": 0.01790019924291773,
+   "full_command_distance_m": 0.01776504560865684,
+   "full_command_minus_logged_m": -0.0001351536342608893,
+   "executed_distance_m": 0.017900197565465504,
+   "clamp_cf_distance_m": 0.01776504560865684,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 0,
+   "saturated_axes": [],
+   "blocking_converged": true,
+   "moved": true,
+   "controller_sim_steps": 9,
+   "rho": 6.924586431597287
+  },
+  {
+   "instance": 107,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 0,
+   "r_m": [
+    0.030151801562825195,
+    -0.027863466849160273,
+    0.05754164763812755
+   ],
+   "a_m": [
+    0.1517367660999298,
+    -0.03785569593310356,
+    0.12750239670276642
+   ],
+   "e_m": [
+    0.15198159217834473,
+    -0.03796772286295891,
+    0.1281030774116516
+   ],
+   "cos_a_r": 0.9091182813863585,
+   "norm_a_m": 0.20177700826901468,
+   "norm_r_m": 0.07068624431421344,
+   "norm_e_m": 0.2023619301716574,
+   "norm_a_minus_e_m": 0.0006582607049730825,
+   "logged_distance_before_m": 0.07068624431423323,
+   "logged_distance_after_m": 0.14115066150288524,
+   "full_command_distance_m": 0.14063162749979238,
+   "full_command_minus_logged_m": -0.0005190340030928609,
+   "executed_distance_m": 0.14115066150286965,
+   "clamp_cf_distance_m": 0.023466403055541884,
+   "clamp_cf_kind": "tick0_counterfactual",
+   "n_saturated_axes": 2,
+   "saturated_axes": [
+    "x",
+    "z"
+   ],
+   "blocking_converged": true,
+   "moved": true,
+   "controller_sim_steps": 55,
+   "rho": -3.0262773263666496
+  },
+  {
+   "instance": 107,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 1,
+   "r_m": [
+    -0.12182979061551953,
+    0.010104256013798635,
+    -0.07056142977352406
+   ],
+   "a_m": [
+    -0.1140945553779602,
+    0.003721347078680992,
+    -0.16425183415412903
+   ],
+   "e_m": [
+    -0.11709285527467728,
+    0.005360005889087915,
+    -0.16716662049293518
+   ],
+   "cos_a_r": 0.9041525217221259,
+   "norm_a_m": 0.2000252009472055,
+   "norm_r_m": 0.14115066150286965,
+   "norm_e_m": 0.2041669547858727,
+   "norm_a_minus_e_m": 0.004491211904204566,
+   "logged_distance_before_m": 0.14115066150288524,
+   "logged_distance_after_m": 0.09683754095501551,
+   "full_command_distance_m": 0.09422561893485056,
+   "full_command_minus_logged_m": -0.0026119220201649557,
+   "executed_distance_m": 0.0968375409621854,
+   "clamp_cf_distance_m": 0.07498688379093335,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 2,
+   "saturated_axes": [
+    "x",
+    "z"
+   ],
+   "blocking_converged": false,
+   "moved": true,
+   "controller_sim_steps": 200,
+   "rho": 1.6255302527923117
+  },
+  {
+   "instance": 107,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 2,
+   "r_m": [
+    -0.004736935340842255,
+    0.004744250124710719,
+    0.09660519071941112
+   ],
+   "a_m": [
+    0.08683427423238754,
+    -0.007483300752937794,
+    0.15225771069526672
+   ],
+   "e_m": [
+    -3.9227306842803955e-05,
+    -5.809494905406609e-05,
+    -5.1514693041099235e-05
+   ],
+   "cos_a_r": 0.8394868325534263,
+   "norm_a_m": 0.17543831234307955,
+   "norm_r_m": 0.0968375409621854,
+   "norm_e_m": 8.699177148933517e-05,
+   "norm_a_minus_e_m": 0.17549996891539052,
+   "logged_distance_before_m": 0.09683754095501551,
+   "logged_distance_after_m": 0.09688988430151646,
+   "full_command_distance_m": 0.10785176124121879,
+   "full_command_minus_logged_m": 0.010961876939702325,
+   "executed_distance_m": 0.09688988430259263,
+   "clamp_cf_distance_m": 0.0729224855100655,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 2,
+   "saturated_axes": [
+    "x",
+    "z"
+   ],
+   "blocking_converged": false,
+   "moved": false,
+   "controller_sim_steps": 200,
+   "rho": 0.22387758187771573
+  },
+  {
+   "instance": 107,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 3,
+   "r_m": [
+    -0.004697708033999451,
+    0.0048023450737647855,
+    0.09665670541245222
+   ],
+   "a_m": [
+    0.02252940461039543,
+    -0.006913469173014164,
+    0.17977598309516907
+   ],
+   "e_m": [
+    -1.41465234264615e-05,
+    -3.0208340831450187e-05,
+    -1.2983548913325649e-05
+   ],
+   "cos_a_r": 0.9812165751880655,
+   "norm_a_m": 0.1813140210406786,
+   "norm_r_m": 0.09688988430259263,
+   "norm_e_m": 3.57944202806695e-05,
+   "norm_a_minus_e_m": 0.1813275034415741,
+   "logged_distance_before_m": 0.09688988430151646,
+   "logged_distance_after_m": 0.0969036536229435,
+   "full_command_distance_m": 0.08824619135641032,
+   "full_command_minus_logged_m": -0.008657462266533175,
+   "executed_distance_m": 0.09690365361953804,
+   "clamp_cf_distance_m": 0.05527589100466807,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 1,
+   "saturated_axes": [
+    "z"
+   ],
+   "blocking_converged": false,
+   "moved": false,
+   "controller_sim_steps": 200,
+   "rho": 0.005974067080691108
+  },
+  {
+   "instance": 107,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 4,
+   "r_m": [
+    -0.004683561510572989,
+    0.004832553414596236,
+    0.09666968896136555
+   ],
+   "a_m": [
+    0.021794233471155167,
+    -0.006242940668016672,
+    0.17786160111427307
+   ],
+   "e_m": [
+    -5.17405942446203e-06,
+    -9.144655450654682e-06,
+    -4.514247393672122e-06
+   ],
+   "cos_a_r": 0.9819680290644202,
+   "norm_a_m": 0.1793006192730867,
+   "norm_r_m": 0.09690365361953804,
+   "norm_e_m": 1.1435647938369223e-05,
+   "norm_a_minus_e_m": 0.17930540810377227,
+   "logged_distance_before_m": 0.0969036536229435,
+   "logged_distance_after_m": 0.0969083635004205,
+   "full_command_distance_m": 0.08611542716211698,
+   "full_command_minus_logged_m": -0.010792936338303513,
+   "executed_distance_m": 0.0969083634955881,
+   "clamp_cf_distance_m": 0.05478868554746525,
+   "clamp_cf_kind": "per_state_counterfactual_on_baseline_trajectory",
+   "n_saturated_axes": 1,
+   "saturated_axes": [
+    "z"
+   ],
+   "blocking_converged": false,
+   "moved": false,
+   "controller_sim_steps": 200,
+   "rho": -0.0260396919818536
+  }
+ ],
+ "axis_rows": [
+  {
+   "instance": 100,
+   "group": "_calibration",
+   "seed": 0,
+   "calibration": true,
+   "g_ambiguous": false,
+   "tick": 0,
+   "axis": "x",
+   "r_m": 0.03266181533076148,
+   "a_m": 0.029338907450437546,
+   "e_m": 0.029050184413790703,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 100,
+   "group": "_calibration",
+   "seed": 0,
+   "calibration": true,
+   "g_ambiguous": false,
+   "tick": 0,
+   "axis": "y",
+   "r_m": 0.0345422950569565,
+   "a_m": 0.03074580989778042,
+   "e_m": 0.030424710363149643,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 100,
+   "group": "_calibration",
+   "seed": 0,
+   "calibration": true,
+   "g_ambiguous": false,
+   "tick": 0,
+   "axis": "z",
+   "r_m": -0.055235804209246966,
+   "a_m": -0.16988003253936768,
+   "e_m": -0.17073601484298706,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 100,
+   "group": "_calibration",
+   "seed": 0,
+   "calibration": true,
+   "g_ambiguous": false,
+   "tick": 1,
+   "axis": "x",
+   "r_m": 0.0036116309169707747,
+   "a_m": 0.03600780665874481,
+   "e_m": 0.036750148981809616,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 100,
+   "group": "_calibration",
+   "seed": 0,
+   "calibration": true,
+   "g_ambiguous": false,
+   "tick": 1,
+   "axis": "y",
+   "r_m": 0.00411758469380686,
+   "a_m": -0.009154358878731728,
+   "e_m": -0.008774744346737862,
+   "saturated": false,
+   "sign_match": false,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 100,
+   "group": "_calibration",
+   "seed": 0,
+   "calibration": true,
+   "g_ambiguous": false,
+   "tick": 1,
+   "axis": "z",
+   "r_m": 0.1155002106337401,
+   "a_m": 0.2079201638698578,
+   "e_m": 0.20825111865997314,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 100,
+   "group": "_calibration",
+   "seed": 0,
+   "calibration": true,
+   "g_ambiguous": false,
+   "tick": 2,
+   "axis": "x",
+   "r_m": -0.03313851806483884,
+   "a_m": -0.12212042510509491,
+   "e_m": -0.12269148975610733,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": false,
+   "moved": true
+  },
+  {
+   "instance": 100,
+   "group": "_calibration",
+   "seed": 0,
+   "calibration": true,
+   "g_ambiguous": false,
+   "tick": 2,
+   "axis": "y",
+   "r_m": 0.012892329040544721,
+   "a_m": 0.021295588463544846,
+   "e_m": 0.01709061861038208,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": false,
+   "moved": true
+  },
+  {
+   "instance": 100,
+   "group": "_calibration",
+   "seed": 0,
+   "calibration": true,
+   "g_ambiguous": false,
+   "tick": 2,
+   "axis": "z",
+   "r_m": -0.09275090802623305,
+   "a_m": -0.1921347677707672,
+   "e_m": -0.18574921786785126,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": false,
+   "moved": true
+  },
+  {
+   "instance": 100,
+   "group": "_calibration",
+   "seed": 0,
+   "calibration": true,
+   "g_ambiguous": false,
+   "tick": 3,
+   "axis": "x",
+   "r_m": 0.0895529716912685,
+   "a_m": 0.08961840718984604,
+   "e_m": -5.681810580426827e-05,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": false,
+   "moved": false
+  },
+  {
+   "instance": 100,
+   "group": "_calibration",
+   "seed": 0,
+   "calibration": true,
+   "g_ambiguous": false,
+   "tick": 3,
+   "axis": "y",
+   "r_m": -0.004198289569837359,
+   "a_m": -0.012154770083725452,
+   "e_m": -2.0308794773882255e-05,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": false,
+   "moved": false
+  },
+  {
+   "instance": 100,
+   "group": "_calibration",
+   "seed": 0,
+   "calibration": true,
+   "g_ambiguous": false,
+   "tick": 3,
+   "axis": "z",
+   "r_m": 0.0929983098416182,
+   "a_m": 0.04219979792833328,
+   "e_m": -3.6893725336994976e-05,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": false,
+   "moved": false
+  },
+  {
+   "instance": 100,
+   "group": "_calibration",
+   "seed": 0,
+   "calibration": true,
+   "g_ambiguous": false,
+   "tick": 4,
+   "axis": "x",
+   "r_m": 0.08960978979707276,
+   "a_m": 0.14395245909690857,
+   "e_m": -2.5372659365530126e-05,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": false,
+   "moved": false
+  },
+  {
+   "instance": 100,
+   "group": "_calibration",
+   "seed": 0,
+   "calibration": true,
+   "g_ambiguous": false,
+   "tick": 4,
+   "axis": "y",
+   "r_m": -0.0041779807750634765,
+   "a_m": -0.04476708546280861,
+   "e_m": -1.0578117326076608e-05,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": false,
+   "moved": false
+  },
+  {
+   "instance": 100,
+   "group": "_calibration",
+   "seed": 0,
+   "calibration": true,
+   "g_ambiguous": false,
+   "tick": 4,
+   "axis": "z",
+   "r_m": 0.0930352035669552,
+   "a_m": 0.1507595330476761,
+   "e_m": -1.4779554476263002e-05,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": false,
+   "moved": false
+  },
+  {
+   "instance": 100,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 0,
+   "axis": "x",
+   "r_m": 0.03266181533076148,
+   "a_m": 0.029347509145736694,
+   "e_m": 0.029177555814385414,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 100,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 0,
+   "axis": "y",
+   "r_m": 0.0345422950569565,
+   "a_m": 0.03073640540242195,
+   "e_m": 0.0305031668394804,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 100,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 0,
+   "axis": "z",
+   "r_m": -0.055235804209246966,
+   "a_m": -0.1707766354084015,
+   "e_m": -0.1714184433221817,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 100,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 1,
+   "axis": "x",
+   "r_m": 0.0034842595163760634,
+   "a_m": 0.037971027195453644,
+   "e_m": 0.03874160721898079,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 100,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 1,
+   "axis": "y",
+   "r_m": 0.004039128217476103,
+   "a_m": -0.009757207706570625,
+   "e_m": -0.009381838142871857,
+   "saturated": false,
+   "sign_match": false,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 100,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 1,
+   "axis": "z",
+   "r_m": 0.11618263911293474,
+   "a_m": 0.21664097905158997,
+   "e_m": 0.2171190083026886,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 100,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 2,
+   "axis": "x",
+   "r_m": -0.035257347702604726,
+   "a_m": -0.125283882021904,
+   "e_m": -0.12532423436641693,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": false,
+   "moved": true
+  },
+  {
+   "instance": 100,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 2,
+   "axis": "y",
+   "r_m": 0.01342096636034796,
+   "a_m": 0.018433470278978348,
+   "e_m": 0.014340524561703205,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": false,
+   "moved": true
+  },
+  {
+   "instance": 100,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 2,
+   "axis": "z",
+   "r_m": -0.10093636918975386,
+   "a_m": -0.19204433262348175,
+   "e_m": -0.18485543131828308,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": false,
+   "moved": true
+  },
+  {
+   "instance": 100,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 3,
+   "axis": "x",
+   "r_m": 0.09006688666381221,
+   "a_m": 0.09001453220844269,
+   "e_m": -5.354955646907911e-05,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": false,
+   "moved": false
+  },
+  {
+   "instance": 100,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 3,
+   "axis": "y",
+   "r_m": -0.0009195582013552459,
+   "a_m": -0.013642840087413788,
+   "e_m": -1.8722870663623326e-05,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": false,
+   "moved": false
+  },
+  {
+   "instance": 100,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 3,
+   "axis": "z",
+   "r_m": 0.08391906212852922,
+   "a_m": 0.0462041050195694,
+   "e_m": -3.149111580569297e-05,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": false,
+   "moved": false
+  },
+  {
+   "instance": 100,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 4,
+   "axis": "x",
+   "r_m": 0.09012043622028129,
+   "a_m": 0.14160428941249847,
+   "e_m": -2.3592099751112983e-05,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": false,
+   "moved": false
+  },
+  {
+   "instance": 100,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 4,
+   "axis": "y",
+   "r_m": -0.0009008353306916225,
+   "a_m": -0.0409797839820385,
+   "e_m": -1.0292576916981488e-05,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": false,
+   "moved": false
+  },
+  {
+   "instance": 100,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 4,
+   "axis": "z",
+   "r_m": 0.08395055324433491,
+   "a_m": 0.14721468091011047,
+   "e_m": -1.3046140338701662e-05,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": false,
+   "moved": false
+  },
+  {
+   "instance": 101,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 0,
+   "axis": "x",
+   "r_m": 0.14168225426611497,
+   "a_m": 0.10578550398349762,
+   "e_m": 0.10609161108732224,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 101,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 0,
+   "axis": "y",
+   "r_m": 0.14307064432188574,
+   "a_m": 0.12203681468963623,
+   "e_m": 0.12115095555782318,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 101,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 0,
+   "axis": "z",
+   "r_m": 0.12176660016686931,
+   "a_m": 0.1693226546049118,
+   "e_m": 0.16929678618907928,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 101,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 1,
+   "axis": "x",
+   "r_m": 0.035590643178792736,
+   "a_m": 0.0284209456294775,
+   "e_m": 0.028300177305936813,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 101,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 1,
+   "axis": "y",
+   "r_m": 0.021919688764062556,
+   "a_m": 0.00687742093577981,
+   "e_m": 0.007079051807522774,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 101,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 1,
+   "axis": "z",
+   "r_m": -0.04753018602220997,
+   "a_m": -0.040846891701221466,
+   "e_m": -0.04149448871612549,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 101,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 2,
+   "axis": "x",
+   "r_m": 0.007290465872855922,
+   "a_m": -0.0007054895395413041,
+   "e_m": -0.0005398426437750459,
+   "saturated": false,
+   "sign_match": false,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 101,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 2,
+   "axis": "y",
+   "r_m": 0.014840636956539782,
+   "a_m": 0.016849301755428314,
+   "e_m": 0.016258131712675095,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 101,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 2,
+   "axis": "z",
+   "r_m": -0.006035697306084484,
+   "a_m": -0.0024468873161822557,
+   "e_m": -0.001732590259052813,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 101,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 3,
+   "axis": "x",
+   "r_m": 0.007830308516630968,
+   "a_m": 0.0054343631491065025,
+   "e_m": 0.004894457291811705,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 101,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 3,
+   "axis": "y",
+   "r_m": -0.0014174947561353124,
+   "a_m": 0.0008299071341753006,
+   "e_m": 0.0007059547351673245,
+   "saturated": false,
+   "sign_match": false,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 101,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 3,
+   "axis": "z",
+   "r_m": -0.004303107047031671,
+   "a_m": -0.0002822191163431853,
+   "e_m": -0.0008569507044740021,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 101,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 4,
+   "axis": "x",
+   "r_m": 0.0029358512248192636,
+   "a_m": -0.0002804286195896566,
+   "e_m": -8.70537114678882e-05,
+   "saturated": false,
+   "sign_match": false,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 101,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 4,
+   "axis": "y",
+   "r_m": -0.002123449491302637,
+   "a_m": -0.00032356558949686587,
+   "e_m": -0.0002075618685921654,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 101,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 4,
+   "axis": "z",
+   "r_m": -0.0034461563425576686,
+   "a_m": -0.005754864774644375,
+   "e_m": -0.004800806753337383,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 102,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 0,
+   "axis": "x",
+   "r_m": 0.10278398983396242,
+   "a_m": 0.14332440495491028,
+   "e_m": 0.14356595277786255,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 102,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 0,
+   "axis": "y",
+   "r_m": -0.11654932155870465,
+   "a_m": -0.13514384627342224,
+   "e_m": -0.13504470884799957,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 102,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 0,
+   "axis": "z",
+   "r_m": -0.029312544076342144,
+   "a_m": 0.038350559771060944,
+   "e_m": 0.03929246589541435,
+   "saturated": false,
+   "sign_match": false,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 102,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 1,
+   "axis": "x",
+   "r_m": -0.04078196294390013,
+   "a_m": -0.02405252680182457,
+   "e_m": -0.024761104956269264,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 102,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 1,
+   "axis": "y",
+   "r_m": 0.018495387289294923,
+   "a_m": 0.007540760096162558,
+   "e_m": 0.007263485342264175,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 102,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 1,
+   "axis": "z",
+   "r_m": -0.0686050099717565,
+   "a_m": -0.1821095198392868,
+   "e_m": -0.18146467208862305,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 102,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 2,
+   "axis": "x",
+   "r_m": -0.016020857987630865,
+   "a_m": -0.0032899044454097748,
+   "e_m": -0.0024151562247425318,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 102,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 2,
+   "axis": "y",
+   "r_m": 0.011231901947030748,
+   "a_m": 0.0164231825619936,
+   "e_m": 0.016570186242461205,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 102,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 2,
+   "axis": "z",
+   "r_m": 0.11285966211686654,
+   "a_m": 0.1417849361896515,
+   "e_m": 0.14219556748867035,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 102,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 3,
+   "axis": "x",
+   "r_m": -0.013605701762888334,
+   "a_m": -0.0006689875735901296,
+   "e_m": -0.0008084427681751549,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 102,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 3,
+   "axis": "y",
+   "r_m": -0.005338284295430457,
+   "a_m": -0.0025182138197124004,
+   "e_m": -0.0024363254196941853,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 102,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 3,
+   "axis": "z",
+   "r_m": -0.0293359053718038,
+   "a_m": -0.03170480579137802,
+   "e_m": -0.031149309128522873,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 102,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 4,
+   "axis": "x",
+   "r_m": -0.012797258994713179,
+   "a_m": -0.013129368424415588,
+   "e_m": -0.01320662535727024,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 102,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 4,
+   "axis": "y",
+   "r_m": -0.0029019588757362713,
+   "a_m": 0.00039315776666626334,
+   "e_m": 0.00038984595448710024,
+   "saturated": false,
+   "sign_match": false,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 102,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 4,
+   "axis": "z",
+   "r_m": 0.0018134037567190744,
+   "a_m": 0.006772301159799099,
+   "e_m": 0.0060399724170565605,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 103,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 0,
+   "axis": "x",
+   "r_m": 0.01912417354114867,
+   "a_m": 0.10578550398349762,
+   "e_m": 0.05686340481042862,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": false,
+   "moved": true
+  },
+  {
+   "instance": 103,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 0,
+   "axis": "y",
+   "r_m": 0.22165984239012862,
+   "a_m": 0.12203681468963623,
+   "e_m": 0.08488159626722336,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": false,
+   "moved": true
+  },
+  {
+   "instance": 103,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 0,
+   "axis": "z",
+   "r_m": 0.1399357850623936,
+   "a_m": 0.1693226546049118,
+   "e_m": 0.055025748908519745,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": false,
+   "moved": true
+  },
+  {
+   "instance": 103,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 1,
+   "axis": "x",
+   "r_m": -0.03773923126927995,
+   "a_m": -0.12008978426456451,
+   "e_m": -0.11970312893390656,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 103,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 1,
+   "axis": "y",
+   "r_m": 0.13677824612290526,
+   "a_m": 0.10336576402187347,
+   "e_m": 0.10298565775156021,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 103,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 1,
+   "axis": "z",
+   "r_m": 0.08491003615387385,
+   "a_m": 0.13889682292938232,
+   "e_m": 0.13909965753555298,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 103,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 2,
+   "axis": "x",
+   "r_m": 0.08196389766462661,
+   "a_m": 0.1456991732120514,
+   "e_m": 0.07719017565250397,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": false,
+   "moved": true
+  },
+  {
+   "instance": 103,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 2,
+   "axis": "y",
+   "r_m": 0.03379258837134505,
+   "a_m": 0.04402316361665726,
+   "e_m": 0.041491080075502396,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": false,
+   "moved": true
+  },
+  {
+   "instance": 103,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 2,
+   "axis": "z",
+   "r_m": -0.054189621381679126,
+   "a_m": -0.18439580500125885,
+   "e_m": -0.06437787413597107,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": false,
+   "moved": true
+  },
+  {
+   "instance": 103,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 3,
+   "axis": "x",
+   "r_m": 0.004773722012122637,
+   "a_m": -0.004298130050301552,
+   "e_m": -0.004474756773561239,
+   "saturated": false,
+   "sign_match": false,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 103,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 3,
+   "axis": "y",
+   "r_m": -0.007698491704157345,
+   "a_m": -0.01091753225773573,
+   "e_m": -0.011088601313531399,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 103,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 3,
+   "axis": "z",
+   "r_m": 0.010188252754291943,
+   "a_m": 0.00894000194966793,
+   "e_m": 0.008025296032428741,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 103,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 4,
+   "axis": "x",
+   "r_m": 0.009248478785683877,
+   "a_m": 0.006556467618793249,
+   "e_m": 0.0026765877846628428,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": false,
+   "moved": true
+  },
+  {
+   "instance": 103,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 4,
+   "axis": "y",
+   "r_m": 0.0033901096093740535,
+   "a_m": 0.010102356784045696,
+   "e_m": 0.010021479800343513,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": false,
+   "moved": true
+  },
+  {
+   "instance": 103,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 4,
+   "axis": "z",
+   "r_m": 0.0021629567218632018,
+   "a_m": -0.010095641948282719,
+   "e_m": -0.008642936125397682,
+   "saturated": false,
+   "sign_match": false,
+   "blocking_converged": false,
+   "moved": true
+  },
+  {
+   "instance": 104,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 0,
+   "axis": "x",
+   "r_m": -0.06985446815727177,
+   "a_m": -0.03550703078508377,
+   "e_m": -0.03501978516578674,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 104,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 0,
+   "axis": "y",
+   "r_m": -0.004909617259687889,
+   "a_m": -0.010663214139640331,
+   "e_m": -0.010486180894076824,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 104,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 0,
+   "axis": "z",
+   "r_m": 0.06280922176274671,
+   "a_m": 0.028552893549203873,
+   "e_m": 0.028025420382618904,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 104,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 1,
+   "axis": "x",
+   "r_m": -0.034834682991485025,
+   "a_m": -0.016158420592546463,
+   "e_m": -0.015420162118971348,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 104,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 1,
+   "axis": "y",
+   "r_m": 0.005576563634388935,
+   "a_m": 0.0009975563734769821,
+   "e_m": 0.0008630013326182961,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 104,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 1,
+   "axis": "z",
+   "r_m": 0.03478380138012781,
+   "a_m": 0.015049323439598083,
+   "e_m": 0.01507499348372221,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 104,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 2,
+   "axis": "x",
+   "r_m": -0.019414520872513677,
+   "a_m": -0.010955712758004665,
+   "e_m": -0.01039988361299038,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 104,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 2,
+   "axis": "y",
+   "r_m": 0.004713562301770639,
+   "a_m": -0.00010615366045385599,
+   "e_m": -0.00027888608747161925,
+   "saturated": false,
+   "sign_match": false,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 104,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 2,
+   "axis": "z",
+   "r_m": 0.019708807896405597,
+   "a_m": 0.012722711078822613,
+   "e_m": 0.011934460140764713,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 104,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 3,
+   "axis": "x",
+   "r_m": -0.009014637259523298,
+   "a_m": -0.005470508709549904,
+   "e_m": -0.004927970468997955,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 104,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 3,
+   "axis": "y",
+   "r_m": 0.004992448389242258,
+   "a_m": 0.0018404873553663492,
+   "e_m": 0.0015115165151655674,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 104,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 3,
+   "axis": "z",
+   "r_m": 0.007774347755640884,
+   "a_m": 0.0063369497656822205,
+   "e_m": 0.005982125177979469,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 104,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 4,
+   "axis": "x",
+   "r_m": -0.004086666790525342,
+   "a_m": -0.002747992053627968,
+   "e_m": -0.0023580254055559635,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 104,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 4,
+   "axis": "y",
+   "r_m": 0.003480931874076691,
+   "a_m": 0.003362142015248537,
+   "e_m": 0.00275174411945045,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 104,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 4,
+   "axis": "z",
+   "r_m": 0.0017922225776614148,
+   "a_m": 0.0033414275385439396,
+   "e_m": 0.0028299130499362946,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 105,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 0,
+   "axis": "x",
+   "r_m": 0.24459449123045587,
+   "a_m": 0.14973150193691254,
+   "e_m": 0.14967548847198486,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 105,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 0,
+   "axis": "y",
+   "r_m": -0.11100658844144214,
+   "a_m": -0.0479850098490715,
+   "e_m": -0.04747984930872917,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 105,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 0,
+   "axis": "z",
+   "r_m": 0.018684433847555547,
+   "a_m": 0.15902291238307953,
+   "e_m": 0.15888859331607819,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 105,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 1,
+   "axis": "x",
+   "r_m": 0.09491900275847101,
+   "a_m": 0.0368216410279274,
+   "e_m": 0.03667100891470909,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 105,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 1,
+   "axis": "y",
+   "r_m": -0.06352673913271296,
+   "a_m": -0.0373762845993042,
+   "e_m": -0.03709590435028076,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 105,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 1,
+   "axis": "z",
+   "r_m": -0.14020415946852263,
+   "a_m": -0.20569577813148499,
+   "e_m": -0.20640605688095093,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 105,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 2,
+   "axis": "x",
+   "r_m": 0.05824799384376192,
+   "a_m": 0.019105713814496994,
+   "e_m": 0.019282834604382515,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 105,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 2,
+   "axis": "y",
+   "r_m": -0.026430834782432203,
+   "a_m": -0.009275821968913078,
+   "e_m": -0.009193966165184975,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 105,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 2,
+   "axis": "z",
+   "r_m": 0.0662018974124283,
+   "a_m": 0.039390139281749725,
+   "e_m": 0.03971324488520622,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 105,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 3,
+   "axis": "x",
+   "r_m": 0.038965159239379404,
+   "a_m": 0.03172585740685463,
+   "e_m": 0.03116055391728878,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 105,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 3,
+   "axis": "y",
+   "r_m": -0.017236868617247228,
+   "a_m": -0.0027041626162827015,
+   "e_m": -0.0026120448019355536,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 105,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 3,
+   "axis": "z",
+   "r_m": 0.026488652527222066,
+   "a_m": 0.026605550199747086,
+   "e_m": 0.026723217219114304,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 105,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 4,
+   "axis": "x",
+   "r_m": 0.007804605322090624,
+   "a_m": 0.005359781440347433,
+   "e_m": 0.005302709992974997,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 105,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 4,
+   "axis": "y",
+   "r_m": -0.014624823815311674,
+   "a_m": -0.00823778472840786,
+   "e_m": -0.00742037408053875,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 105,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 4,
+   "axis": "z",
+   "r_m": -0.00023456469189223755,
+   "a_m": 0.00852503813803196,
+   "e_m": 0.008755584247410297,
+   "saturated": false,
+   "sign_match": false,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 106,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 0,
+   "axis": "x",
+   "r_m": -0.011150397839178247,
+   "a_m": -0.01825576089322567,
+   "e_m": -0.01773931086063385,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 106,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 0,
+   "axis": "y",
+   "r_m": -0.24305139311999369,
+   "a_m": -0.09880940616130829,
+   "e_m": -0.09836634248495102,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 106,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 0,
+   "axis": "z",
+   "r_m": 0.0644141429902255,
+   "a_m": 0.15500342845916748,
+   "e_m": 0.15463292598724365,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 106,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 1,
+   "axis": "x",
+   "r_m": 0.006588913021455603,
+   "a_m": -0.12067874521017075,
+   "e_m": -0.12129195034503937,
+   "saturated": true,
+   "sign_match": false,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 106,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 1,
+   "axis": "y",
+   "r_m": -0.14468505063504267,
+   "a_m": -0.13525357842445374,
+   "e_m": -0.13472019135951996,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 106,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 1,
+   "axis": "z",
+   "r_m": -0.09021878299701815,
+   "a_m": -0.19787845015525818,
+   "e_m": -0.19751407206058502,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 106,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 2,
+   "axis": "x",
+   "r_m": 0.12788086336649496,
+   "a_m": 0.01972973346710205,
+   "e_m": 0.020402878522872925,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 106,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 2,
+   "axis": "y",
+   "r_m": -0.009964859275522708,
+   "a_m": -0.008150006644427776,
+   "e_m": -0.008056738413870335,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 106,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 2,
+   "axis": "z",
+   "r_m": 0.10729528906356688,
+   "a_m": 0.16282960772514343,
+   "e_m": 0.16236671805381775,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 106,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 3,
+   "axis": "x",
+   "r_m": 0.10747798484362205,
+   "a_m": 0.10126446187496185,
+   "e_m": 0.10159476101398468,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 106,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 3,
+   "axis": "y",
+   "r_m": -0.0019081208616523737,
+   "a_m": -0.002426915569230914,
+   "e_m": -0.0023030138108879328,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 106,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 3,
+   "axis": "z",
+   "r_m": -0.05507142899025087,
+   "a_m": -0.024930063635110855,
+   "e_m": -0.02403128892183304,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 106,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 4,
+   "axis": "x",
+   "r_m": 0.005883223829637366,
+   "a_m": -0.005534690339118242,
+   "e_m": -0.005408506374806166,
+   "saturated": false,
+   "sign_match": false,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 106,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 4,
+   "axis": "y",
+   "r_m": 0.00039489294923555907,
+   "a_m": 0.009271448478102684,
+   "e_m": 0.008838365785777569,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 106,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": false,
+   "tick": 4,
+   "axis": "z",
+   "r_m": -0.031040140068417835,
+   "a_m": -0.020723413676023483,
+   "e_m": -0.020011918619275093,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 107,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 0,
+   "axis": "x",
+   "r_m": 0.030151801562825195,
+   "a_m": 0.1517367660999298,
+   "e_m": 0.15198159217834473,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 107,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 0,
+   "axis": "y",
+   "r_m": -0.027863466849160273,
+   "a_m": -0.03785569593310356,
+   "e_m": -0.03796772286295891,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 107,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 0,
+   "axis": "z",
+   "r_m": 0.05754164763812755,
+   "a_m": 0.12750239670276642,
+   "e_m": 0.1281030774116516,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": true,
+   "moved": true
+  },
+  {
+   "instance": 107,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 1,
+   "axis": "x",
+   "r_m": -0.12182979061551953,
+   "a_m": -0.1140945553779602,
+   "e_m": -0.11709285527467728,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": false,
+   "moved": true
+  },
+  {
+   "instance": 107,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 1,
+   "axis": "y",
+   "r_m": 0.010104256013798635,
+   "a_m": 0.003721347078680992,
+   "e_m": 0.005360005889087915,
+   "saturated": false,
+   "sign_match": true,
+   "blocking_converged": false,
+   "moved": true
+  },
+  {
+   "instance": 107,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 1,
+   "axis": "z",
+   "r_m": -0.07056142977352406,
+   "a_m": -0.16425183415412903,
+   "e_m": -0.16716662049293518,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": false,
+   "moved": true
+  },
+  {
+   "instance": 107,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 2,
+   "axis": "x",
+   "r_m": -0.004736935340842255,
+   "a_m": 0.08683427423238754,
+   "e_m": -3.9227306842803955e-05,
+   "saturated": true,
+   "sign_match": false,
+   "blocking_converged": false,
+   "moved": false
+  },
+  {
+   "instance": 107,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 2,
+   "axis": "y",
+   "r_m": 0.004744250124710719,
+   "a_m": -0.007483300752937794,
+   "e_m": -5.809494905406609e-05,
+   "saturated": false,
+   "sign_match": false,
+   "blocking_converged": false,
+   "moved": false
+  },
+  {
+   "instance": 107,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 2,
+   "axis": "z",
+   "r_m": 0.09660519071941112,
+   "a_m": 0.15225771069526672,
+   "e_m": -5.1514693041099235e-05,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": false,
+   "moved": false
+  },
+  {
+   "instance": 107,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 3,
+   "axis": "x",
+   "r_m": -0.004697708033999451,
+   "a_m": 0.02252940461039543,
+   "e_m": -1.41465234264615e-05,
+   "saturated": false,
+   "sign_match": false,
+   "blocking_converged": false,
+   "moved": false
+  },
+  {
+   "instance": 107,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 3,
+   "axis": "y",
+   "r_m": 0.0048023450737647855,
+   "a_m": -0.006913469173014164,
+   "e_m": -3.0208340831450187e-05,
+   "saturated": false,
+   "sign_match": false,
+   "blocking_converged": false,
+   "moved": false
+  },
+  {
+   "instance": 107,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 3,
+   "axis": "z",
+   "r_m": 0.09665670541245222,
+   "a_m": 0.17977598309516907,
+   "e_m": -1.2983548913325649e-05,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": false,
+   "moved": false
+  },
+  {
+   "instance": 107,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 4,
+   "axis": "x",
+   "r_m": -0.004683561510572989,
+   "a_m": 0.021794233471155167,
+   "e_m": -5.17405942446203e-06,
+   "saturated": false,
+   "sign_match": false,
+   "blocking_converged": false,
+   "moved": false
+  },
+  {
+   "instance": 107,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 4,
+   "axis": "y",
+   "r_m": 0.004832553414596236,
+   "a_m": -0.006242940668016672,
+   "e_m": -9.144655450654682e-06,
+   "saturated": false,
+   "sign_match": false,
+   "blocking_converged": false,
+   "moved": false
+  },
+  {
+   "instance": 107,
+   "group": "cem_release",
+   "seed": 0,
+   "calibration": false,
+   "g_ambiguous": true,
+   "tick": 4,
+   "axis": "z",
+   "r_m": 0.09666968896136555,
+   "a_m": 0.17786160111427307,
+   "e_m": -4.514247393672122e-06,
+   "saturated": true,
+   "sign_match": true,
+   "blocking_converged": false,
+   "moved": false
+  }
+ ]
+}

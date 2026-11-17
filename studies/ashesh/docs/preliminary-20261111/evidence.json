@@ -1,0 +1,138 @@
+{
+ "population": "1 scene, 1 seed, 1 context, 1 goal direction; 9 simulator resets (2 neutral, +/-1, +/-3, +/-10 mm, +20 mm goal); 7 candidate actions incl. neutral",
+ "features_per_endpoint": 998400,
+ "rows": [
+  {
+   "action": "minus0.01",
+   "commanded_mm": -10,
+   "executed_mm": -1.6544808034370162,
+   "D_mm": 5.113838470292376,
+   "dC_realized": 0.014715052318722457,
+   "dC_pred_commanded": 0.0028229525457028337,
+   "dC_pred_executed": 1.3096654669170205e-05,
+   "feat_resp_realized": 0.06579206936662028,
+   "feat_resp_pred_executed": 0.0010741494442869516,
+   "cos_pred_executed_vs_realized": -0.035824239610328545
+  },
+  {
+   "action": "minus0.003",
+   "commanded_mm": -3,
+   "executed_mm": -0.43313138719973937,
+   "D_mm": 3.889471812917848,
+   "dC_realized": 0.0013295858688591872,
+   "dC_pred_commanded": 1.169583394530771e-05,
+   "dC_pred_executed": 4.894084702417034e-06,
+   "feat_resp_realized": 0.03752942751775591,
+   "feat_resp_pred_executed": 0.00030423230236703976,
+   "cos_pred_executed_vs_realized": -0.05694703907271808
+  },
+  {
+   "action": "minus0.001",
+   "commanded_mm": -1,
+   "executed_mm": -0.1279288319155333,
+   "D_mm": 3.572332783554187,
+   "dC_realized": 0.0016487334371785844,
+   "dC_pred_commanded": 3.2439484822094355e-05,
+   "dC_pred_executed": -2.4762589275473257e-06,
+   "feat_resp_realized": 0.022819591809876614,
+   "feat_resp_pred_executed": 8.750192298494681e-05,
+   "cos_pred_executed_vs_realized": 0.019511710329720898
+  },
+  {
+   "action": "base0",
+   "commanded_mm": 0,
+   "executed_mm": 0.0,
+   "D_mm": 3.460337802270145,
+   "dC_realized": 0.0,
+   "dC_pred_commanded": 0.0,
+   "dC_pred_executed": 0.0,
+   "feat_resp_realized": 0.0,
+   "feat_resp_pred_executed": 0.0,
+   "cos_pred_executed_vs_realized": null
+  },
+  {
+   "action": "plus0.001",
+   "commanded_mm": 1,
+   "executed_mm": 0.08767576908288806,
+   "D_mm": 3.374552816328452,
+   "dC_realized": -0.002021582920246484,
+   "dC_pred_commanded": -5.4230928426629577e-05,
+   "dC_pred_executed": -3.2158544479854445e-06,
+   "feat_resp_realized": 0.03477851150315897,
+   "feat_resp_pred_executed": 9.096872832767096e-05,
+   "cos_pred_executed_vs_realized": 0.07707599335728403
+  },
+  {
+   "action": "plus0.003",
+   "commanded_mm": 3,
+   "executed_mm": 0.35985946210565806,
+   "D_mm": 3.109475892798736,
+   "dC_realized": -0.007025448735281964,
+   "dC_pred_commanded": -0.00015504901522642167,
+   "dC_pred_executed": -1.5366923951321e-05,
+   "feat_resp_realized": 0.046383815767509405,
+   "feat_resp_pred_executed": 0.00041778798849366017,
+   "cos_pred_executed_vs_realized": 0.1289949149942676
+  },
+  {
+   "action": "plus0.01",
+   "commanded_mm": 10,
+   "executed_mm": 1.6209070547439353,
+   "D_mm": 1.840890337413419,
+   "dC_realized": -0.02950468214231415,
+   "dC_pred_commanded": 0.003169849788662721,
+   "dC_pred_executed": -6.412847381903619e-05,
+   "feat_resp_realized": 0.07216281558969259,
+   "feat_resp_pred_executed": 0.0022200107029351638,
+   "cos_pred_executed_vs_realized": 0.16818365416809977
+  }
+ ],
+ "selectors": {
+  "dC_realized": {
+   "picks_commanded_mm": 10,
+   "pairs_ordered_like_D": 20,
+   "pairs_total": 21,
+   "progress_captured": 1.0,
+   "regret_mm": 0.0
+  },
+  "dC_pred_executed": {
+   "picks_commanded_mm": 10,
+   "pairs_ordered_like_D": 20,
+   "pairs_total": 21,
+   "progress_captured": 1.0,
+   "regret_mm": 0.0
+  },
+  "dC_pred_commanded": {
+   "picks_commanded_mm": 3,
+   "pairs_ordered_like_D": 14,
+   "pairs_total": 21,
+   "progress_captured": 0.21665532046292715,
+   "regret_mm": 1.2685855553853171
+  }
+ },
+ "realized_cost_base": 0.09899748136700814,
+ "realized_cost_plus10": 0.069492799224694,
+ "neutral_repeat_dC_realized": -1.4575342143496872e-06,
+ "plus10_cost_gain_executed_input": 0.0021735015991603012,
+ "plus10_feature_gain_executed_input": 0.030763914694762272,
+ "goal_executed_mm": 3.460337802270145,
+ "mean_elapsed_s_per_reset": 39.67116016281458,
+ "sources_sha256": {
+  "realized": {
+   "path": "runs/20261029T230407Z-checkpoint/remote/physical/encoded-observations.npz",
+   "sha256": "385c1356d06684cec16398ed9d739d66075279fffcd69554e7805c4ba26827bb"
+  },
+  "pred_commanded": {
+   "path": "runs/20261029T235530Z-action-contract/remote/replay/requested-endpoints.npz",
+   "sha256": "860bfb8ff46613fce8e28a8f0c8167ad7177ebe0997d12b35e0f7d3c7dab0e1f"
+  },
+  "pred_executed": {
+   "path": "runs/20261029T235530Z-action-contract/remote/replay/achieved_xyz-endpoints.npz",
+   "sha256": "3912341b064a81921e8042ff5b7305e46d677bfccd10950a42f9d213579e2e64"
+  },
+  "trials": {
+   "path": "runs/20261029T230407Z-checkpoint/remote/physical/trials.json",
+   "sha256": "6efa7f5919daa2b7808e6b88ff08ec6f813b13b6f05b825a43fef0798aac0f08"
+  }
+ }
+}

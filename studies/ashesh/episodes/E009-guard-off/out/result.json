@@ -1,0 +1,400 @@
+{
+  "predictions": {
+    "1": {
+      "holds": true,
+      "clauses": {
+        "before_entry_within_1_5cm": {
+          "holds": true,
+          "rows": [
+            {
+              "instance": 100,
+              "tick": 0,
+              "guardoff_cm": 11.630503040534286,
+              "native_cm": 11.630503040534286,
+              "abs_error_cm": 0.0,
+              "tolerance_cm": 1.5,
+              "holds": true
+            },
+            {
+              "instance": 100,
+              "tick": 1,
+              "guardoff_cm": 10.58625404394561,
+              "native_cm": 10.775599550402065,
+              "abs_error_cm": 0.18934550645645504,
+              "tolerance_cm": 1.5,
+              "holds": true
+            },
+            {
+              "instance": 107,
+              "tick": 0,
+              "guardoff_cm": 14.46528887482606,
+              "native_cm": 14.115066150288524,
+              "abs_error_cm": 0.35022272453753556,
+              "tolerance_cm": 1.5,
+              "holds": true
+            }
+          ]
+        }
+      }
+    },
+    "2": {
+      "holds": true,
+      "clauses": {
+        "no_unmoved_tick_on_command_at_least_1cm": {
+          "holds": true,
+          "executed_below_m": 0.001,
+          "command_at_least_m": 0.01,
+          "stalled_count": 0,
+          "native_stalled_counts": {
+            "100": 2,
+            "107": 3
+          },
+          "rows": [
+            {
+              "instance": 100,
+              "tick": 0,
+              "commanded_m": 0.17598483489078035,
+              "executed_m": 0.17653910519071625,
+              "stalled": false,
+              "holds": true
+            },
+            {
+              "instance": 100,
+              "tick": 1,
+              "commanded_m": 0.21944063497461042,
+              "executed_m": 0.21878324195086038,
+              "stalled": false,
+              "holds": true
+            },
+            {
+              "instance": 100,
+              "tick": 2,
+              "commanded_m": 0.21556694348919428,
+              "executed_m": 0.2163146901455831,
+              "stalled": false,
+              "holds": true
+            },
+            {
+              "instance": 100,
+              "tick": 3,
+              "commanded_m": 0.15448493027423926,
+              "executed_m": 0.15468770011313482,
+              "stalled": false,
+              "holds": true
+            },
+            {
+              "instance": 100,
+              "tick": 4,
+              "commanded_m": 0.14317910894500957,
+              "executed_m": 0.14392003848252818,
+              "stalled": false,
+              "holds": true
+            },
+            {
+              "instance": 107,
+              "tick": 0,
+              "commanded_m": 0.20396107363049182,
+              "executed_m": 0.20474520577857405,
+              "stalled": false,
+              "holds": true
+            },
+            {
+              "instance": 107,
+              "tick": 1,
+              "commanded_m": 0.19647765237187068,
+              "executed_m": 0.19665311397654292,
+              "stalled": false,
+              "holds": true
+            },
+            {
+              "instance": 107,
+              "tick": 2,
+              "commanded_m": 0.042083370441878674,
+              "executed_m": 0.041226033372626446,
+              "stalled": false,
+              "holds": true
+            },
+            {
+              "instance": 107,
+              "tick": 3,
+              "commanded_m": 0.04257976428811481,
+              "executed_m": 0.041996930472546296,
+              "stalled": false,
+              "holds": true
+            },
+            {
+              "instance": 107,
+              "tick": 4,
+              "commanded_m": 0.016165330054569865,
+              "executed_m": 0.01580838131923226,
+              "stalled": false,
+              "holds": true
+            }
+          ]
+        },
+        "margin_below_0_15rad_on_both": {
+          "holds": true,
+          "rows": [
+            {
+              "instance": 100,
+              "minimum_margin_rad": 0.13545115068499558,
+              "threshold_rad": 0.15,
+              "holds": true
+            },
+            {
+              "instance": 107,
+              "minimum_margin_rad": 0.12904141599761676,
+              "threshold_rad": 0.15,
+              "holds": true
+            }
+          ]
+        }
+      }
+    },
+    "3": {
+      "holds": true,
+      "clauses": {
+        "both_closer_than_guarded": {
+          "holds": true,
+          "rows": [
+            {
+              "instance": 100,
+              "guardoff_cm": 10.391329931188947,
+              "native_cm": 12.319344250565182,
+              "holds": true
+            },
+            {
+              "instance": 107,
+              "guardoff_cm": 1.5652541370968138,
+              "native_cm": 9.69083635004205,
+              "holds": true
+            }
+          ]
+        },
+        "at_least_one_within_5cm": {
+          "holds": true,
+          "count": 1,
+          "required_minimum": 1,
+          "threshold_cm": 5.0,
+          "rows": [
+            {
+              "instance": 100,
+              "guardoff_cm": 10.391329931188947,
+              "within": false
+            },
+            {
+              "instance": 107,
+              "guardoff_cm": 1.5652541370968138,
+              "within": true
+            }
+          ]
+        },
+        "at_most_one_within_2cm": {
+          "holds": true,
+          "count": 1,
+          "allowed_maximum": 1,
+          "threshold_cm": 2.0,
+          "rows": [
+            {
+              "instance": 100,
+              "guardoff_cm": 10.391329931188947,
+              "within": false
+            },
+            {
+              "instance": 107,
+              "guardoff_cm": 1.5652541370968138,
+              "within": true
+            }
+          ]
+        },
+        "positive_progress_on_at_least_one": {
+          "holds": true,
+          "count": 1,
+          "required_minimum": 1,
+          "rows": [
+            {
+              "instance": 100,
+              "progress": -0.4258856045986579,
+              "positive": false
+            },
+            {
+              "instance": 107,
+              "progress": 0.7785631204087557,
+              "positive": true
+            }
+          ]
+        }
+      }
+    },
+    "4": {
+      "holds": true,
+      "clauses": {
+        "both_farther_than_cap5": {
+          "holds": true,
+          "rows": [
+            {
+              "instance": 100,
+              "guardoff_cm": 10.391329931188947,
+              "cap5_cm": 0.4219801901536315,
+              "holds": true
+            },
+            {
+              "instance": 107,
+              "guardoff_cm": 1.5652541370968138,
+              "cap5_cm": 0.7684033130375163,
+              "holds": true
+            }
+          ]
+        }
+      }
+    }
+  },
+  "finals": [
+    {
+      "instance": 100,
+      "initial_cm": 7.2876322600323755,
+      "guardoff_cm": 10.391329931188947,
+      "native_cm": 12.319344250565182,
+      "cap5_cm": 0.4219801901536315,
+      "progress": -0.4258856045986579,
+      "closer_than_guarded": true,
+      "within_5cm": false,
+      "within_2cm": false,
+      "positive_progress": false,
+      "farther_than_cap": true
+    },
+    {
+      "instance": 107,
+      "initial_cm": 7.0686244314233235,
+      "guardoff_cm": 1.5652541370968138,
+      "native_cm": 9.69083635004205,
+      "cap5_cm": 0.7684033130375163,
+      "progress": 0.7785631204087557,
+      "closer_than_guarded": true,
+      "within_5cm": true,
+      "within_2cm": true,
+      "positive_progress": true,
+      "farther_than_cap": true
+    }
+  ],
+  "trajectory": [
+    {
+      "instance": 100,
+      "tick": -1,
+      "native_cm": 7.2876322600323755,
+      "guardoff_cm": 7.2876322600323755,
+      "cap5_cm": 7.2876322600323755
+    },
+    {
+      "instance": 100,
+      "tick": 0,
+      "native_cm": 11.630503040534286,
+      "guardoff_cm": 11.630503040534286,
+      "cap5_cm": 0.6993908767456403
+    },
+    {
+      "instance": 100,
+      "tick": 1,
+      "native_cm": 10.775599550402065,
+      "guardoff_cm": 10.58625404394561,
+      "cap5_cm": 0.7074515458892857
+    },
+    {
+      "instance": 100,
+      "tick": 2,
+      "native_cm": 12.310685600710558,
+      "guardoff_cm": 11.443589050887567,
+      "cap5_cm": 0.4513250160338046
+    },
+    {
+      "instance": 100,
+      "tick": 3,
+      "native_cm": 12.316736282639573,
+      "guardoff_cm": 4.18182401026834,
+      "cap5_cm": 0.4219801901536315
+    },
+    {
+      "instance": 100,
+      "tick": 4,
+      "native_cm": 12.319344250565182,
+      "guardoff_cm": 10.391329931188947,
+      "cap5_cm": 0.4219801901536315
+    },
+    {
+      "instance": 107,
+      "tick": -1,
+      "native_cm": 7.0686244314233235,
+      "guardoff_cm": 7.0686244314233235,
+      "cap5_cm": 7.0686244314233235
+    },
+    {
+      "instance": 107,
+      "tick": 0,
+      "native_cm": 14.115066150288524,
+      "guardoff_cm": 14.46528887482606,
+      "cap5_cm": 2.3585091067451893
+    },
+    {
+      "instance": 107,
+      "tick": 1,
+      "native_cm": 9.683754095501552,
+      "guardoff_cm": 8.68258506228736,
+      "cap5_cm": 1.2788115241155862
+    },
+    {
+      "instance": 107,
+      "tick": 2,
+      "native_cm": 9.688988430151646,
+      "guardoff_cm": 6.538154008525841,
+      "cap5_cm": 1.2341868975911838
+    },
+    {
+      "instance": 107,
+      "tick": 3,
+      "native_cm": 9.690365362294349,
+      "guardoff_cm": 2.7638943782166034,
+      "cap5_cm": 0.8560014788414523
+    },
+    {
+      "instance": 107,
+      "tick": 4,
+      "native_cm": 9.69083635004205,
+      "guardoff_cm": 1.5652541370968138,
+      "cap5_cm": 0.7684033130375163
+    }
+  ],
+  "interpretation_valid": true,
+  "interpretation_note": "Read predictions 2-4 only after fidelity prediction 1 holds; otherwise investigate wrapper fidelity before interpreting recovery.",
+  "definitions": {
+    "progress": "1 - final_distance_m / initial_distance_m",
+    "before_entry_ticks": {
+      "100": [
+        0,
+        1
+      ],
+      "107": [
+        0
+      ]
+    },
+    "within": "<= (inclusive)",
+    "comparisons": "Raw native and cap finals; episode.md parentheses are rounded descriptions",
+    "minimum_margin": "Minimum over all pre-hold substeps and all post-tick joint states",
+    "tick_minus_one": "Initial distance before any action",
+    "intervention": "Threshold exactly 0.0 rad; negative margins can still trigger the release rule"
+  },
+  "seed": 0,
+  "reach_v0_unit": false,
+  "input_sha256": {
+    "/home/asheshkaji/projects/robojepa-optimrl/runs/E009-guard-off/cem_release_guardoff/inst100-seed0/unit.json": "ec920d5021e95d807e06a75e877cfd804353e5902bcd6730c95b23364b74e912",
+    "/home/asheshkaji/projects/robojepa-optimrl/runs/E002-planner-loop/cem_release/inst100-seed0/unit.json": "e07334b112593eb5f8ad1167330b41bafd45bd62f3b832b6ce0181da737483a7",
+    "/home/asheshkaji/projects/robojepa-optimrl/runs/E002-planner-loop/cem_clampexec/inst100-seed0/unit.json": "185808dad7365e6622a5451a2ae49ddf249bb2fd8af1c71122802bf464237254",
+    "/home/asheshkaji/projects/robojepa-optimrl/runs/E009-guard-off/cem_release_guardoff/inst107-seed0/unit.json": "56ef6abc66721f4798bce449a1096ad7dec93ccb3848429377b2b1224feab866",
+    "/home/asheshkaji/projects/robojepa-optimrl/runs/E002-planner-loop/cem_release/inst107-seed0/unit.json": "cb6673bb8006b1d499bd7b06c2f705971ffab8e4b73c47edd2d2a8c952dd6f3c",
+    "/home/asheshkaji/projects/robojepa-optimrl/runs/E002-planner-loop/cem_clampexec/inst107-seed0/unit.json": "30d4481d4103a3e731e19ae1b12312a0997839ac12d6715ddf4e9b4843de3a3b"
+  },
+  "dataset_kind": "guard-off-intervention",
+  "figure": {
+    "compiled": true,
+    "returncode": 0
+  }
+}

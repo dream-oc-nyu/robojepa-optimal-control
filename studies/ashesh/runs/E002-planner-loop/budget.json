@@ -1,0 +1,27 @@
+{
+  "budget_s": 216.10266383492853,
+  "planning_s": [
+    305.275547377998,
+    216.20136816089507,
+    216.0199346509762,
+    215.6679943059571,
+    216.10266383492853
+  ],
+  "calibration_unit": "runs/_calibration/inst100-seed0/unit.json",
+  "aggregation": "median of five native CEM plan() wall times, CUDA synchronized",
+  "embodiment_id": 2,
+  "horizon_max": 1,
+  "step_bound_m": 0.3,
+  "source_commits": {
+    "robo_jepa": "f93106f5f4a451fd526d51778aa8ab7c852eb824",
+    "robosuite": "5ce6643f3092639d08f7b0f90ed1c6a84f50552c",
+    "robocasa": "456174f62b89b8fca99eaaf33949c29fec9cfc2a",
+    "vjepa2": "204698b45b3712590f06245fbfba32d3be539812"
+  },
+  "weight_sha256": {
+    "predictor": "bdd77b212d81e11438fd6bd85525bed72ff1f47a6b3211ac925ddfbc7c8351a6",
+    "encoder": "7aae1a3c7a31d258af9c985388b5d2f20587469380f2e11b54d7876ac8cfe58a"
+  },
+  "fp32": true,
+  "controller": "release ReachBlockingRoboCasaEnv, in-process"
+}

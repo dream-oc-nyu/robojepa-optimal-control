@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-17",
+  "environment": {
+    "python": "3.13.13",
+    "numpy": "2.3.3",
+    "torch": "2.13.0+cu130",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": ""
+  },
+  "checks": {
+    "copied_file_sha256": "all match source manifest",
+    "reach_scored_units": 24,
+    "reach_ticks_per_unit": 5,
+    "scorer_results_json": "byte-identical to original output",
+    "independent_progress_recomputation": "matches displayed means, medians, improving counts and sub-2cm counts",
+    "sign_flip_census": "population, predictions, secondary, flips and overshoots exactly match saved JSON",
+    "gn_results": "No gn units: no output written.",
+    "adaptive_length_predictions": "B1-B5 and C1-C3 pending"
+  },
+  "passing_test_batches": [
+    {
+      "suite": "bench.test_score + bench.pod.test_{clampexec,cap10,gn_cube_a,gn_cube_b,bisect_a,bisect_b,planner_log}",
+      "tests": 101
+    },
+    {
+      "suite": "episodes/E011-bisect test_*.py",
+      "tests": 11
+    },
+    {
+      "suite": "episodes/E008-frozen-arm/pod test_*.py",
+      "tests": 7
+    },
+    {
+      "suite": "episodes/E009-guard-off/pod test_*.py",
+      "tests": 8
+    }
+  ],
+  "known_failure": {
+    "suite": "planners.test_planners (fail-fast)",
+    "test": "ContractTests.test_all_variants / defect=True,horizon=1,planner=adam-fd",
+    "observed_plan_s": 0.3207960333675146,
+    "required_plan_s_less_than": 0.3,
+    "earlier_test_methods_passed": 2,
+    "status": "failed; no tests weakened or code changed"
+  },
+  "initial_combined_test_attempt": "timed out after 180 seconds without thread limits; not counted as a pass",
+  "not_run": [
+    "GPU/model/simulator experiments",
+    "held-out evaluation",
+    "bench.test_runtime",
+    "bench.pod.test_cem_adapter",
+    "E001-E005 latent-array recomputation",
+    "top-level team runner integration"
+  ],
+  "experimental_code_changed": false
+}

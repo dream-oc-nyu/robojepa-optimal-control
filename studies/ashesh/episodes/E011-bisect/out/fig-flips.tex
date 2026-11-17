@@ -1,0 +1,20 @@
+\documentclass[tikz,border=8pt]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[width=13cm,height=13cm,axis equal image,
+xmin=0,xmax=12,ymin=0,ymax=12,
+xlabel={Remaining offset after tick $t$, logged step (cm)},
+ylabel={Remaining offset after tick $t$, half step (cm)},
+label style={font=\Large},tick label style={font=\large},
+legend style={font=\large,at={(0.03,0.97)},anchor=north west},legend cell align=left,
+grid=major,major grid style={gray!20}]
+\addplot[black,dashed,thick,domain=0:12,samples=2,forget plot] {x};
+\addplot[only marks,blue,mark=*,mark size=3.2pt,fill opacity=0.55,draw opacity=0.9,restrict expr to domain={\thisrow{judged}}{1:1},restrict expr to domain={\thisrow{true_bracket}}{1:1}] table[x=logged_next_abs_r_cm,y=bisected_next_abs_r_cm] {flips.dat};
+\addlegendentry{True bracket}
+\addplot[only marks,red!80!black,mark=x,mark size=5.5pt,line width=1.6pt,restrict expr to domain={\thisrow{judged}}{1:1},restrict expr to domain={\thisrow{true_bracket}}{0:0}] table[x=logged_next_abs_r_cm,y=bisected_next_abs_r_cm] {flips.dat};
+\addlegendentry{False flip}
+\end{axis}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,14 @@
+__pycache__/
+.pytest_cache/
+*.pyc
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.pth
+*.pth.tar
+*.pt
+*.npz
+*.npy
+.venv/
+.env

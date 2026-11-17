@@ -1,0 +1,26 @@
+\documentclass[tikz,border=8pt]{standalone}
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=1.18}
+\begin{document}
+\begin{tikzpicture}
+\begin{groupplot}[group style={group size=1 by 2,vertical sep=3cm},
+width=16cm,height=6.8cm,xlabel={Planning tick (after execution)},ylabel={Distance to goal (cm)},
+xmin=-1,xmax=4,ymin=0,xtick={-1,0,1,2,3,4},xticklabels={Start,0,1,2,3,4},
+label style={font=\Large},tick label style={font=\large},title style={font=\Large},
+legend style={font=\large,at={(0.5,-0.32)},anchor=north,legend columns=3},
+grid=major,major grid style={gray!20}]
+\nextgroupplot[title={Instance 100}]
+\addplot[very thick,black,dashed,mark=square*] coordinates {(-1,7.28763226003) (0,11.6305030405) (1,10.7755995504) (2,12.3106856007) (3,12.3167362826) (4,12.3193442506)};
+\addplot[very thick,blue,mark=*] coordinates {(-1,7.28763226003) (0,11.6305030405) (1,10.5862540439) (2,11.4435890509) (3,4.18182401027) (4,10.3913299312)};
+\addplot[very thick,orange!80!black,dashdotted,mark=triangle*] coordinates {(-1,7.28763226003) (0,0.699390876746) (1,0.707451545889) (2,0.451325016034) (3,0.421980190154) (4,0.421980190154)};
+\nextgroupplot[title={Instance 107}]
+\addplot[very thick,black,dashed,mark=square*] coordinates {(-1,7.06862443142) (0,14.1150661503) (1,9.6837540955) (2,9.68898843015) (3,9.69036536229) (4,9.69083635004)};
+\addlegendentry{Native}
+\addplot[very thick,blue,mark=*] coordinates {(-1,7.06862443142) (0,14.4652888748) (1,8.68258506229) (2,6.53815400853) (3,2.76389437822) (4,1.5652541371)};
+\addlegendentry{Guard off}
+\addplot[very thick,orange!80!black,dashdotted,mark=triangle*] coordinates {(-1,7.06862443142) (0,2.35850910675) (1,1.27881152412) (2,1.23418689759) (3,0.856001478841) (4,0.768403313038)};
+\addlegendentry{5 cm cap}
+\end{groupplot}
+\end{tikzpicture}
+\end{document}

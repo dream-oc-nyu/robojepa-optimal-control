@@ -1,0 +1,54 @@
+{
+  "planner": "cem_release",
+  "remote": "/workspace/robojepa-E001-20261112T003859Z/e008/out/cem_release",
+  "files": [
+    {
+      "path": "inst100-seed0.json",
+      "size": 1327434,
+      "sha256": "4a35d2b27fa5e2f4e1e714c8f520bbab89090af425a9da634b36cab566f24b26"
+    },
+    {
+      "path": "inst101-seed0.json",
+      "size": 176911,
+      "sha256": "0a08d4347bd7c9f42b46784d6af309fed69d7bdf21d2014d8d1c2c9265cbf5e8"
+    },
+    {
+      "path": "inst102-seed0.json",
+      "size": 207415,
+      "sha256": "ada4a9cf49c549f67c246ab4a247d17c54c0a3815158b60cfa0dc0a3cdf5d98d"
+    },
+    {
+      "path": "inst103-seed0.json",
+      "size": 733815,
+      "sha256": "e626aa90a3fb2da96700d7de7543d6f856edafc12e571ad15a307b626b13af0a"
+    },
+    {
+      "path": "inst104-seed0.json",
+      "size": 120687,
+      "sha256": "bfbdd3cf06b2893808119404e6bf98123b31ace526d12a575f12618afe3f99cf"
+    },
+    {
+      "path": "inst105-seed0.json",
+      "size": 195369,
+      "sha256": "ec8d6d58176bf73297c6a7ad879d1d6957e12209c6da56b5d5348b049944e4de"
+    },
+    {
+      "path": "inst106-seed0.json",
+      "size": 227829,
+      "sha256": "d6ded3220f5311221655eaacad4334c52d454b5132f3fa26de473fa7bdc09075"
+    },
+    {
+      "path": "inst107-seed0.json",
+      "size": 1442027,
+      "sha256": "f508f5cdffb0f82f3b3186f23a72e6fd17ea1c7a8aac0feed6e73525fe433cd0"
+    },
+    {
+      "path": "replay.json",
+      "size": 4432987,
+      "sha256": "a4aaf9abc3e250819b8debd23e6a0d2c60de41917d3eb378c46b832eed58a0d3"
+    }
+  ],
+  "verified_files": 9,
+  "copied": 9,
+  "already_verified": 0
+}

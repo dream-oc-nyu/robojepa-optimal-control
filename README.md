@@ -14,6 +14,13 @@ optimizer, and compare how well each one plans and what it costs. This repositor
 four tasks (Reach, ObjectReach, ObstacleReach, ObjectPush) and logs the cost of every planning step (predictor
 rollouts, wall time, peak GPU memory) next to the task's reward.
 
+## Ashesh's study snapshot
+
+On the `ashesh` branch, [studies/ashesh](studies/ashesh/README.md) contains the latent-model diagnostics,
+reach benchmark, experimental planners, exported results, and [progress summary](studies/ashesh/PROGRESS.md)
+through 14 November 2026. It is a separate study, not an integration into the four-task runner below.
+Completed results, pending experiments, reproduction commands, and known test limitations are documented there.
+
 ## Built on
 
 The official code, [facebookresearch/robo_jepa](https://github.com/facebookresearch/robo_jepa): the world model, the

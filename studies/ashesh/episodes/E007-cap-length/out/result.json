@@ -1,0 +1,1152 @@
+{
+  "runs_root": "/home/asheshkaji/projects/robojepa-optimrl/runs/E002-planner-loop",
+  "seed": 0,
+  "expected_instances": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107
+  ],
+  "arms_present": [
+    "cem_release",
+    "cem_cap10",
+    "cem_clampexec"
+  ],
+  "arms": {
+    "cem_release": {
+      "cap_m": null,
+      "units_present": 8,
+      "status": "complete",
+      "present_instances": [
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107
+      ],
+      "missing_instances": [],
+      "mean_progress": 0.5870401756979255,
+      "median_progress": 0.9509411004582318,
+      "positive_progress_instances": 6,
+      "final_within_2cm_instances": 6,
+      "total_unmoved_ticks": 5,
+      "total_non_converged_ticks": 10,
+      "total_at_or_above_cap_ticks": 23,
+      "near_median_final_distance_m": 0.11005090300303616,
+      "near_instances_present": [
+        100,
+        107
+      ],
+      "far_median_final_distance_m": 0.01178924728264953,
+      "far_instances_present": [
+        101,
+        102,
+        103,
+        105,
+        106
+      ],
+      "per_instance": {
+        "100": {
+          "D0_m": 0.07287632260032376,
+          "distance_after_tick_m": [
+            0.11630503040534286,
+            0.10775599550402065,
+            0.12310685600710558,
+            0.12316736282639573,
+            0.12319344250565183
+          ],
+          "final_distance_m": 0.12319344250565183,
+          "min_distance_m": 0.07287632260032376,
+          "progress": -0.690445375259708,
+          "unmoved_ticks": 2,
+          "unmoved_tick_ids": [
+            3,
+            4
+          ],
+          "non_converged_ticks": 3,
+          "non_converged_tick_ids": [
+            2,
+            3,
+            4
+          ],
+          "at_or_above_cap_ticks": 5,
+          "at_or_above_cap_tick_ids": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "101": {
+          "D0_m": 0.23530868143902217,
+          "distance_after_tick_m": [
+            0.06329522200286142,
+            0.01760184759829657,
+            0.009046533027307598,
+            0.005000425911719732,
+            0.003826702580316129
+          ],
+          "final_distance_m": 0.003826702580316129,
+          "min_distance_m": 0.003826702580316129,
+          "progress": 0.9837375206179642,
+          "unmoved_ticks": 0,
+          "unmoved_tick_ids": [],
+          "non_converged_ticks": 0,
+          "non_converged_tick_ids": [],
+          "at_or_above_cap_ticks": 1,
+          "at_or_above_cap_tick_ids": [
+            0
+          ]
+        },
+        "102": {
+          "D0_m": 0.15813765451273054,
+          "distance_after_tick_m": [
+            0.08192615436039945,
+            0.11454312014528642,
+            0.03277510972553222,
+            0.013246873158836065,
+            0.005372842660917035
+          ],
+          "final_distance_m": 0.005372842660917035,
+          "min_distance_m": 0.005372842660917035,
+          "progress": 0.9660242674176978,
+          "unmoved_ticks": 0,
+          "unmoved_tick_ids": [],
+          "non_converged_ticks": 0,
+          "non_converged_tick_ids": [],
+          "at_or_above_cap_ticks": 3,
+          "at_or_above_cap_tick_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        "103": {
+          "D0_m": 0.2628323480650084,
+          "distance_after_tick_m": [
+            0.16535492966583845,
+            0.10390637461975026,
+            0.013632890521639887,
+            0.010084918657454412,
+            0.014280480890628907
+          ],
+          "final_distance_m": 0.014280480890628907,
+          "min_distance_m": 0.010084918657454412,
+          "progress": 0.9456669584403788,
+          "unmoved_ticks": 0,
+          "unmoved_tick_ids": [],
+          "non_converged_ticks": 3,
+          "non_converged_tick_ids": [
+            0,
+            2,
+            4
+          ],
+          "at_or_above_cap_ticks": 3,
+          "at_or_above_cap_tick_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        "104": {
+          "D0_m": 0.0940677914895272,
+          "distance_after_tick_m": [
+            0.04954256799462873,
+            0.028063827272006837,
+            0.012908474235392634,
+            0.005659487096377764,
+            0.002143995647374461
+          ],
+          "final_distance_m": 0.002143995647374461,
+          "min_distance_m": 0.002143995647374461,
+          "progress": 0.9772079729583834,
+          "unmoved_ticks": 0,
+          "unmoved_tick_ids": [],
+          "non_converged_ticks": 0,
+          "non_converged_tick_ids": [],
+          "at_or_above_cap_ticks": 0,
+          "at_or_above_cap_tick_ids": []
+        },
+        "105": {
+          "D0_m": 0.26925459793194517,
+          "distance_after_tick_m": [
+            0.18083823970197993,
+            0.09205492201387294,
+            0.050170128043957665,
+            0.0165786722864727,
+            0.01178924728264953
+          ],
+          "final_distance_m": 0.01178924728264953,
+          "min_distance_m": 0.01178924728264953,
+          "progress": 0.9562152424760847,
+          "unmoved_ticks": 0,
+          "unmoved_tick_ids": [],
+          "non_converged_ticks": 0,
+          "non_converged_tick_ids": [],
+          "at_or_above_cap_ticks": 2,
+          "at_or_above_cap_tick_ids": [
+            0,
+            1
+          ]
+        },
+        "106": {
+          "D0_m": 0.2516892777889359,
+          "distance_after_tick_m": [
+            0.17063588842469032,
+            0.16722766553686857,
+            0.12078087860238285,
+            0.03159522734874464,
+            0.01790019924291773
+          ],
+          "final_distance_m": 0.01790019924291773,
+          "min_distance_m": 0.01790019924291773,
+          "progress": 0.9288797703256606,
+          "unmoved_ticks": 0,
+          "unmoved_tick_ids": [],
+          "non_converged_ticks": 0,
+          "non_converged_tick_ids": [],
+          "at_or_above_cap_ticks": 4,
+          "at_or_above_cap_tick_ids": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "107": {
+          "D0_m": 0.07068624431423323,
+          "distance_after_tick_m": [
+            0.14115066150288524,
+            0.09683754095501551,
+            0.09688988430151646,
+            0.0969036536229435,
+            0.0969083635004205
+          ],
+          "final_distance_m": 0.0969083635004205,
+          "min_distance_m": 0.07068624431423323,
+          "progress": -0.37096495139305663,
+          "unmoved_ticks": 3,
+          "unmoved_tick_ids": [
+            2,
+            3,
+            4
+          ],
+          "non_converged_ticks": 4,
+          "non_converged_tick_ids": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "at_or_above_cap_ticks": 5,
+          "at_or_above_cap_tick_ids": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        }
+      },
+      "paired_vs_cem_release": null,
+      "tick0": null,
+      "decision": null
+    },
+    "cem_cap10": {
+      "cap_m": 0.1,
+      "units_present": 8,
+      "status": "complete",
+      "present_instances": [
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107
+      ],
+      "missing_instances": [],
+      "mean_progress": 0.8411283020680226,
+      "median_progress": 0.9570353230055847,
+      "positive_progress_instances": 8,
+      "final_within_2cm_instances": 7,
+      "total_unmoved_ticks": 0,
+      "total_non_converged_ticks": 3,
+      "total_at_or_above_cap_ticks": 16,
+      "near_median_final_distance_m": 0.0370888899085862,
+      "near_instances_present": [
+        100,
+        107
+      ],
+      "far_median_final_distance_m": 0.008447324392367714,
+      "far_instances_present": [
+        101,
+        102,
+        103,
+        105,
+        106
+      ],
+      "per_instance": {
+        "100": {
+          "D0_m": 0.07287632260032376,
+          "distance_after_tick_m": [
+            0.04598651243671314,
+            0.02638877207659718,
+            0.023202894209256537,
+            0.017641206363251782,
+            0.01539840188262858
+          ],
+          "final_distance_m": 0.01539840188262858,
+          "min_distance_m": 0.01539840188262858,
+          "progress": 0.7887050096218745,
+          "unmoved_ticks": 0,
+          "unmoved_tick_ids": [],
+          "non_converged_ticks": 0,
+          "non_converged_tick_ids": [],
+          "at_or_above_cap_ticks": 1,
+          "at_or_above_cap_tick_ids": [
+            0
+          ]
+        },
+        "101": {
+          "D0_m": 0.23530868143902217,
+          "distance_after_tick_m": [
+            0.06361859674128954,
+            0.03342546664665908,
+            0.01681726938830114,
+            0.006417519525958576,
+            0.004574690077861838
+          ],
+          "final_distance_m": 0.004574690077861838,
+          "min_distance_m": 0.004574690077861838,
+          "progress": 0.9805587705056801,
+          "unmoved_ticks": 0,
+          "unmoved_tick_ids": [],
+          "non_converged_ticks": 0,
+          "non_converged_tick_ids": [],
+          "at_or_above_cap_ticks": 1,
+          "at_or_above_cap_tick_ids": [
+            0
+          ]
+        },
+        "102": {
+          "D0_m": 0.15813765451273054,
+          "distance_after_tick_m": [
+            0.07042845669820917,
+            0.037059187277887366,
+            0.015063467266408921,
+            0.004078887002571747,
+            0.004091546800540087
+          ],
+          "final_distance_m": 0.004091546800540087,
+          "min_distance_m": 0.004078887002571747,
+          "progress": 0.9741266758183093,
+          "unmoved_ticks": 0,
+          "unmoved_tick_ids": [],
+          "non_converged_ticks": 0,
+          "non_converged_tick_ids": [],
+          "at_or_above_cap_ticks": 2,
+          "at_or_above_cap_tick_ids": [
+            0,
+            1
+          ]
+        },
+        "103": {
+          "D0_m": 0.2628323480650084,
+          "distance_after_tick_m": [
+            0.16440302777550522,
+            0.13963516852567598,
+            0.0851125936185932,
+            0.018675065196124222,
+            0.0137637000549747
+          ],
+          "final_distance_m": 0.0137637000549747,
+          "min_distance_m": 0.0137637000549747,
+          "progress": 0.947633157956758,
+          "unmoved_ticks": 0,
+          "unmoved_tick_ids": [],
+          "non_converged_ticks": 3,
+          "non_converged_tick_ids": [
+            0,
+            1,
+            3
+          ],
+          "at_or_above_cap_ticks": 4,
+          "at_or_above_cap_tick_ids": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "104": {
+          "D0_m": 0.0940677914895272,
+          "distance_after_tick_m": [
+            0.049507700885666965,
+            0.02803032493668307,
+            0.012945436599644825,
+            0.005643151413839975,
+            0.0021775571718133345
+          ],
+          "final_distance_m": 0.0021775571718133345,
+          "min_distance_m": 0.0021775571718133345,
+          "progress": 0.9768511927692513,
+          "unmoved_ticks": 0,
+          "unmoved_tick_ids": [],
+          "non_converged_ticks": 0,
+          "non_converged_tick_ids": [],
+          "at_or_above_cap_ticks": 0,
+          "at_or_above_cap_tick_ids": []
+        },
+        "105": {
+          "D0_m": 0.26925459793194517,
+          "distance_after_tick_m": [
+            0.1779983880617866,
+            0.08588163517535694,
+            0.045743148505044816,
+            0.023884826362934156,
+            0.01985284250962446
+          ],
+          "final_distance_m": 0.01985284250962446,
+          "min_distance_m": 0.01985284250962446,
+          "progress": 0.9262673965009046,
+          "unmoved_ticks": 0,
+          "unmoved_tick_ids": [],
+          "non_converged_ticks": 0,
+          "non_converged_tick_ids": [],
+          "at_or_above_cap_ticks": 2,
+          "at_or_above_cap_tick_ids": [
+            0,
+            1
+          ]
+        },
+        "106": {
+          "D0_m": 0.2516892777889359,
+          "distance_after_tick_m": [
+            0.14891438765090415,
+            0.06821625040041206,
+            0.04149085534833983,
+            0.018878923898333295,
+            0.008447324392367714
+          ],
+          "final_distance_m": 0.008447324392367714,
+          "min_distance_m": 0.008447324392367714,
+          "progress": 0.9664374880544114,
+          "unmoved_ticks": 0,
+          "unmoved_tick_ids": [],
+          "non_converged_ticks": 0,
+          "non_converged_tick_ids": [],
+          "at_or_above_cap_ticks": 2,
+          "at_or_above_cap_tick_ids": [
+            0,
+            1
+          ]
+        },
+        "107": {
+          "D0_m": 0.07068624431423323,
+          "distance_after_tick_m": [
+            0.0815708937113893,
+            0.06658810334447234,
+            0.07441131550612042,
+            0.043708177600687854,
+            0.05877937793454382
+          ],
+          "final_distance_m": 0.05877937793454382,
+          "min_distance_m": 0.043708177600687854,
+          "progress": 0.16844672531699179,
+          "unmoved_ticks": 0,
+          "unmoved_tick_ids": [],
+          "non_converged_ticks": 0,
+          "non_converged_tick_ids": [],
+          "at_or_above_cap_ticks": 4,
+          "at_or_above_cap_tick_ids": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      },
+      "paired_vs_cem_release": {
+        "paired_instances": 8,
+        "instances": [
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107
+        ],
+        "per_instance": {
+          "100": {
+            "delta_progress": 1.4791503848815823,
+            "delta_final_distance_cm": -10.779504062302326
+          },
+          "101": {
+            "delta_progress": -0.003178750112284079,
+            "delta_final_distance_cm": 0.07479874975457089
+          },
+          "102": {
+            "delta_progress": 0.008102408400611494,
+            "delta_final_distance_cm": -0.12812958603769475
+          },
+          "103": {
+            "delta_progress": 0.001966199516379108,
+            "delta_final_distance_cm": -0.051678083565420696
+          },
+          "104": {
+            "delta_progress": -0.00035678018913209986,
+            "delta_final_distance_cm": 0.00335615244388735
+          },
+          "105": {
+            "delta_progress": -0.029947845975180076,
+            "delta_final_distance_cm": 0.806359522697493
+          },
+          "106": {
+            "delta_progress": 0.03755771772875083,
+            "delta_final_distance_cm": -0.9452874850550016
+          },
+          "107": {
+            "delta_progress": 0.5394116767100484,
+            "delta_final_distance_cm": -3.8128985565876676
+          }
+        },
+        "mean_delta_progress": 0.254088126370097,
+        "mean_delta_progress_ci95": [
+          -0.002189521226308541,
+          0.6261614230678368
+        ],
+        "bootstrap_draws": 10000,
+        "bootstrap_seed": 20261113,
+        "closer_instances": 4,
+        "farther_instances": 1,
+        "within_1mm_instances": 3,
+        "closer_by_at_least_5cm_instances": 1,
+        "final_within_1cm_of_baseline_instances": 6
+      },
+      "tick0": {
+        "unique_g": {
+          "100": {
+            "goal_status": "unique",
+            "ambiguous": false,
+            "arm_present": true,
+            "clipped_baseline_command_m": [
+              0.029347509145736694,
+              0.03073640540242195,
+              -0.1
+            ],
+            "predicted_distance_m": 0.04504778181379699,
+            "realized_distance_m": 0.04598651243671314,
+            "absolute_prediction_error_cm": 0.0938730622916148,
+            "within_1cm": true,
+            "max_command_deviation_mm": 0.003470107913017273
+          },
+          "101": {
+            "goal_status": "unique",
+            "ambiguous": false,
+            "arm_present": true,
+            "clipped_baseline_command_m": [
+              0.1,
+              0.1,
+              0.1
+            ],
+            "predicted_distance_m": 0.06376735533038673,
+            "realized_distance_m": 0.06361859674128954,
+            "absolute_prediction_error_cm": 0.014875858909718653,
+            "within_1cm": true,
+            "max_command_deviation_mm": 1.4901161138336505e-06
+          },
+          "102": {
+            "goal_status": "unique",
+            "ambiguous": false,
+            "arm_present": true,
+            "clipped_baseline_command_m": [
+              0.1,
+              -0.1,
+              0.038350559771060944
+            ],
+            "predicted_distance_m": 0.06971317139331325,
+            "realized_distance_m": 0.07042845669820917,
+            "absolute_prediction_error_cm": 0.0715285304895924,
+            "within_1cm": true,
+            "max_command_deviation_mm": 0.0021904706954956055
+          },
+          "103": {
+            "goal_status": "unique",
+            "ambiguous": false,
+            "arm_present": true,
+            "clipped_baseline_command_m": [
+              0.1,
+              0.1,
+              0.1
+            ],
+            "predicted_distance_m": 0.1514492769356885,
+            "realized_distance_m": 0.16440302777550522,
+            "absolute_prediction_error_cm": 1.2953750839816731,
+            "within_1cm": false,
+            "max_command_deviation_mm": 1.4901161138336505e-06
+          },
+          "105": {
+            "goal_status": "unique",
+            "ambiguous": false,
+            "arm_present": true,
+            "clipped_baseline_command_m": [
+              0.1,
+              -0.0479850098490715,
+              0.1
+            ],
+            "predicted_distance_m": 0.17745846714417798,
+            "realized_distance_m": 0.1779983880617866,
+            "absolute_prediction_error_cm": 0.053992091760862726,
+            "within_1cm": true,
+            "max_command_deviation_mm": 0.01582503318786621
+          },
+          "106": {
+            "goal_status": "unique",
+            "ambiguous": false,
+            "arm_present": true,
+            "clipped_baseline_command_m": [
+              -0.01825576089322567,
+              -0.09880940616130829,
+              0.1
+            ],
+            "predicted_distance_m": 0.1487366471487088,
+            "realized_distance_m": 0.14891438765090415,
+            "absolute_prediction_error_cm": 0.017774050219535042,
+            "within_1cm": true,
+            "max_command_deviation_mm": 0.26929378509521484
+          }
+        },
+        "ambiguous_g": {
+          "104": {
+            "goal_status": "ambiguous",
+            "ambiguous": true,
+            "arm_present": true,
+            "clipped_baseline_command_m": [
+              -0.03550703078508377,
+              -0.010663214139640331,
+              0.028552893549203873
+            ],
+            "predicted_distance_m": null,
+            "realized_distance_m": 0.049507700885666965,
+            "absolute_prediction_error_cm": null,
+            "within_1cm": null,
+            "max_command_deviation_mm": 0.08211657404899597,
+            "exclusion_reason": "Mirror-ambiguous goal; excluded from prediction agreement."
+          },
+          "107": {
+            "goal_status": "ambiguous",
+            "ambiguous": true,
+            "arm_present": true,
+            "clipped_baseline_command_m": [
+              0.1,
+              -0.03785569593310356,
+              0.1
+            ],
+            "predicted_distance_m": null,
+            "realized_distance_m": 0.0815708937113893,
+            "absolute_prediction_error_cm": null,
+            "within_1cm": null,
+            "max_command_deviation_mm": 0.01664087176322937,
+            "exclusion_reason": "Mirror-ambiguous goal; excluded from prediction agreement."
+          }
+        },
+        "ambiguous_instances": [
+          104,
+          107
+        ],
+        "unique_instances_compared": 6,
+        "within_1cm_instances": 5
+      },
+      "decision": true
+    },
+    "cem_clampexec": {
+      "cap_m": 0.05,
+      "units_present": 8,
+      "status": "complete",
+      "present_instances": [
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107
+      ],
+      "missing_instances": [],
+      "mean_progress": 0.8882358709315892,
+      "median_progress": 0.9166950959479483,
+      "positive_progress_instances": 8,
+      "final_within_2cm_instances": 5,
+      "total_unmoved_ticks": 0,
+      "total_non_converged_ticks": 3,
+      "total_at_or_above_cap_ticks": 20,
+      "near_median_final_distance_m": 0.005951917515955739,
+      "near_instances_present": [
+        100,
+        107
+      ],
+      "far_median_final_distance_m": 0.04693868866949628,
+      "far_instances_present": [
+        101,
+        102,
+        103,
+        105,
+        106
+      ],
+      "per_instance": {
+        "100": {
+          "D0_m": 0.07287632260032376,
+          "distance_after_tick_m": [
+            0.006993908767456403,
+            0.007074515458892857,
+            0.004513250160338046,
+            0.004219801901536315,
+            0.004219801901536315
+          ],
+          "final_distance_m": 0.004219801901536315,
+          "min_distance_m": 0.004219801901536315,
+          "progress": 0.9420963935751944,
+          "unmoved_ticks": 0,
+          "unmoved_tick_ids": [],
+          "non_converged_ticks": 0,
+          "non_converged_tick_ids": [],
+          "at_or_above_cap_ticks": 1,
+          "at_or_above_cap_tick_ids": [
+            0
+          ]
+        },
+        "101": {
+          "D0_m": 0.23530868143902217,
+          "distance_after_tick_m": [
+            0.14956668271427534,
+            0.06420025662461896,
+            0.023531105108371506,
+            0.012928769796068365,
+            0.006699536962277732
+          ],
+          "final_distance_m": 0.006699536962277732,
+          "min_distance_m": 0.006699536962277732,
+          "progress": 0.9715287301713352,
+          "unmoved_ticks": 0,
+          "unmoved_tick_ids": [],
+          "non_converged_ticks": 0,
+          "non_converged_tick_ids": [],
+          "at_or_above_cap_ticks": 2,
+          "at_or_above_cap_tick_ids": [
+            0,
+            1
+          ]
+        },
+        "102": {
+          "D0_m": 0.15813765451273054,
+          "distance_after_tick_m": [
+            0.10929246670664061,
+            0.04192467512307898,
+            0.026588914285149742,
+            0.006352247068696827,
+            0.00319313054899064
+          ],
+          "final_distance_m": 0.00319313054899064,
+          "min_distance_m": 0.00319313054899064,
+          "progress": 0.9798079049621063,
+          "unmoved_ticks": 0,
+          "unmoved_tick_ids": [],
+          "non_converged_ticks": 0,
+          "non_converged_tick_ids": [],
+          "at_or_above_cap_ticks": 2,
+          "at_or_above_cap_tick_ids": [
+            0,
+            1
+          ]
+        },
+        "103": {
+          "D0_m": 0.2628323480650084,
+          "distance_after_tick_m": [
+            0.1961394928538048,
+            0.17788058741045343,
+            0.13596148034079458,
+            0.10154658199701713,
+            0.07126529931522475
+          ],
+          "final_distance_m": 0.07126529931522475,
+          "min_distance_m": 0.07126529931522475,
+          "progress": 0.7288564370410062,
+          "unmoved_ticks": 0,
+          "unmoved_tick_ids": [],
+          "non_converged_ticks": 3,
+          "non_converged_tick_ids": [
+            2,
+            3,
+            4
+          ],
+          "at_or_above_cap_ticks": 5,
+          "at_or_above_cap_tick_ids": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "104": {
+          "D0_m": 0.0940677914895272,
+          "distance_after_tick_m": [
+            0.04950534868246068,
+            0.027963837667975083,
+            0.013697356729372468,
+            0.005597468342383183,
+            0.003048755029434495
+          ],
+          "final_distance_m": 0.003048755029434495,
+          "min_distance_m": 0.003048755029434495,
+          "progress": 0.9675898096345344,
+          "unmoved_ticks": 0,
+          "unmoved_tick_ids": [],
+          "non_converged_ticks": 0,
+          "non_converged_tick_ids": [],
+          "at_or_above_cap_ticks": 0,
+          "at_or_above_cap_tick_ids": []
+        },
+        "105": {
+          "D0_m": 0.26925459793194517,
+          "distance_after_tick_m": [
+            0.20684185081250708,
+            0.2009806025957316,
+            0.16717780675532634,
+            0.09015287559649313,
+            0.04693868866949628
+          ],
+          "final_distance_m": 0.04693868866949628,
+          "min_distance_m": 0.04693868866949628,
+          "progress": 0.8256717284309472,
+          "unmoved_ticks": 0,
+          "unmoved_tick_ids": [],
+          "non_converged_ticks": 0,
+          "non_converged_tick_ids": [],
+          "at_or_above_cap_ticks": 5,
+          "at_or_above_cap_tick_ids": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "106": {
+          "D0_m": 0.2516892777889359,
+          "distance_after_tick_m": [
+            0.19377395620014018,
+            0.1464212126478243,
+            0.11071750331439803,
+            0.06310530375279554,
+            0.05057893227742095
+          ],
+          "final_distance_m": 0.05057893227742095,
+          "min_distance_m": 0.05057893227742095,
+          "progress": 0.7990421653168875,
+          "unmoved_ticks": 0,
+          "unmoved_tick_ids": [],
+          "non_converged_ticks": 0,
+          "non_converged_tick_ids": [],
+          "at_or_above_cap_ticks": 4,
+          "at_or_above_cap_tick_ids": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "107": {
+          "D0_m": 0.07068624431423323,
+          "distance_after_tick_m": [
+            0.023585091067451894,
+            0.012788115241155862,
+            0.012341868975911838,
+            0.008560014788414522,
+            0.007684033130375163
+          ],
+          "final_distance_m": 0.007684033130375163,
+          "min_distance_m": 0.007684033130375163,
+          "progress": 0.8912937983207021,
+          "unmoved_ticks": 0,
+          "unmoved_tick_ids": [],
+          "non_converged_ticks": 0,
+          "non_converged_tick_ids": [],
+          "at_or_above_cap_ticks": 1,
+          "at_or_above_cap_tick_ids": [
+            0
+          ]
+        }
+      },
+      "paired_vs_cem_release": {
+        "paired_instances": 8,
+        "instances": [
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107
+        ],
+        "per_instance": {
+          "100": {
+            "delta_progress": 1.6325417688349022,
+            "delta_final_distance_cm": -11.897364060411551
+          },
+          "101": {
+            "delta_progress": -0.012208790446628925,
+            "delta_final_distance_cm": 0.2872834381961603
+          },
+          "102": {
+            "delta_progress": 0.013783637544408589,
+            "delta_final_distance_cm": -0.21797121119263946
+          },
+          "103": {
+            "delta_progress": -0.21681052139937262,
+            "delta_final_distance_cm": 5.698481842459584
+          },
+          "104": {
+            "delta_progress": -0.009618163323848905,
+            "delta_final_distance_cm": 0.0904759382060034
+          },
+          "105": {
+            "delta_progress": -0.13054351404513753,
+            "delta_final_distance_cm": 3.5149441386846747
+          },
+          "106": {
+            "delta_progress": -0.12983760500877306,
+            "delta_final_distance_cm": 3.267873303450322
+          },
+          "107": {
+            "delta_progress": 1.2622587497137587,
+            "delta_final_distance_cm": -8.922433037004533
+          }
+        },
+        "mean_delta_progress": 0.3011956952336636,
+        "mean_delta_progress_ci95": [
+          -0.1029984803032395,
+          0.7809088426505957
+        ],
+        "bootstrap_draws": 10000,
+        "bootstrap_seed": 20261113,
+        "closer_instances": 3,
+        "farther_instances": 4,
+        "within_1mm_instances": 1,
+        "closer_by_at_least_5cm_instances": 2,
+        "final_within_1cm_of_baseline_instances": 3
+      },
+      "tick0": {
+        "unique_g": {
+          "100": {
+            "goal_status": "unique",
+            "ambiguous": false,
+            "arm_present": true,
+            "clipped_baseline_command_m": [
+              0.029347509145736694,
+              0.03073640540242195,
+              -0.05
+            ],
+            "predicted_distance_m": 0.00727207448175243,
+            "realized_distance_m": 0.006993908767456403,
+            "absolute_prediction_error_cm": 0.02781657142960272,
+            "within_1cm": true,
+            "max_command_deviation_mm": 0.001516193151473999
+          },
+          "101": {
+            "goal_status": "unique",
+            "ambiguous": false,
+            "arm_present": true,
+            "clipped_baseline_command_m": [
+              0.05,
+              0.05,
+              0.05
+            ],
+            "predicted_distance_m": 0.1490577924206541,
+            "realized_distance_m": 0.14956668271427534,
+            "absolute_prediction_error_cm": 0.05088902936212503,
+            "within_1cm": true,
+            "max_command_deviation_mm": 7.450580569168253e-07
+          },
+          "102": {
+            "goal_status": "unique",
+            "ambiguous": false,
+            "arm_present": true,
+            "clipped_baseline_command_m": [
+              0.05,
+              -0.05,
+              0.038350559771060944
+            ],
+            "predicted_distance_m": 0.10859676516812172,
+            "realized_distance_m": 0.10929246670664061,
+            "absolute_prediction_error_cm": 0.06957015385188892,
+            "within_1cm": true,
+            "max_command_deviation_mm": 0.008925795555114746
+          },
+          "103": {
+            "goal_status": "unique",
+            "ambiguous": false,
+            "arm_present": true,
+            "clipped_baseline_command_m": [
+              0.05,
+              0.05,
+              0.05
+            ],
+            "predicted_distance_m": 0.19623675390637188,
+            "realized_distance_m": 0.1961394928538048,
+            "absolute_prediction_error_cm": 0.009726105256707696,
+            "within_1cm": true,
+            "max_command_deviation_mm": 7.450580569168253e-07
+          },
+          "105": {
+            "goal_status": "unique",
+            "ambiguous": false,
+            "arm_present": true,
+            "clipped_baseline_command_m": [
+              0.05,
+              -0.0479850098490715,
+              0.05
+            ],
+            "predicted_distance_m": 0.2069284902302301,
+            "realized_distance_m": 0.20684185081250708,
+            "absolute_prediction_error_cm": 0.00866394177230223,
+            "within_1cm": true,
+            "max_command_deviation_mm": 0.026848167181015015
+          },
+          "106": {
+            "goal_status": "unique",
+            "ambiguous": false,
+            "arm_present": true,
+            "clipped_baseline_command_m": [
+              -0.01825576089322567,
+              -0.05,
+              0.05
+            ],
+            "predicted_distance_m": 0.19371911131285635,
+            "realized_distance_m": 0.19377395620014018,
+            "absolute_prediction_error_cm": 0.005484488728382808,
+            "within_1cm": true,
+            "max_command_deviation_mm": 0.01519918441772461
+          }
+        },
+        "ambiguous_g": {
+          "104": {
+            "goal_status": "ambiguous",
+            "ambiguous": true,
+            "arm_present": true,
+            "clipped_baseline_command_m": [
+              -0.03550703078508377,
+              -0.010663214139640331,
+              0.028552893549203873
+            ],
+            "predicted_distance_m": null,
+            "realized_distance_m": 0.04950534868246068,
+            "absolute_prediction_error_cm": null,
+            "within_1cm": null,
+            "max_command_deviation_mm": 0.08413568139076233,
+            "exclusion_reason": "Mirror-ambiguous goal; excluded from prediction agreement."
+          },
+          "107": {
+            "goal_status": "ambiguous",
+            "ambiguous": true,
+            "arm_present": true,
+            "clipped_baseline_command_m": [
+              0.05,
+              -0.03785569593310356,
+              0.05
+            ],
+            "predicted_distance_m": null,
+            "realized_distance_m": 0.023585091067451894,
+            "absolute_prediction_error_cm": null,
+            "within_1cm": null,
+            "max_command_deviation_mm": 0.032257288694381714,
+            "exclusion_reason": "Mirror-ambiguous goal; excluded from prediction agreement."
+          }
+        },
+        "ambiguous_instances": [
+          104,
+          107
+        ],
+        "unique_instances_compared": 6,
+        "within_1cm_instances": 6
+      },
+      "decision": false
+    }
+  },
+  "input_sha256": {
+    "/home/asheshkaji/projects/robojepa-optimrl/episodes/E006-action-interface/out/prior.json": "ae316b7de44896623135f9d60ae0850ee7ac372021b402afa605ae9ec0ed6e9e",
+    "/home/asheshkaji/projects/robojepa-optimrl/runs/E002-planner-loop/cem_release/inst100-seed0/unit.json": "e07334b112593eb5f8ad1167330b41bafd45bd62f3b832b6ce0181da737483a7",
+    "/home/asheshkaji/projects/robojepa-optimrl/runs/E002-planner-loop/cem_release/inst101-seed0/unit.json": "4925cea2f9f448a99af3f673172065d9af10d72aeb84d28634e5c46e108d7ac1",
+    "/home/asheshkaji/projects/robojepa-optimrl/runs/E002-planner-loop/cem_release/inst102-seed0/unit.json": "9069b5fbe935bd6c81f953205412ff29b6560fabba337b311d607b7186e1cc40",
+    "/home/asheshkaji/projects/robojepa-optimrl/runs/E002-planner-loop/cem_release/inst103-seed0/unit.json": "f16a157b9dcdc2bd55d7f7034cdd8d0bc00102138cd2a3e1757bdc167b10207b",
+    "/home/asheshkaji/projects/robojepa-optimrl/runs/E002-planner-loop/cem_release/inst104-seed0/unit.json": "f8923c17c64ad09ba42a49046f36ff4182431680eb8b620f515691cc73ec55ae",
+    "/home/asheshkaji/projects/robojepa-optimrl/runs/E002-planner-loop/cem_release/inst105-seed0/unit.json": "4c0edd6866dd0ea4fd12e8bcd4bf8f7c00c680044564b4c2e07251d649e01914",
+    "/home/asheshkaji/projects/robojepa-optimrl/runs/E002-planner-loop/cem_release/inst106-seed0/unit.json": "414ecfff871e25a467c5dcfe666dd78941f0aef0876c775efa658725bec641a2",
+    "/home/asheshkaji/projects/robojepa-optimrl/runs/E002-planner-loop/cem_release/inst107-seed0/unit.json": "cb6673bb8006b1d499bd7b06c2f705971ffab8e4b73c47edd2d2a8c952dd6f3c",
+    "/home/asheshkaji/projects/robojepa-optimrl/runs/E002-planner-loop/cem_cap10/inst100-seed0/unit.json": "ecbae36efb4230c163a9d0f808e8291b8c2ce3d85152100fefea5f131bac4c8e",
+    "/home/asheshkaji/projects/robojepa-optimrl/runs/E002-planner-loop/cem_cap10/inst101-seed0/unit.json": "be17fc881c7a3e3afd5d237b530969c56963bafad08cc40f4bfc282d9e41c4fe",
+    "/home/asheshkaji/projects/robojepa-optimrl/runs/E002-planner-loop/cem_cap10/inst102-seed0/unit.json": "bdfc1ddedbe08afeb064be7e055e6e400ccaba2143edfaa1c72755886a23f40a",
+    "/home/asheshkaji/projects/robojepa-optimrl/runs/E002-planner-loop/cem_cap10/inst103-seed0/unit.json": "b5ca7c6b6cdeecf05290510d0283ca7cb55b52b9e99e4809df7039b0f0908539",
+    "/home/asheshkaji/projects/robojepa-optimrl/runs/E002-planner-loop/cem_cap10/inst104-seed0/unit.json": "c796dae03bdedb9c852da85b283208a4dcfd09903b077827d1c912b0180f6619",
+    "/home/asheshkaji/projects/robojepa-optimrl/runs/E002-planner-loop/cem_cap10/inst105-seed0/unit.json": "aec2ecfcf2a3c555aa92d4ed7d755225cfeecb1c3f14ab7d55a25976a7ccef6d",
+    "/home/asheshkaji/projects/robojepa-optimrl/runs/E002-planner-loop/cem_cap10/inst106-seed0/unit.json": "09e8cb1b4acfca3d4653dc36fcadba24ae01398fd413651b0dad21e9eefa342f",
+    "/home/asheshkaji/projects/robojepa-optimrl/runs/E002-planner-loop/cem_cap10/inst107-seed0/unit.json": "2f99dbc01c778665bb229d302e1a81ce35223dc1c04ce67a66ca497fa2e378ae",
+    "/home/asheshkaji/projects/robojepa-optimrl/runs/E002-planner-loop/cem_clampexec/inst100-seed0/unit.json": "185808dad7365e6622a5451a2ae49ddf249bb2fd8af1c71122802bf464237254",
+    "/home/asheshkaji/projects/robojepa-optimrl/runs/E002-planner-loop/cem_clampexec/inst101-seed0/unit.json": "874e5745d40d771c9c063f13acf5e5e13098328ef3a562190b3ee7d7974bee98",
+    "/home/asheshkaji/projects/robojepa-optimrl/runs/E002-planner-loop/cem_clampexec/inst102-seed0/unit.json": "593c9e9a46d4163453ad37812dc5ce79d43189a79336bbb96ecb50f13d8f366b",
+    "/home/asheshkaji/projects/robojepa-optimrl/runs/E002-planner-loop/cem_clampexec/inst103-seed0/unit.json": "74c314c7a45898d6372ee20319f5f9c88d39b2156a29db44555b7d9e3870a23f",
+    "/home/asheshkaji/projects/robojepa-optimrl/runs/E002-planner-loop/cem_clampexec/inst104-seed0/unit.json": "a9fe3e0ccc23db3927b00fac127239222f465c19d8fa501967b530c022aec40c",
+    "/home/asheshkaji/projects/robojepa-optimrl/runs/E002-planner-loop/cem_clampexec/inst105-seed0/unit.json": "e5c067f46317af68f84a628fb024b0e57108fa5e8d5465c9acead9bee532d547",
+    "/home/asheshkaji/projects/robojepa-optimrl/runs/E002-planner-loop/cem_clampexec/inst106-seed0/unit.json": "d8598f1f5496afd53fb9ef256e5a173c0d9cdb4c8786b09b954bcafd24b705cf",
+    "/home/asheshkaji/projects/robojepa-optimrl/runs/E002-planner-loop/cem_clampexec/inst107-seed0/unit.json": "30d4481d4103a3e731e19ae1b12312a0997839ac12d6715ddf4e9b4843de3a3b",
+    "/home/asheshkaji/projects/robojepa-optimrl/bench/leaderboard.jsonl": "fd206e11e02db79d407432464f3f1b771872ca22bfd0210ccf6ab4b9208396d8"
+  },
+  "excluded_inputs": [],
+  "baseline_leaderboard_check": {
+    "passed": true,
+    "max_absolute_error": 0.0,
+    "row": "last cem_release row",
+    "tolerance": 1e-09
+  },
+  "definitions": {
+    "progress": "1 - final_distance_m / D0_m (fixed bench/score.py definition)",
+    "minimum_distance": "minimum over start and five post-tick distances",
+    "unmoved": "norm(executed) < 0.001 m and norm(commanded) >= 0.01 m",
+    "at_or_above_cap": "any abs(commanded) > 0.05 m for none; >= cap - 1e-9 for capped arms",
+    "paired_difference": "arm minus cem_release; negative distance difference is closer",
+    "closer_farther": "difference strictly beyond +/-0.001 m; boundary is a tie",
+    "bootstrap": "95% percentile interval; resample common instances, mean paired progress difference",
+    "tick0": "norm(g_m - clip(baseline tick-0 commanded, -cap, cap)); unique goals only",
+    "command_sanity": "max absolute arm tick-0 command minus clipped baseline command, in mm",
+    "decision": "complete 8/8 only: all progress > 0; mean paired progress difference > 0; median >= baseline median - 0.03",
+    "near_starts": [
+      100,
+      107
+    ],
+    "far_starts": [
+      101,
+      102,
+      103,
+      105,
+      106
+    ]
+  },
+  "figure": {
+    "status": "compiled",
+    "path": "/home/asheshkaji/projects/robojepa-optimrl/episodes/E007-cap-length/out/fig-cap.pdf"
+  }
+}

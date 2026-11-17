@@ -1,0 +1,162 @@
+[
+  {
+    "repo": "robocasa/robocasa-assets",
+    "revision": "1b92c3d02ca4354984fec961357db0bff7b32166",
+    "path": "fixtures.zip",
+    "sha256": "e7bb86e9e0ef130de78200a0a7465dfb0161ed3956c65d8b3f36bdff3746c7a8",
+    "bytes": 227181940,
+    "extract_to": "."
+  },
+  {
+    "repo": "robocasa/robocasa-assets",
+    "revision": "1b92c3d02ca4354984fec961357db0bff7b32166",
+    "path": "generative_textures.zip",
+    "sha256": "bc05095af306222d9a799a9b0b5b16662aa546998622ee8fd3072566ea4c31ec",
+    "bytes": 1184675536,
+    "extract_to": "."
+  },
+  {
+    "repo": "robocasa/robocasa-assets",
+    "revision": "1b92c3d02ca4354984fec961357db0bff7b32166",
+    "path": "textures.zip",
+    "sha256": "ba3a4dcef96e199cbd601c7cdb7eb46077fb6672611b7ac74c25a191bf0be392",
+    "bytes": 543180421,
+    "extract_to": "."
+  },
+  {
+    "repo": "nvidia/PhysicalAI-Robotics-Manipulation-Objects-Kitchen-MJCF",
+    "revision": "420a04af939c34873e6839a586b70844baf28aab",
+    "path": "fixtures_lightwheel/blenders.zip",
+    "sha256": "989aea1bc02066f40a1661e81a41fe059cc6af96b9a9dc71ff277d4f8e87a15f",
+    "bytes": 24946844,
+    "extract_to": "fixtures"
+  },
+  {
+    "repo": "nvidia/PhysicalAI-Robotics-Manipulation-Objects-Kitchen-MJCF",
+    "revision": "420a04af939c34873e6839a586b70844baf28aab",
+    "path": "fixtures_lightwheel/cabinets.zip",
+    "sha256": "d3fcbdc7601cfd727cf470458636828e7798a8a9fbe7b8de17965457242e2fbf",
+    "bytes": 30583208,
+    "extract_to": "fixtures"
+  },
+  {
+    "repo": "nvidia/PhysicalAI-Robotics-Manipulation-Objects-Kitchen-MJCF",
+    "revision": "420a04af939c34873e6839a586b70844baf28aab",
+    "path": "fixtures_lightwheel/coffee_machines.zip",
+    "sha256": "3a4bdee6956232d5f5f9cded6fc5a83ed72047d2e42af3230b26be6b517036a3",
+    "bytes": 44202991,
+    "extract_to": "fixtures"
+  },
+  {
+    "repo": "nvidia/PhysicalAI-Robotics-Manipulation-Objects-Kitchen-MJCF",
+    "revision": "420a04af939c34873e6839a586b70844baf28aab",
+    "path": "fixtures_lightwheel/dishwashers.zip",
+    "sha256": "aad7b6f8ff94868320c20854ad68b0d20b4f7a966e42d6aa5d50fd10aaa97489",
+    "bytes": 31135767,
+    "extract_to": "fixtures"
+  },
+  {
+    "repo": "nvidia/PhysicalAI-Robotics-Manipulation-Objects-Kitchen-MJCF",
+    "revision": "420a04af939c34873e6839a586b70844baf28aab",
+    "path": "fixtures_lightwheel/electric_kettles.zip",
+    "sha256": "8dfe2c0f205d0ed1a45837ea6a6a60fccc763218fbaa0cf14d382ded948b790b",
+    "bytes": 30624436,
+    "extract_to": "fixtures"
+  },
+  {
+    "repo": "nvidia/PhysicalAI-Robotics-Manipulation-Objects-Kitchen-MJCF",
+    "revision": "420a04af939c34873e6839a586b70844baf28aab",
+    "path": "fixtures_lightwheel/fridges.zip",
+    "sha256": "10accb5fff37dc2a70d12822d729ff885364fefb932826a89e04dbc6b5c77715",
+    "bytes": 57854798,
+    "extract_to": "fixtures"
+  },
+  {
+    "repo": "nvidia/PhysicalAI-Robotics-Manipulation-Objects-Kitchen-MJCF",
+    "revision": "420a04af939c34873e6839a586b70844baf28aab",
+    "path": "fixtures_lightwheel/handles.zip",
+    "sha256": "e92243d84252077482e523a577cb9dc2aef07aafae1b87eda95a464aa274beff",
+    "bytes": 12227543,
+    "extract_to": "fixtures"
+  },
+  {
+    "repo": "nvidia/PhysicalAI-Robotics-Manipulation-Objects-Kitchen-MJCF",
+    "revision": "420a04af939c34873e6839a586b70844baf28aab",
+    "path": "fixtures_lightwheel/hoods.zip",
+    "sha256": "ca713d1cc4a4eeea9a8f75ef4b6c9a45920e334b2acd1c1f7f9a9ad86161800e",
+    "bytes": 10068743,
+    "extract_to": "fixtures"
+  },
+  {
+    "repo": "nvidia/PhysicalAI-Robotics-Manipulation-Objects-Kitchen-MJCF",
+    "revision": "420a04af939c34873e6839a586b70844baf28aab",
+    "path": "fixtures_lightwheel/microwaves.zip",
+    "sha256": "17e8f0bebbc59a7289e2ee2789d230e527b055e38a1155dd2361defdac34d74b",
+    "bytes": 35952253,
+    "extract_to": "fixtures"
+  },
+  {
+    "repo": "nvidia/PhysicalAI-Robotics-Manipulation-Objects-Kitchen-MJCF",
+    "revision": "420a04af939c34873e6839a586b70844baf28aab",
+    "path": "fixtures_lightwheel/ovens.zip",
+    "sha256": "94774e936bb712e2f4ccd2b0179485ef9a5e560afbd8b313cdd808841e42474d",
+    "bytes": 22962348,
+    "extract_to": "fixtures"
+  },
+  {
+    "repo": "nvidia/PhysicalAI-Robotics-Manipulation-Objects-Kitchen-MJCF",
+    "revision": "420a04af939c34873e6839a586b70844baf28aab",
+    "path": "fixtures_lightwheel/sinks.zip",
+    "sha256": "28ac94842896c3517295061700384b86e6a123256ec700421cf7f63e59957072",
+    "bytes": 45690984,
+    "extract_to": "fixtures"
+  },
+  {
+    "repo": "nvidia/PhysicalAI-Robotics-Manipulation-Objects-Kitchen-MJCF",
+    "revision": "420a04af939c34873e6839a586b70844baf28aab",
+    "path": "fixtures_lightwheel/stand_mixers.zip",
+    "sha256": "fa540e15e7f7957704d783d283fa2147651858a86ba9338ac5b1c3abbc8e4663",
+    "bytes": 20891187,
+    "extract_to": "fixtures"
+  },
+  {
+    "repo": "nvidia/PhysicalAI-Robotics-Manipulation-Objects-Kitchen-MJCF",
+    "revision": "420a04af939c34873e6839a586b70844baf28aab",
+    "path": "fixtures_lightwheel/stoves.zip",
+    "sha256": "7f71b03a067ea8ed01e4d8e3686020eb1945116058cf8ebffe231d981ed1814a",
+    "bytes": 27392867,
+    "extract_to": "fixtures"
+  },
+  {
+    "repo": "nvidia/PhysicalAI-Robotics-Manipulation-Objects-Kitchen-MJCF",
+    "revision": "420a04af939c34873e6839a586b70844baf28aab",
+    "path": "fixtures_lightwheel/stovetops.zip",
+    "sha256": "ddfc2b322e47cf336936c1ead2158446ae7b16fbe65fe48f1b72d6888b3accd2",
+    "bytes": 19114603,
+    "extract_to": "fixtures"
+  },
+  {
+    "repo": "nvidia/PhysicalAI-Robotics-Manipulation-Objects-Kitchen-MJCF",
+    "revision": "420a04af939c34873e6839a586b70844baf28aab",
+    "path": "fixtures_lightwheel/toaster_ovens.zip",
+    "sha256": "50e7a3aa83cf7b4f673cfbad21c2f018ee41a4caef9ae89f7402e18e66dab2e9",
+    "bytes": 51055625,
+    "extract_to": "fixtures"
+  },
+  {
+    "repo": "nvidia/PhysicalAI-Robotics-Manipulation-Objects-Kitchen-MJCF",
+    "revision": "420a04af939c34873e6839a586b70844baf28aab",
+    "path": "fixtures_lightwheel/toasters.zip",
+    "sha256": "4cfecba35309f4ac84f03cd97cc3721a5d80fcabeec969349ca670c253eb7103",
+    "bytes": 38500809,
+    "extract_to": "fixtures"
+  },
+  {
+    "repo": "nvidia/PhysicalAI-Robotics-Manipulation-Objects-Kitchen-MJCF",
+    "revision": "420a04af939c34873e6839a586b70844baf28aab",
+    "path": "fixtures_lightwheel/windows.zip",
+    "sha256": "70db83646d008e79ca842ac95a8814658f13332f20c07c32599bf2160974d26c",
+    "bytes": 26406851,
+    "extract_to": "fixtures"
+  }
+]

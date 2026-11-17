@@ -1,0 +1,243 @@
+{
+ "method": "coarse-to-fine grid search of the sum of squared sphere residuals, top-6 cells refined",
+ "tolerance_g_m": 0.0005,
+ "tolerance_residual_m": 0.001,
+ "n_instances": 8,
+ "n_pass": 8,
+ "passed": true,
+ "failures": [],
+ "instances": [
+  {
+   "instance": 100,
+   "status_prior": "unique",
+   "n_equations": 12,
+   "g_prior_m": [
+    0.03266181533076148,
+    0.0345422950569565,
+    -0.055235804209246966
+   ],
+   "g_grid_m": [
+    0.03266183568211487,
+    0.03454227908254816,
+    -0.05523581599104443
+   ],
+   "g_linearised_m": [
+    0.03266181490224935,
+    0.034542290974831635,
+    -0.055235804794928
+   ],
+   "grid_minus_prior_m": 2.8428331965779056e-08,
+   "grid_minus_nearest_listed_m": 2.8428331965779056e-08,
+   "linearised_minus_prior_m": 4.146129321083498e-09,
+   "rms_grid_m": 8.399472146770383e-09,
+   "max_abs_residual_at_prior_m": 4.8107963029897505e-09,
+   "grid_ambiguous": false,
+   "ambiguity_verdict_agrees": true,
+   "g_agrees": true,
+   "residuals_below_1mm": true
+  },
+  {
+   "instance": 101,
+   "status_prior": "unique",
+   "n_equations": 6,
+   "g_prior_m": [
+    0.14168225426611497,
+    0.14307064432188574,
+    0.12176660016686931
+   ],
+   "g_grid_m": [
+    0.1416822651703512,
+    0.1430706465170964,
+    0.12176657710535753
+   ],
+   "g_linearised_m": [
+    0.14168225406957236,
+    0.14307064440315476,
+    0.12176660110104778
+   ],
+   "grid_minus_prior_m": 2.5603801347543496e-08,
+   "grid_minus_nearest_listed_m": 2.5603801347543496e-08,
+   "linearised_minus_prior_m": 9.58083017442885e-10,
+   "rms_grid_m": 1.666860003945511e-08,
+   "max_abs_residual_at_prior_m": 7.291852677226984e-10,
+   "grid_ambiguous": false,
+   "ambiguity_verdict_agrees": true,
+   "g_agrees": true,
+   "residuals_below_1mm": true
+  },
+  {
+   "instance": 102,
+   "status_prior": "unique",
+   "n_equations": 6,
+   "g_prior_m": [
+    0.10278398983396242,
+    -0.11654932155870465,
+    -0.029312544076342144
+   ],
+   "g_grid_m": [
+    0.10278399215595559,
+    -0.11654931990474172,
+    -0.029312539394844055
+   ],
+   "g_linearised_m": [
+    0.10278399682770761,
+    -0.11654931350101869,
+    -0.029312545210269284
+   ],
+   "grid_minus_prior_m": 5.481210630704506e-09,
+   "grid_minus_nearest_listed_m": 5.481210630704506e-09,
+   "linearised_minus_prior_m": 1.072961162739145e-08,
+   "rms_grid_m": 4.317307527810532e-09,
+   "max_abs_residual_at_prior_m": 2.9140844043373804e-09,
+   "grid_ambiguous": false,
+   "ambiguity_verdict_agrees": true,
+   "g_agrees": true,
+   "residuals_below_1mm": true
+  },
+  {
+   "instance": 103,
+   "status_prior": "unique",
+   "n_equations": 6,
+   "g_prior_m": [
+    0.01912417354114867,
+    0.22165984239012862,
+    0.1399357850623936
+   ],
+   "g_grid_m": [
+    0.019124187033143204,
+    0.22165988721278784,
+    0.1399357899562772
+   ],
+   "g_linearised_m": [
+    0.01912416808274605,
+    0.22165984483929294,
+    0.13993577949876151
+   ],
+   "grid_minus_prior_m": 4.7064368614762804e-08,
+   "grid_minus_nearest_listed_m": 4.7064368614762804e-08,
+   "linearised_minus_prior_m": 8.169857217081118e-09,
+   "rms_grid_m": 2.82232792005446e-08,
+   "max_abs_residual_at_prior_m": 1.0156575580566596e-09,
+   "grid_ambiguous": false,
+   "ambiguity_verdict_agrees": true,
+   "g_agrees": true,
+   "residuals_below_1mm": true
+  },
+  {
+   "instance": 104,
+   "status_prior": "ambiguous",
+   "n_equations": 6,
+   "g_prior_m": [
+    -0.06985446815727177,
+    -0.004909617259687889,
+    0.06280922176274671
+   ],
+   "g_grid_m": [
+    -0.06985445658065856,
+    -0.0049096287675582,
+    0.06280925676446263
+   ],
+   "g_linearised_m": [
+    -0.06985446724985928,
+    -0.0049096174708266925,
+    0.06280922267131529
+   ],
+   "grid_minus_prior_m": 3.8620838539162014e-08,
+   "grid_minus_nearest_listed_m": 3.8620838539162014e-08,
+   "linearised_minus_prior_m": 1.301335426744232e-09,
+   "rms_grid_m": 1.6749242710498076e-08,
+   "max_abs_residual_at_prior_m": 6.894216447728141e-11,
+   "grid_ambiguous": true,
+   "ambiguity_verdict_agrees": true,
+   "g_agrees": true,
+   "residuals_below_1mm": true
+  },
+  {
+   "instance": 105,
+   "status_prior": "unique",
+   "n_equations": 6,
+   "g_prior_m": [
+    0.24459449123045587,
+    -0.11100658844144214,
+    0.018684433847555547
+   ],
+   "g_grid_m": [
+    0.24459445483084596,
+    -0.11100660860615008,
+    0.018684444086227353
+   ],
+   "g_linearised_m": [
+    0.24459449286632787,
+    -0.11100659950972079,
+    0.018684439024129987
+   ],
+   "grid_minus_prior_m": 4.2852974790928296e-08,
+   "grid_minus_nearest_listed_m": 4.2852974790928296e-08,
+   "linearised_minus_prior_m": 1.2328008455928354e-08,
+   "rms_grid_m": 1.517055677551815e-08,
+   "max_abs_residual_at_prior_m": 4.868248359990446e-09,
+   "grid_ambiguous": false,
+   "ambiguity_verdict_agrees": true,
+   "g_agrees": true,
+   "residuals_below_1mm": true
+  },
+  {
+   "instance": 106,
+   "status_prior": "unique",
+   "n_equations": 6,
+   "g_prior_m": [
+    -0.011150397839178247,
+    -0.24305139311999369,
+    0.0644141429902255
+   ],
+   "g_grid_m": [
+    -0.011150378212883288,
+    -0.2430513446862038,
+    0.06441410919659052
+   ],
+   "g_linearised_m": [
+    -0.011150397831654602,
+    -0.24305139308991372,
+    0.06441414153839181
+   ],
+   "grid_minus_prior_m": 6.223369845285861e-08,
+   "grid_minus_nearest_listed_m": 6.223369845285861e-08,
+   "linearised_minus_prior_m": 1.4521647590218724e-09,
+   "rms_grid_m": 3.245204732503676e-08,
+   "max_abs_residual_at_prior_m": 2.6478540124386107e-09,
+   "grid_ambiguous": false,
+   "ambiguity_verdict_agrees": true,
+   "g_agrees": true,
+   "residuals_below_1mm": true
+  },
+  {
+   "instance": 107,
+   "status_prior": "ambiguous",
+   "n_equations": 6,
+   "g_prior_m": [
+    0.030151801562825195,
+    -0.027863466849160273,
+    0.05754164763812755
+   ],
+   "g_grid_m": [
+    0.03015180501558366,
+    -0.027863447304907668,
+    0.05754165606514828
+   ],
+   "g_linearised_m": [
+    0.03015180755548308,
+    -0.027863455848142045,
+    0.05754164378895467
+   ],
+   "grid_minus_prior_m": 2.1561865161545817e-08,
+   "grid_minus_nearest_listed_m": 2.1561865161545817e-08,
+   "linearised_minus_prior_m": 1.3105360828952476e-08,
+   "rms_grid_m": 7.886229012069474e-09,
+   "max_abs_residual_at_prior_m": 7.169875804180492e-12,
+   "grid_ambiguous": true,
+   "ambiguity_verdict_agrees": true,
+   "g_agrees": true,
+   "residuals_below_1mm": true
+  }
+ ]
+}

@@ -1,0 +1,54 @@
+{
+  "planner": "cem_clampexec",
+  "remote": "/workspace/robojepa-E001-20261112T003859Z/e008/out/cem_clampexec",
+  "files": [
+    {
+      "path": "inst100-seed0.json",
+      "size": 148336,
+      "sha256": "73edee0f08dc293e0666d3297a942189afe49256bad7401f020a83063e55ebcf"
+    },
+    {
+      "path": "inst101-seed0.json",
+      "size": 168459,
+      "sha256": "04ada06cce283ef6d56004932a1fab526b1a3d0a9553c08549e42d7c9c20349a"
+    },
+    {
+      "path": "inst102-seed0.json",
+      "size": 159775,
+      "sha256": "2352463fbf738d51a36f509d25089055bf37bf42bd85eb9323b737a9f78cf2ab"
+    },
+    {
+      "path": "inst103-seed0.json",
+      "size": 711156,
+      "sha256": "fbba6e057a489463c8d4d99ad1af011cd5226eb6a361da4142f04f69336ae46e"
+    },
+    {
+      "path": "inst104-seed0.json",
+      "size": 119855,
+      "sha256": "4c8753ffa9daca64ea7a63be2b38ffa0a0683b59266fe1b77b850ddc3bca68fa"
+    },
+    {
+      "path": "inst105-seed0.json",
+      "size": 198978,
+      "sha256": "a7f07dfa3fc38b028ad85876e498c939358c5d3ef2bd94bf63509649a0cb1f9d"
+    },
+    {
+      "path": "inst106-seed0.json",
+      "size": 190204,
+      "sha256": "1eb53db0f43ffedc51274109d3bd0148efa0c119786a016cf718c47d64e1a612"
+    },
+    {
+      "path": "inst107-seed0.json",
+      "size": 149676,
+      "sha256": "a415bbf6403dfe20b291dc0b56a3ac0b95f097f6a50fd84d5617701d406125e4"
+    },
+    {
+      "path": "replay.json",
+      "size": 1847941,
+      "sha256": "2bf35c86185b064b877f3f7a3b1526efa727d32e2073c1e24455b3f48f913a65"
+    }
+  ],
+  "verified_files": 9,
+  "copied": 9,
+  "already_verified": 0
+}

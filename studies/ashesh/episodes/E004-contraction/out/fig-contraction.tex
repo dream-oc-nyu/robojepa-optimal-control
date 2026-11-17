@@ -1,0 +1,35 @@
+\documentclass[border=5pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17,every axis/.append style={
+ tick label style={font=\large},label style={font=\large},
+ scaled ticks=false,axis line style={black!65},tick style={black!65},
+ xtick={0,1,2,3,4,5,6,7},
+ xticklabels={raw,real,foreign,channel,scalar,cosine,penalty,norm},
+ xticklabel style={rotate=35,anchor=east},xmin=-0.5,xmax=7.5,
+ ymajorgrids,grid style={black!10},legend style={font=\large,draw=none},
+ unbounded coords=discard}}
+\definecolor{one}{RGB}{0,114,178}
+\definecolor{three}{RGB}{213,94,0}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[name=left,width=14cm,height=10cm,ylabel={median foreign response},
+ legend pos=north west,yticklabel style={/pgf/number format/fixed,/pgf/number format/precision=3}]
+\addplot[black!60,thin,forget plot] coordinates {(-0.5,0) (7.5,0)};
+\addplot[only marks,mark=*,mark size=3pt,one] table[x expr=\thisrow{x}-0.12,y=foreign_median_1cm]{variants.dat};
+\addlegendentry{1 cm}
+\addplot[only marks,mark=square*,mark size=3pt,three] table[x expr=\thisrow{x}+0.12,y=foreign_median_3cm]{variants.dat};
+\addlegendentry{3 cm}
+\end{axis}
+\begin{axis}[at={(left.east)},anchor=west,xshift=2.3cm,width=14cm,height=10cm,
+ ylabel={all-scope concordance},ymin=0.3,ymax=1,legend pos=north west]
+\addplot[black!60,dashed] table[x=x,y=real_fraction]{variants.dat};
+\addlegendentry{realized reference}
+\addplot[only marks,mark=*,mark size=3pt,one,error bars/.cd,y dir=both,y explicit]
+ table[x=x,y=fraction,y error minus=ci_minus,y error plus=ci_plus]{variants.dat};
+\addlegendentry{95\% instance bootstrap}
+\end{axis}
+\end{tikzpicture}
+\end{document}

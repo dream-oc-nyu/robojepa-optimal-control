@@ -1,0 +1,72 @@
+\documentclass[border=4pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\definecolor{real}{RGB}{0,114,178}
+\definecolor{pred}{RGB}{213,94,0}
+\definecolor{corr}{RGB}{0,158,115}
+\definecolor{ctoward}{RGB}{0,0,0}
+\definecolor{caway}{RGB}{204,121,167}
+\definecolor{clateral}{RGB}{86,180,233}
+\pgfplotsset{
+  every axis/.append style={
+    tick label style={font=\large}, label style={font=\large},
+    yticklabel style={/pgf/number format/fixed,/pgf/number format/precision=2},
+    xticklabel style={/pgf/number format/fixed,/pgf/number format/precision=2},
+    scaled ticks=false, axis line style={black!70}, tick style={black!70},
+    legend style={font=\large, draw=none, fill=white, fill opacity=0.85, text opacity=1},
+    legend cell align=left, unbounded coords=discard, filter discard warning=false}}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[name=left, width=11.5cm, height=10.5cm,
+  xmin=-0.040, xmax=0.040, ymin=-0.035, ymax=0.025,
+  xlabel={realized response to a foreign goal, $F_{\mathrm{real}}$ (mean $|\Delta z|$)},
+  ylabel={predicted response to a foreign goal, $F_{\mathrm{pred}}$ (mean $|\Delta z|$)},
+  grid=major, grid style={black!8}, legend pos=north west]
+\draw[black!55, line width=0.6pt] (axis cs:-0.040,0) -- (axis cs:0.040,0);
+\draw[black!55, line width=0.6pt] (axis cs:0,-0.035) -- (axis cs:0,0.025);
+\addplot[forget plot, black!35, dashed, domain=-0.040:0.040, samples=2] {x};
+\addplot[only marks, mark=*, mark size=2.2pt, clateral, opacity=0.55, draw opacity=0,
+  restrict expr to domain={\thisrow{grp}}{3:3}] table[x=F_real, y=F_pred]{foreign_response.dat};
+\addlegendentry{lateral}
+\addplot[only marks, mark=*, mark size=2.2pt, caway, opacity=0.7, draw opacity=0,
+  restrict expr to domain={\thisrow{grp}}{2:2}] table[x=F_real, y=F_pred]{foreign_response.dat};
+\addlegendentry{away from own goal}
+\addplot[only marks, mark=*, mark size=2.2pt, ctoward, opacity=0.6, draw opacity=0,
+  restrict expr to domain={\thisrow{grp}}{1:1}] table[x=F_real, y=F_pred]{foreign_response.dat};
+\addlegendentry{toward own goal}
+\node[font=\large, anchor=north east, align=right] at (rel axis cs:0.985,0.985)
+  {672 pairs, $\geq$ 1 cm\\$F_{\mathrm{pred}}<0$: 672/672\\$F_{\mathrm{real}}<0$: 359/672};
+\end{axis}
+\begin{axis}[name=right, at={(left.east)}, anchor=west, xshift=3.0cm, width=14.5cm, height=10.5cm,
+  xmin=0.4, xmax=6.6, xtick={1,2,3,4,5,6},
+  xticklabels={10,30,10,30,10,30},
+  xlabel={commanded displacement (mm)},
+  ylabel={own-goal cost change vs.\ no motion, $\Delta C$ (mean $|\Delta z|$)},
+  ymajorgrids, grid style={black!8}, legend pos=north west, clip=false,
+  extra x ticks={1.5,3.5,5.5}, extra x tick labels={toward goal, away from goal, lateral},
+  extra x tick style={tick style={draw=none}, tick label style={font=\large, yshift=4pt, anchor=south},
+    ticklabel pos=upper, major tick length=0pt}]
+\draw[black!55, line width=0.6pt] (axis cs:0.4,0) -- (axis cs:6.6,0);
+\draw[black!25] (rel axis cs:0.3387,0) -- (rel axis cs:0.3387,1);
+\draw[black!25] (rel axis cs:0.6613,0) -- (rel axis cs:0.6613,1);
+\addplot[forget plot, only marks, mark=square*, mark size=2.2pt, pred, opacity=0.45, draw opacity=0]
+  table[x expr=\thisrow{xpos}-0.25, y=dC_pred]{corrected.dat};
+\addplot[forget plot, only marks, mark=triangle*, mark size=2.8pt, corr, opacity=0.45, draw opacity=0]
+  table[x expr=\thisrow{xpos}, y=dC_corr]{corrected.dat};
+\addplot[forget plot, only marks, mark=*, mark size=2.2pt, real, opacity=0.45, draw opacity=0]
+  table[x expr=\thisrow{xpos}+0.25, y=dC_real]{corrected.dat};
+\addplot[only marks, mark=square*, mark size=4pt, pred, mark options={draw=black, line width=0.6pt}]
+  table[x expr=\thisrow{xpos}-0.25, y=dC_pred]{fig_goal_free_medians.dat};
+\addlegendentry{predicted, raw}
+\addplot[only marks, mark=triangle*, mark size=5pt, corr, mark options={draw=black, line width=0.6pt}]
+  table[x expr=\thisrow{xpos}, y=dC_corr]{fig_goal_free_medians.dat};
+\addlegendentry{predicted, baseline subtracted}
+\addplot[only marks, mark=*, mark size=4pt, real, mark options={draw=black, line width=0.6pt}]
+  table[x expr=\thisrow{xpos}+0.25, y=dC_real]{fig_goal_free_medians.dat};
+\addlegendentry{realized}
+\end{axis}
+\end{tikzpicture}
+\end{document}

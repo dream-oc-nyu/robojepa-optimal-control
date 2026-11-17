@@ -1,0 +1,26 @@
+\documentclass[border=5pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17,every axis/.append style={tick label style={font=\large},label style={font=\large},scaled ticks=false,axis line style={black!65},tick style={black!65},unbounded coords=discard,ymajorgrids,grid style={black!10},legend style={font=\large,draw=none}}}
+\definecolor{one}{RGB}{0,114,178}
+\definecolor{three}{RGB}{213,94,0}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[name=left,width=15cm,height=10cm,ylabel={class-distinct shell concordance},ymin=0.4,ymax=1.05,xmin=-0.5,xmax=7.5,xtick={0,1,2,3,4,5,6,7},xticklabels={raw,view 0,view 1,channel,foreign,real,real v0,real v1},xticklabel style={rotate=35,anchor=east},legend pos=south east]
+\addplot[black!65,dotted,forget plot] coordinates {(-.5,.5) (7.5,.5)};
+\addplot[only marks,mark=*,mark size=3pt,one,error bars/.cd,y dir=both,y explicit]
+ table[x expr=\thisrow{x}-0.11,y=plot1,y error minus=ci_minus,y error plus=ci_plus]{shells.dat};
+\addlegendentry{1 cm}
+\addplot[only marks,mark=square*,mark size=3pt,three,error bars/.cd,y dir=both,y explicit]
+ table[x expr=\thisrow{x}+0.11,y=plot3,y error minus=ci_minus,y error plus=ci_plus]{shells.dat};
+\addlegendentry{3 cm}
+\end{axis}
+\begin{axis}[at={(left.east)},anchor=west,xshift=2.6cm,width=14cm,height=10cm,xlabel={view-0 weight $w_0$},ylabel={all-scope concordance},xmin=-.04,xmax=1.04,ymin=.4,ymax=.8,xtick={0,.1,.2,.3,.4,.5,.6,.7,.8,.9,1},legend pos=north west]
+\addplot[one,thick,mark=*,mark size=2.8pt,point meta=explicit symbolic,nodes near coords,nodes near coords style={font=\large,anchor=south,yshift=3pt}]
+ table[x=w0,y=fraction,meta=n_regret0]{weight_path.dat};
+\addlegendentry{labels: zero-regret / 8}
+\end{axis}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,177 @@
+{
+  "planner": "cem_release",
+  "instance": 103,
+  "seed": 0,
+  "complete": true,
+  "calibration": false,
+  "initial_distance_m": 0.2628323480650084,
+  "budget_s": 216.10266383492853,
+  "horizon_max": 1,
+  "step_bound_m": 0.3,
+  "embodiment_id": 2,
+  "view_weights": [
+    0.5,
+    0.5
+  ],
+  "scene_seed": 0,
+  "reach_episode_idx": 0,
+  "source_commits": {
+    "robo_jepa": "f93106f5f4a451fd526d51778aa8ab7c852eb824",
+    "robosuite": "5ce6643f3092639d08f7b0f90ed1c6a84f50552c",
+    "robocasa": "456174f62b89b8fca99eaaf33949c29fec9cfc2a",
+    "vjepa2": "204698b45b3712590f06245fbfba32d3be539812"
+  },
+  "weight_sha256": {
+    "predictor": "bdd77b212d81e11438fd6bd85525bed72ff1f47a6b3211ac925ddfbc7c8351a6",
+    "encoder": "7aae1a3c7a31d258af9c985388b5d2f20587469380f2e11b54d7876ac8cfe58a"
+  },
+  "fp32": true,
+  "controller": "release ReachBlockingRoboCasaEnv, in-process",
+  "ticks": [
+    {
+      "tick": 0,
+      "commanded": [
+        0.10578550398349762,
+        0.12203681468963623,
+        0.1693226546049118
+      ],
+      "executed": [
+        0.05686340481042862,
+        0.08488159626722336,
+        0.055025748908519745
+      ],
+      "cost_before": 0.3545595705509186,
+      "cost_after": 0.312774121761322,
+      "cost_predicted": 0.3317180275917053,
+      "cost_model_before": 0.3625938594341278,
+      "rho": 1.353338397580744,
+      "distance_m": 0.16535492966583845,
+      "release_reward": 0.37155166424941966,
+      "release_success": false,
+      "planning_s": 291.1261062780395,
+      "budget_overrun_s": 75.02344244311098,
+      "predictor_calls": 960,
+      "predicted_samples": 15360,
+      "harness_predictor_calls": 2,
+      "harness_predicted_samples": 2,
+      "controller_sim_steps": 200,
+      "blocking_converged": false
+    },
+    {
+      "tick": 1,
+      "commanded": [
+        -0.12008978426456451,
+        0.10336576402187347,
+        0.13889682292938232
+      ],
+      "executed": [
+        -0.11970312893390656,
+        0.10298565775156021,
+        0.13909965753555298
+      ],
+      "cost_before": 0.312774121761322,
+      "cost_after": 0.28479495644569397,
+      "cost_predicted": 0.30455154180526733,
+      "cost_model_before": 0.3241429924964905,
+      "rho": 1.4281313699838754,
+      "distance_m": 0.10390637461975026,
+      "release_reward": 0.605093187511125,
+      "release_success": false,
+      "planning_s": 207.3351266430691,
+      "budget_overrun_s": 0.0,
+      "predictor_calls": 640,
+      "predicted_samples": 10240,
+      "harness_predictor_calls": 2,
+      "harness_predicted_samples": 2,
+      "controller_sim_steps": 79,
+      "blocking_converged": true
+    },
+    {
+      "tick": 2,
+      "commanded": [
+        0.1456991732120514,
+        0.04402316361665726,
+        -0.18439580500125885
+      ],
+      "executed": [
+        0.07719017565250397,
+        0.041491080075502396,
+        -0.06437787413597107
+      ],
+      "cost_before": 0.28479495644569397,
+      "cost_after": 0.21169568598270416,
+      "cost_predicted": 0.27485060691833496,
+      "cost_model_before": 0.298739492893219,
+      "rho": 3.059969834501446,
+      "distance_m": 0.013632890521639887,
+      "release_reward": 0.9481868041242651,
+      "release_success": false,
+      "planning_s": 207.4012539749965,
+      "budget_overrun_s": 0.0,
+      "predictor_calls": 640,
+      "predicted_samples": 10240,
+      "harness_predictor_calls": 2,
+      "harness_predicted_samples": 2,
+      "controller_sim_steps": 200,
+      "blocking_converged": false
+    },
+    {
+      "tick": 3,
+      "commanded": [
+        -0.004298130050301552,
+        -0.01091753225773573,
+        0.00894000194966793
+      ],
+      "executed": [
+        -0.004474756773561239,
+        -0.011088601313531399,
+        0.008025296032428741
+      ],
+      "cost_before": 0.21169568598270416,
+      "cost_after": 0.2007216513156891,
+      "cost_predicted": 0.23451672494411469,
+      "cost_model_before": 0.24591903388500214,
+      "rho": 0.9624396886549329,
+      "distance_m": 0.010084918657454412,
+      "release_reward": 0.9616712343607463,
+      "release_success": false,
+      "planning_s": 207.08460955193732,
+      "budget_overrun_s": 0.0,
+      "predictor_calls": 640,
+      "predicted_samples": 10240,
+      "harness_predictor_calls": 2,
+      "harness_predicted_samples": 2,
+      "controller_sim_steps": 12,
+      "blocking_converged": true
+    },
+    {
+      "tick": 4,
+      "commanded": [
+        0.006556467618793249,
+        0.010102356784045696,
+        -0.010095641948282719
+      ],
+      "executed": [
+        0.0026765877846628428,
+        0.010021479800343513,
+        -0.008642936125397682
+      ],
+      "cost_before": 0.2007216513156891,
+      "cost_after": 0.2144717574119568,
+      "cost_predicted": 0.23349684476852417,
+      "cost_model_before": 0.24106884002685547,
+      "rho": -1.8159158355439753,
+      "distance_m": 0.014280480890628907,
+      "release_reward": 0.9457255706402578,
+      "release_success": false,
+      "planning_s": 208.62144917296246,
+      "budget_overrun_s": 0.0,
+      "predictor_calls": 640,
+      "predicted_samples": 10240,
+      "harness_predictor_calls": 2,
+      "harness_predicted_samples": 2,
+      "controller_sim_steps": 200,
+      "blocking_converged": false
+    }
+  ]
+}

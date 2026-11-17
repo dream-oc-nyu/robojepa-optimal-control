@@ -1,0 +1,29 @@
+\documentclass[12pt,border=6pt]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+ width=16cm,height=9cm,
+ font=\large, label style={font=\Large},
+ xlabel={Instance (start distance, cm)}, ylabel={Final distance (cm)},
+ ymode=log, log basis y=10, ymin=0.1,
+ xmin=-0.5,xmax=7.5, xtick={0,1,2,3,4,5,6,7},
+ xticklabels={{\shortstack{107\\(7.1)}},{\shortstack{100\\(7.3)}},{\shortstack{104\\(9.4)}},{\shortstack{102\\(15.8)}},{\shortstack{101\\(23.5)}},{\shortstack{106\\(25.2)}},{\shortstack{103\\(26.3)}},{\shortstack{105\\(26.9)}}},
+ unbounded coords=discard, filter discard warning=false,
+ ymajorgrids=true, grid style={gray!20},
+ legend style={at={(0.5,1.02)},anchor=south,draw=none},legend columns=3,
+]
+\addplot[only marks,mark=*,mark size=3pt,black]
+ table[x expr=\coordindex,y=final_none_cm] {cap.dat};
+\addlegendentry{No cap}
+\addplot[only marks,mark=square*,mark size=3pt,blue!75!black]
+ table[x expr=\coordindex,y=final_cap10_cm] {cap.dat};
+\addlegendentry{10 cm}
+\addplot[only marks,mark=triangle*,mark size=3.5pt,orange!85!black]
+ table[x expr=\coordindex,y=final_cap5_cm] {cap.dat};
+\addlegendentry{5 cm}
+\addplot[dashed,gray,thick,forget plot] coordinates {(-0.5,2) (7.5,2)};
+\end{axis}
+\end{tikzpicture}
+\end{document}
